@@ -9,7 +9,7 @@
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Slack built using Ruby on Rails
+WorkingTitle is a web application inspired by Slack built using Ruby on Rails
 and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
 following criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
@@ -28,11 +28,11 @@ sufficient CSS styling:
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: /wireframes
-[components]: /component-hierarchy.md
-[sample-state]: /sample-state.md
-[api-endpoints]: /api-endpoints.md
-[schema]: /schema.md
+[wireframes]: wireframes
+[components]: component-hierarchy.md
+[sample-state]: sample-state.md
+[api-endpoints]: api-endpoints.md
+[schema]: schema.md
 
 ## Implementation Timeline
 
@@ -40,29 +40,25 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: Messages Model, API, and components (3 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
-the API.
+**Objective:** Messages can be created, & read through the API. Integrate websockets in order
+to see live updates.
 
-### Phase 3: Notebooks (2 days)
+### Phase 3: Channels (2 days)
 
-**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**Objective:** Messages belong to Channels that can be created & read through the API.
 
-### Phase 4: Tags (1 day)
+### Phase 4: Teams (2 day)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Channels belong to Teams that can be created & read through the API.
 
-### Phase 5: Allow Complex Styling in Notes (1 day, W2 Th 6pm)
+### Phase 5: Polish (1 day, W2 Th 6pm)
 
-**Objective:** Allow rich text editing of notes.
-
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
-
-**Objective:** Add infinite scroll to Notes Index
+**Objective:** Apply thorough CSS styling to make product presentational
 
 ### Bonus Features (TBD)
-- [ ] Search notes by content
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
+- [ ] Search messages
+- [ ] Notifications
+- [ ] Emoji response on messages
+- [ ] Integrate with Giphy
