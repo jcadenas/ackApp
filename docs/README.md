@@ -42,16 +42,16 @@ sufficient CSS styling:
 
 ### Phase 2: Messages Model, API, and components (3 days)
 
-**Objective:** Messages can be created, & read through the API. Integrate websockets in order
+**Objective:** Messages can be created, read, updated & destroyed through the API. Integrate websockets in order
 to see live updates.
 
 ### Phase 3: Channels (2 days)
 
-**Objective:** Messages belong to Channels that can be created & read through the API.
+**Objective:** Messages belong to Channels that can be created, read, updated & destroyed through the API.
 
 ### Phase 4: Teams (2 day)
 
-**Objective:** Channels belong to Teams that can be created & read through the API.
+**Objective:** Channels belong to Teams that can be created, read, updated & destroyed through the API.
 
 ### Phase 5: Polish (1 day, W2 Th 6pm)
 
