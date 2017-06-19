@@ -5,7 +5,7 @@
 [Trello link][trello]
 
 [heroku]: https://media.giphy.com/media/EoJA9S9oQxnOg/giphy.gif
-[trello]: https://media.giphy.com/media/3o6MbdDgPPdxki4jD2/giphy.gif
+[trello]: https://trello.com/b/xbvIPYRZ/workingtitle
 
 ## Minimum Viable Product
 
