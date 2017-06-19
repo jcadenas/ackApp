@@ -19,6 +19,7 @@ sufficient CSS styling:
 - [ ] Live Chat
 - [ ] Channels
 - [ ] Teams
+- [ ] Search messages
 - [ ] Production README [sample](docs/production_readme.md)
 
 ## Design Docs
@@ -49,16 +50,19 @@ to see live updates.
 
 **Objective:** Messages belong to Channels that can be created, read, updated & destroyed through the API.
 
-### Phase 4: Teams (2 day)
+### Phase 4: Teams (1 day)
 
 **Objective:** Channels belong to Teams that can be created, read, updated & destroyed through the API.
+
+### Phase 4: Search Messages (1 day)
+
+**Objective:** User can search within a channel for messages by keyword.
 
 ### Phase 5: Polish (1 day, W2 Th 6pm)
 
 **Objective:** Apply thorough CSS styling to make product presentational
 
 ### Bonus Features (TBD)
-- [ ] Search messages
 - [ ] Notifications
 - [ ] Emoji response on messages
 - [ ] Integrate with Giphy
