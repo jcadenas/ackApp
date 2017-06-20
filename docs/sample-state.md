@@ -3,7 +3,7 @@
     current_user: {
       username:''
     },
-    errors: {}
+    errors: []
   },
 
   entities: {

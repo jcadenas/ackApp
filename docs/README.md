@@ -16,10 +16,10 @@ sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Live Chat
-- [ ] Channels
 - [ ] Teams
-- [ ] Search messages
+- [ ] Channels
+- [ ] Messages
+- [ ] Live Chat
 - [ ] Production README [sample](docs/production_readme.md)
 
 ## Design Docs
@@ -41,24 +41,23 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Messages Model, API, and components (3 days)
+### Phase 2: Teams (2 day)
 
-**Objective:** Messages can be created, read, updated & destroyed through the API. Integrate websockets in order
-to see live updates.
+**Objective:** Channels belong to Teams that can be created, read, updated & destroyed through the API.
 
 ### Phase 3: Channels (2 days)
 
 **Objective:** Messages belong to Channels that can be created, read, updated & destroyed through the API.
 
-### Phase 4: Teams (1 day)
+### Phase 4: Messages Model, API, and components (2 days)
 
-**Objective:** Channels belong to Teams that can be created, read, updated & destroyed through the API.
+**Objective:**  Messages can be created, read, updated & destroyed through the API.
 
-### Phase 4: Search Messages (1 day)
+### Phase 5: Live Messages (1 day)
 
-**Objective:** User can search within a channel for messages by keyword.
+**Objective:** Integrate websockets in order to see live updates.
 
-### Phase 5: Polish (1 day, W2 Th 6pm)
+### Phase 6: Polish (1 day, W2 Th 6pm)
 
 **Objective:** Apply thorough CSS styling to make product presentational
 

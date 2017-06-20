@@ -5,8 +5,8 @@
 | column          | type     | database-level validations | model-level validations |
 |-----------------|----------|----------------------------|-------------------------|
 | username        | `string` |    `null-false`            |   `unique` `presence`   |
-| password_digest | `string` |    `null-false`            |   `unique` `presence`   |
-| session_token   | `string` |    `null-false`            |   `unique` `presence`   |
+| password_digest | `string` |    `null-false`            |    `presence`           |
+| session_token   | `string` |    `null-false`            |    `presence`           |
 
 *User Model Associations:*
 - **Has Many**
@@ -49,6 +49,7 @@
 |-------------|-----------|----------------------------|-------------------------|
 | name        | `string`  |    `null-false`            |   `unique` `presence`   |
 | purpose     | `string`  |                            |                         |
+| channel_id  | `integer` |    `null-false`            |      `presence`         |
 
 *Team Model Associations:*
 - **Has Many**
