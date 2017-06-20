@@ -4,8 +4,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 // TESTING
-// import * as APIUtil from './util/api_util';
-// import * as Actions from './actions/session_actions';
+import * as APIUtil from './util/api_util';
+import * as Actions from './actions/session_actions';
 
 
 
@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // TESTING
-  // window.store = store;
-  // window.APICreateUser = APIUtil.createUser;
-  // window.APICreateSession = APIUtil.createSession;
-  // window.ActionCreateUser = Actions.createUser;
-  // window.ActionCreateSession = Actions.createSession;
+  window.store = store;
+  window.APICreateUser = APIUtil.createUser;
+  window.APICreateSession = APIUtil.createSession;
+  window.ActionCreateUser = Actions.createUser;
+  window.ActionCreateSession = Actions.createSession;
 
 
 

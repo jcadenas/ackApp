@@ -15,7 +15,7 @@ export const receiveOneUser = (user) => {
 export const receiveErrors = (errors) => {
   return ({
     type: RECEIVE_ERRORS,
-    errors
+    errors: errors.responseJSON
   });
 };
 
