@@ -1,15 +1,15 @@
-# WorkingTitle
+# ackApp
 
 [Heroku link][heroku] **Note:** This should be a link to your production site
 
 [Trello link][trello]
 
 [heroku]: https://media.giphy.com/media/EoJA9S9oQxnOg/giphy.gif
-[trello]: https://trello.com/b/xbvIPYRZ/workingtitle
+[trello]: https://trello.com/b/xbvIPYRZ/ackApp
 
 ## Minimum Viable Product
 
-WorkingTitle is a web application inspired by Slack built using Ruby on Rails
+ackApp is a web application inspired by Slack built using Ruby on Rails
 and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
 following criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
