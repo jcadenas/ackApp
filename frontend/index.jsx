@@ -12,7 +12,16 @@ import * as Actions from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let root = document.getElementById('root');
-  const store = configureStore();
+
+  let store
+  if (window.currentUser){
+    const preloadedState = { session: { current_user: window.currentUser }}
+    store = configureStore(preloadedState);
+  } else {
+    store = configureStore();
+  }
+  ReactDOM.render(<Root store={store} />, root);
+
 
 
 
@@ -24,8 +33,4 @@ document.addEventListener('DOMContentLoaded', () => {
   window.ActionCreateSession = Actions.createSession;
   window.ActionDestroySession = Actions.destroySession;
   window.APIDestroySession = APIUtil.destroySession;
-
-
-
-  ReactDOM.render(<Root store={store} />, root);
 });

@@ -2,6 +2,7 @@ import * as APIUtil from '../util/api_util';
 
 export const RECEIVE_ONE_USER = 'RECEIVE_ONE_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const DESTROYED_SESSION = 'DESTROY_ONE_SESSION';
 
 // TODO: Likely need to change how I'm passing user
@@ -16,7 +17,14 @@ export const receiveOneUser = (user) => {
 export const receiveErrors = (errors) => {
   return ({
     type: RECEIVE_ERRORS,
-    errors: errors.responseJSON
+    errors
+  });
+};
+
+export const clearErrors = (errors) => {
+  return ({
+    type: CLEAR_ERRORS,
+    errors
   });
 };
 
@@ -28,9 +36,9 @@ export const destroyedSession = () => {
 
 export const createUser = (user) => (dispatch) => {
   return (
-    APIUtil.createOneUser(user).then(
+    APIUtil.createUser(user).then(
       (resp) => dispatch(receiveOneUser(resp)),
-      (errors) => dispatch(receiveErrors(errors))
+      (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
   );
 };
@@ -39,7 +47,7 @@ export const createSession = (user) => (dispatch) => {
   return (
     APIUtil.createSession(user).then(
       (resp) => dispatch(receiveOneUser(resp)),
-      (errors) => dispatch(receiveErrors(errors))
+      (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
   );
 };
@@ -48,7 +56,7 @@ export const destroySession = () => (dispatch) => {
   return (
     APIUtil.destroySession().then(
       (resp) => dispatch(destroyedSession(resp)),
-      (errors) => dispatch(receiveErrors(errors))
+      (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
   );
 };
