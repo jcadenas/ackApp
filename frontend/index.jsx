@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.APICreateSession = APIUtil.createSession;
   window.ActionCreateUser = Actions.createUser;
   window.ActionCreateSession = Actions.createSession;
+  window.ActionDestroySession = Actions.destroySession;
+  window.APIDestroySession = APIUtil.destroySession;
 
 
 

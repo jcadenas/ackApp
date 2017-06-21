@@ -15,3 +15,10 @@ export const createSession = (user) => {
     data: { user }
   });
 };
+
+export const destroySession = () => {
+  return $.ajax({
+    type: 'DELETE',
+    url: '/api/session'
+  });
+};
