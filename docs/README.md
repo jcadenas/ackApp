@@ -4,8 +4,8 @@
 
 [Trello link][trello]
 
-[heroku]: https://media.giphy.com/media/EoJA9S9oQxnOg/giphy.gif
-[trello]: https://trello.com/b/xbvIPYRZ/ackApp
+[heroku]: https://ack-app.herokuapp.com/#/
+[trello]: https://trello.com/b/xbvIPYRZ/ackapp
 
 ## Minimum Viable Product
 
