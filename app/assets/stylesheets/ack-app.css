@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
-span {
+body {
   font-family: 'Lato', sans-serif;
-  background: yellow;
-}
-
-.landing-nav-wrapper {
-  display: block;
-}
-.landing-nav {
-  display: flex;
-  justify-content: space-between;
 }

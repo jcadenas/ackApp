@@ -1,0 +1,81 @@
+/*LANDING*/
+
+
+
+/*LANDING NAV*/
+
+.landing-nav-wrapper {
+  display: block;
+}
+
+.landing-nav {
+  display: flex;
+  justify-content: space-between;
+  background: #E3E4E5;
+  color: #4A4A4A;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.landing-nav-logo {
+  margin: 10px 10px 10px 20px;
+  font-size: 32px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: normal;
+  color: rgb(37, 48, 57);
+}
+
+.landing-nav-list {
+  display: flex;
+  margin-right: 20px;
+}
+
+
+.landing-nav-list-item {
+  margin: 20px 9px;
+  border-radius: 5px;
+  padding: 8px 7px 9px 7px;
+}
+
+.landing-nav-list-item:hover {
+  background: rgba(145, 145, 145, 0.3);
+}
+
+/*LANDING BODY*/
+
+.landing-body {
+  display:flex;
+}
+
+.landing-body-content {
+  width: 700px;
+  margin: 96px 143px 0 143px
+}
+
+
+
+
+/*LANDING CONTENT*/
+
+.landing-body-content-cta {
+  font-size: 94px;
+  color: rgb(37, 48, 57);
+  font-weight: 900;
+}
+
+.landing-body-content-desc {
+  color: rgb(37, 48, 57);
+  margin: 20px auto;
+  font-size: 20px;
+}
+
+.big-asterisk, .little-asterisk {
+  color: rgb(214, 21, 143);
+}
+
+.little-asterisk {
+  font-weight: bold;
+  font-size:40px;
+
+}

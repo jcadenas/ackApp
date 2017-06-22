@@ -21,14 +21,16 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   outline: 0;
 }
 
-span {
-  background: green;
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: auto;
 }
 
 body {
   line-height: 1;
   color: black;
-  background: white;
+  background: #E3E4E5;
 }
 ol, ul {
   list-style: none;
