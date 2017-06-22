@@ -10,8 +10,8 @@
 
 *User Model Associations:*
 - **Has Many**
-  - Rosters
-  - Teams through Rosters
+  - memberships
+  - Teams through memberships
   - Subscriptions
   - Channels through Subscriptions
   - Messages
@@ -53,18 +53,18 @@
 
 *Team Model Associations:*
 - **Has Many**
-  - Rosters
-  - Users through Rosters
+  - memberships
+  - Users through memberships
   - Channels
 
-## Roster
+## Membership
 
 | column     | type      | database-level validations | model-level validations |
 |------------|-----------|----------------------------|-------------------------|
 | user_id    | `integer` |    `null-false`            |      `presence`         |
 | team_id    | `integer` |    `null-false`            |      `presence`         |
 
-*Roster Model Associations:*
+*Membership Model Associations:*
 - **Belongs To**
 - User
 - Team

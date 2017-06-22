@@ -42,11 +42,11 @@
 * `POST /api/subscriptions/`
 * `DELETE /api/subscriptions/:channelId`
 
-### Rosters
+### Memberships
 
-* `GET /api/rosters/`
-* `POST /api/rosters/`
-* `DELETE /api/rosters/:teamId`
+* `GET /api/memberships/`
+* `POST /api/memberships/`
+* `DELETE /api/memberships/:teamId`
 
 
 ### Messages
