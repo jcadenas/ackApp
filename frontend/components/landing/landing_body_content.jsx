@@ -16,7 +16,7 @@ class LandingBodyContent extends React.Component {
         </div>
         <Link to='/signup' className='landing-body-content-cta-link'>Get Started</Link>
         <div className='landing-body-content-signin'>
-          <span>Already joined an Ack! team? <Link to='/login'>Sign in</Link></span>
+          <span>Already joined an Ack! team? <Link to='/login'>Log in</Link></span>
         </div>
 
       </div>

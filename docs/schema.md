@@ -64,7 +64,7 @@
 | user_id    | `integer` |    `null-false`            |      `presence`         |
 | team_id    | `integer` |    `null-false`            |      `presence`         |
 
-*Subscription Model Associations:*
+*Roster Model Associations:*
 - **Belongs To**
 - User
 - Team
