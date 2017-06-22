@@ -38,7 +38,9 @@ export const createUser = (user) => (dispatch) => {
   return (
     APIUtil.createUser(user).then(
       (resp) => dispatch(receiveOneUser(resp)),
-      (errors) => dispatch(receiveErrors(errors.responseJSON))
+      (errors) => {
+        return dispatch(receiveErrors(errors.responseJSON))
+      }
     )
   );
 };
