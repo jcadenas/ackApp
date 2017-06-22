@@ -36,6 +36,7 @@
   margin: 20px 9px;
   border-radius: 5px;
   padding: 8px 7px 9px 7px;
+  cursor: pointer;
 }
 
 .landing-nav-list-item:hover {
@@ -49,7 +50,7 @@
 }
 
 .landing-body-content {
-  width: 700px;
+  width: 570px;
   margin: 96px 143px 0 143px
 }
 
@@ -58,24 +59,61 @@
 
 /*LANDING CONTENT*/
 
-.landing-body-content-cta {
+.landing-body-content-cta span {
   font-size: 94px;
   color: rgb(37, 48, 57);
   font-weight: 900;
 }
 
-.landing-body-content-desc {
+.landing-body-content-desc p {
   color: rgb(37, 48, 57);
-  margin: 20px auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
   font-size: 20px;
+  font-weight: lighter;
+  line-height: 28px;
 }
 
-.big-asterisk, .little-asterisk {
+.fa-fw-big-ast, .fa-fw-little-ast {
   color: rgb(214, 21, 143);
 }
 
-.little-asterisk {
-  font-weight: bold;
-  font-size:40px;
+.fa-fw-big-ast {
+  font-size: 32px;
+  vertical-align: top;
+  padding: 10px 10px;
+}
 
+.fa-fw-little-ast {
+  font-size: 18px;
+  vertical-align: top;
+}
+
+.landing-body-content-cta-link {
+  background: rgb(66, 194, 152);
+  font-size: 17px;
+  font-weight: bold;
+  height: 53px;
+  line-height: 25.6px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.2);
+  padding: 14px 64px;
+  color: rgb(255, 255, 255);
+}
+
+.landing-body-content-cta-link:hover {
+  background: rgb(63, 186, 145);
+}
+
+.landing-body-content-signin {
+  display: block;
+  margin-top: 28px;
+  color: rgb(112, 120, 125);
+  font-size: 14px;
+}
+
+.landing-body-content-signin a {
+  text-decoration: underline;
 }
