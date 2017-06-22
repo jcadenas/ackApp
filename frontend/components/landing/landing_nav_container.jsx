@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import LandingNav from './landing_nav';
-import { destroySession } from '../../actions/session_actions';
+import { destroySession, createSession } from '../../actions/session_actions';
 
 const mapStateToProps = ( state ) => {
   return ({
@@ -10,7 +10,8 @@ const mapStateToProps = ( state ) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    destroySession: () => dispatch(destroySession())
+    destroySession: () => dispatch(destroySession()),
+    logInDemoUser: (user) => dispatch(createSession(user))
   });
 };
 
