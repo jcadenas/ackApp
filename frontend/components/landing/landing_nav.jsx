@@ -6,8 +6,8 @@ const nav_list = () => {
   return(
     <ul className='landing-nav-list'>
       <li className='landing-nav-list-item'><Link to='/signup'>Sign Up</Link></li>
-      <li className='landing-nav-list-item'><Link to='/signup'>Login</Link></li>
-      <li className='landing-nav-list-item'><Link to='/signup'>Demo User</Link></li>
+      <li className='landing-nav-list-item'><Link to='/login'>Login</Link></li>
+      <li className='landing-nav-list-item'><Link to='/signup?demo_user=updatethislink'>Demo User</Link></li>
     </ul>
   );
 };

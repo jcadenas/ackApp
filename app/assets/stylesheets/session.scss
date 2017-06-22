@@ -1,0 +1,53 @@
+.session-form-container {
+  width: 640px;
+  margin: 0 auto;
+  padding: 36px;
+  border: 1px solid black;
+}
+
+.session-form-header {
+  display: block;
+  box-sizing: border-box;
+  color: rgb(44, 45, 48);
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 41px;
+  margin-bottom: 16px;
+}
+
+.session-blerb {
+  box-sizing: border-box;
+  color: rgb(113, 114, 116);
+  display: block;
+  font-size: 14.4px;
+  line-height: 20px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.session-form-label {
+  display: block;
+  cursor: pointer;
+  color: rgb(85, 84, 89);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+.session-input {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 4px;
+  color: rgb(85, 84, 89);
+  font-size: 18px;
+  letter-spacing: normal;
+  cursor: auto;
+  padding: 12px;
+  padding-left: 32px;
+  vertical-align: middle;
+  max-width: 100%;
+  width: 640px;
+}

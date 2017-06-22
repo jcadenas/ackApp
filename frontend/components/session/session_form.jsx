@@ -32,11 +32,48 @@ class SessionForm extends React.Component {
   header() {
     if (this.props.formType === 'signup'){
       return (
-        <h3>Sign Up</h3>
+        <h3 className='session-form-header'>Sign Up</h3>
       );
     } else {
       return (
-        <h3>Log In</h3>
+        <h3 className='session-form-header'>Log In</h3>
+      );
+    }
+  }
+
+  blerb() {
+    if (this.props.formType === 'signup'){
+      return (
+        <p className='session-blerb'>Create an account today and get your work on</p>
+      );
+    } else {
+      return (
+        <p className='session-blerb'>Log In! You have missed so much . . .
+          Seriously,  get in there  -  Everyone is talking about you. </p>
+      );
+    }
+  }
+
+  username_requirements() {
+    if (this.props.formType === 'signup'){
+      return (
+        <p className='session-username-reqs'>Usernames must be lowercase, shorter than 22 characters, and without special characters, periods or spaces.</p>
+      );
+    } else {
+      return (
+        <div></div>
+      );
+    }
+  }
+
+  password_requirements() {
+    if (this.props.formType === 'signup'){
+      return (
+        <p className='session-password-reqs'>Passwords must be a minimum of six characters, and without special characters and spaces.</p>
+      );
+    } else {
+      return (
+        <div></div>
       );
     }
   }
@@ -65,30 +102,36 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
+      <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           {this.header()}
+          {this.blerb()}
           {this.renderErrors()}
-          <div className="login-form">
+          <div className="session-form">
             <br/>
-            <label>Username:
-              <input type="text"
-                value={this.state.username}
-                onChange={this.handleChange('username')}
-                className="login-input"
-              />
-            </label>
+            <label htmlFor='username' className='session-form-label'>Username</label>
+            <input type="text"
+              id='username'
+              value={this.state.username}
+              onChange={this.handleChange('username')}
+              className="session-input"
+              ></input>
+            {this.username_requirements()}
             <br/>
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.handleChange('password')}
-                className="login-input"
-              />
-            </label>
+            <label htmlFor='password' className='session-form-label'>Password</label>
+            <input type="password"
+              id='password'
+              value={this.state.password}
+              onChange={this.handleChange('password')}
+              className="session-input"
+              ></input>
+            {this.password_requirements()}
             <br/>
-            <input type="submit" value="Submit" />
+            <div className='session-form-buttons'>
+              <Link to='/' className='cancel-session-form'>Cancel</Link>
+              <input type="submit" value="Submit" />
+            </div>
             <br/>
             or {this.navLink()}
           </div>
@@ -100,4 +143,4 @@ class SessionForm extends React.Component {
 
 }
 
-export default SessionForm
+export default SessionForm;

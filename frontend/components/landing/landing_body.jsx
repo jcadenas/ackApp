@@ -9,8 +9,7 @@ class LandingBody extends React.Component {
     return(
       <div className='landing-body'>
         <LandingBodyContent />
-        <div className='LandingBodyDecor'/>
-
+        <div className='landing-body-styling'/>
       </div>
     );
   }
