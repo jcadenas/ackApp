@@ -12,6 +12,7 @@
 - **Has Many**
   - memberships
   - Teams through memberships
+  - Teams directly through Team's Owner_id
   - Subscriptions
   - Channels through Subscriptions
   - Messages
@@ -22,7 +23,7 @@
 | column      | type      | database-level validations | model-level validations |
 |-------------|-----------|----------------------------|-------------------------|
 | name        | `string`  |    `null-false`            |   `unique` `presence`   |
-| topic     | `string`  |                            |                         |
+| topic       | `string`  |                            |                         |
 
 *Channel Model Associations:*
 - **Has Many**
@@ -50,12 +51,15 @@
 | name        | `string`  |    `null-false`            |   `unique` `presence`   |
 | purpose     | `string`  |                            |                         |
 | channel_id  | `integer` |    `null-false`            |      `presence`         |
+| owner_id    | `integer` |    `null-false`            |      `presence`         |
 
 *Team Model Associations:*
 - **Has Many**
   - memberships
   - Users through memberships
   - Channels
+- **Belongs To**
+  - User (owner_id)
 
 ## Membership
 
