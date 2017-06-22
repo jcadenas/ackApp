@@ -10,7 +10,7 @@ const App = () => {
   return (
     <header>
       <switch>
-        <AuthRoute exact path='/' component={Landing} />
+        <Route exact path='/' component={Landing} />
         <AuthRoute path='/signup' component={SessionFormContainer} />
         <AuthRoute path='/login' component={SessionFormContainer} />
       </switch>
