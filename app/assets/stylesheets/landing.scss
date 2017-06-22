@@ -121,3 +121,22 @@
 .landing-body-content-signin a {
   text-decoration: underline;
 }
+
+.landing-nav-list-item-logout {
+  border: none;
+  margin: 20px 9px;
+  border-radius: 5px;
+  padding: 8px 7px 9px 7px;
+  cursor: pointer;
+  background: #E3E4E5;
+  color: #4A4A4A;
+  font-size: 15px;
+  font-weight: bold;
+
+  text-align: center;
+  text-decoration: none;
+}
+
+.landing-nav-list-item-logout:hover {
+  background: rgba(145, 145, 145, 0.3);
+}

@@ -44,7 +44,7 @@ class SessionForm extends React.Component {
   blerb() {
     if (this.props.formType === 'signup'){
       return (
-        <p className='session-blerb'>Create an account today and get your work on</p>
+        <p className='session-blerb'>Create an account today and get your work on.</p>
       );
     } else {
       return (
@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
   username_requirements() {
     if (this.props.formType === 'signup'){
       return (
-        <p className='session-username-reqs'>Usernames must be lowercase, shorter than 22 characters, and without special characters, periods or spaces.</p>
+        <p className='session-input-reqs'>Usernames must be lowercase, shorter than 22 characters, and without special characters, periods or spaces.</p>
       );
     } else {
       return (
@@ -69,7 +69,7 @@ class SessionForm extends React.Component {
   password_requirements() {
     if (this.props.formType === 'signup'){
       return (
-        <p className='session-password-reqs'>Passwords must be a minimum of six characters, and without special characters and spaces.</p>
+        <p className='session-input-reqs'>Passwords must be a minimum of six characters, and without special characters and spaces.</p>
       );
     } else {
       return (
@@ -78,11 +78,23 @@ class SessionForm extends React.Component {
     }
   }
 
+  button_cta() {
+    if (this.props.formType === 'signup'){
+      return (
+        'Create Account'
+      );
+    } else {
+      return (
+        'Log In'
+      );
+    }
+  }
+
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up</Link>;
+      return <span className='session-form-orlink'>Don't have an account? <Link to="/signup">Sign Up</Link></span>;
     } else {
-      return <Link to="/login">log in</Link>;
+      return <span className='session-form-orlink'>Already have an account? <Link to="/login">Log In</Link></span>;
     }
   }
 
@@ -100,42 +112,53 @@ class SessionForm extends React.Component {
     }
   }
 
+  // Currently not used
+  esc_button() {
+    return (
+      <div className='form_escape_button'>
+        <i className="fa fa-times-circle-o" aria-hidden="true"></i>
+      </div>
+    )
+  }
+
   render() {
     return (
-      <div className="session-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br/>
-          {this.header()}
-          {this.blerb()}
-          {this.renderErrors()}
-          <div className="session-form">
+      <div>
+        <div className="session-form-container">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
             <br/>
-            <label htmlFor='username' className='session-form-label'>Username</label>
-            <input type="text"
-              id='username'
-              value={this.state.username}
-              onChange={this.handleChange('username')}
-              className="session-input"
-              ></input>
-            {this.username_requirements()}
-            <br/>
-            <label htmlFor='password' className='session-form-label'>Password</label>
-            <input type="password"
-              id='password'
-              value={this.state.password}
-              onChange={this.handleChange('password')}
-              className="session-input"
-              ></input>
-            {this.password_requirements()}
-            <br/>
-            <div className='session-form-buttons'>
-              <Link to='/' className='cancel-session-form'>Cancel</Link>
-              <input type="submit" value="Submit" />
+            {this.header()}
+            {this.blerb()}
+            {this.renderErrors()}
+            <div className="session-form">
+              <br/>
+              <label htmlFor='username' className='session-form-label'>Username</label>
+              <input type="text"
+                id='username'
+                value={this.state.username}
+                onChange={this.handleChange('username')}
+                className="session-input"
+                ></input>
+              {this.username_requirements()}
+              <br/>
+              <label htmlFor='password' className='session-form-label'>Password</label>
+              <input type="password"
+                id='password'
+                value={this.state.password}
+                onChange={this.handleChange('password')}
+                className="session-input"
+                ></input>
+              {this.password_requirements()}
+              <br/>
+              <div className='session-form-buttons'>
+                <button className='session-form-submit'>{this.button_cta()}</button>
+                <Link to='/' className='cancel-session-form'>Cancel</Link>
+              </div>
+              <br/>
+              {this.navLink()}
             </div>
-            <br/>
-            or {this.navLink()}
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     );
   }

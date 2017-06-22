@@ -1,8 +1,7 @@
 .session-form-container {
   width: 640px;
   margin: 0 auto;
-  padding: 36px;
-  border: 1px solid black;
+  padding: 82px;
 }
 
 .session-form-header {
@@ -51,3 +50,83 @@
   max-width: 100%;
   width: 640px;
 }
+
+.session-input-reqs {
+  box-sizing: border-box;
+  display: block;
+  color: rgb(113, 114, 116);
+  font-size: 12.8px;
+  line-height: 16px;
+  margin-top: 4px;
+}
+
+.session-form-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.session-form-submit {
+  background: rgb(42, 178, 123);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 19.2px;
+  padding: 14px 18px 16px 18px;
+  text-align: center;
+}
+
+.session-form-submit:hover {
+  background: rgb(39, 173, 119);
+}
+
+.cancel-session-form {
+  background: rgb(251, 251, 250);
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  color: rgb(85, 84, 89);
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 19.2px;
+  margin-right: 8px;
+  padding: 14px 18px 16px 18px;
+  text-align: center;
+}
+
+.cancel-session-form:hover {
+  color: rgb(0, 122, 184);
+}
+
+.session-form-orlink {
+  box-sizing: border-box;
+  display: block;
+  text-align: right;
+  color: rgb(113, 114, 116);
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 4px;
+}
+
+.session-form-orlink a {
+  text-decoration: underline;
+}
+
+.fa-times-circle-o {
+  font-size: 32px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: rgb(113, 114, 116);
+}
+
+
+
+
+
+
+// Bottom of file
