@@ -18,7 +18,7 @@ class Team < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :user_id
 
-  has_many :memberships, inverse_of: :team
+  has_many :memberships, inverse_of: :team, dependent: :destroy
   has_many :members,
     through: :memberships,
     source: :member

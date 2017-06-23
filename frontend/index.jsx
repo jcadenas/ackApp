@@ -5,7 +5,7 @@ import Root from './components/root';
 
 // TESTING
 import * as APIUtil from './util/api_util';
-import * as Actions from './actions/session_actions';
+import * as Actions from './actions/membership_actions';
 
 
 
@@ -35,4 +35,30 @@ document.addEventListener('DOMContentLoaded', () => {
   window.APICreateMembership = APIUtil.createMembership;
   window.APIDestroyMembership = APIUtil.destroyMembership;
 
+  window.ActionCreateTeam = Actions.createTeam;
+  window.ActionDestroyTeam = Actions.destroyTeam;
+  window.ActionFetchOneTeam = Actions.fetchOneTeam;
+  window.ActionAllTeams = Actions.fetchAllTeams;
+  window.ActionUpdateOneTeam = Actions.udpateOneTeam;
+
+  window.ActionCreateMembership = Actions.createMembership;
+  window.ActionDestroyMembership = Actions.destroyMembership;
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Bottom of File

@@ -14,14 +14,15 @@ class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
   has_many :teams,
     through: :memberships,
     source: :team
   has_many :owned_teams,
     class_name: :Team,
     foreign_key: :user_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   attr_reader :password
 

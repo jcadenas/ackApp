@@ -6,15 +6,19 @@
     errors: []
   },
 
-  entities: {
-    teams: {
+  teams: {
+    entities: {
       1: {
         name:'',
         id:'',
         channels_id: []
       }
     },
-    channels: {
+    errors: []
+  },
+
+  channels: {
+    entities: {
       1: {
         name:'',
         topic:'',
@@ -23,13 +27,18 @@
         team_id:''
       }
     },
-    messages: {
+    errors: []
+  },
+
+  messages: {
+    entities: {
       1: {
         body:'',
         id:'',
         channel_id: ''
       }
-    }
+    },
+    errors: []
   }
 
 }

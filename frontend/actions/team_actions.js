@@ -4,12 +4,14 @@ import * as APIUtil from '../util/api_util';
 
 export const RECEIVE_ONE_TEAM = 'RECEIVE_ONE_TEAM';
 export const RECEIVE_ALL_TEAMS = 'RECEIVE_ALL_TEAMS';
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const DESTROYED_TEAM = 'DESTROYED_TEAM';
 
 
 
 
 // OBJECT ACTION CREATORS -----------------------------
+
 
 export const receiveOneTeam = (team) => {
   return ({
@@ -32,7 +34,19 @@ export const receiveAllTeams = (teams) => {
   });
 };
 
+export const receiveErrors = (errors) => {
+  return ({
+    type: RECEIVE_ERRORS,
+    errors
+  });
+};
 
+export const updatedOneTeam = (team) => {
+  return ({
+    type: UPDATED_ONE_TEAM,
+    team
+  });
+};
 
 
 
@@ -40,5 +54,42 @@ export const receiveAllTeams = (teams) => {
 // ASYNC ACTION CREATORS -----------------------------
 
 export const createTeam = (team) => (dispatch) => {
-  return APIUtil.createTeam(team).then
+  return APIUtil.createTeam(team)
+    .then(
+      (resp) => dispatch(receiveOneTeam(resp)),
+      (errors) => dispatch(receiveErrors(errors.responseJSON)));
 };
+
+export const destroyTeam = (team_id) => (dispatch) => {
+  return APIUtil.destroyTeam(team_id)
+    .then(
+      (resp) => dispatch(destroyedOneTeam(resp)),
+      (errors) => dispatch(receiveErrors(errors.responseJSON)));
+};
+
+export const fetchOneTeam = (team_id) => (dispatch) => {
+  return APIUtil.fetchOneTeam(team_id)
+    .then(
+      (resp) => dispatch(receiveOneTeam(resp)),
+      (errors) => dispatch(receiveErrors(errors.responseJSON)));
+};
+
+export const fetchAllTeams = () => (dispatch) => {
+  return APIUtil.fetchAllTeams()
+    .then(
+      (resp) => dispatch(receiveAllTeams(resp)),
+      (errors) => dispatch(receiveErrors(errors.responseJSON)));
+};
+
+export const updateOneTeam = (team) => (dispatch) => {
+  return APIUtil.updateOneTeam(team)
+    .then(
+      (resp) => dispatch(receiveOneTeam(resp)),
+      (errors) => dispatch(receiveErrors(errors.responseJSON)));
+};
+
+
+
+
+
+// End of File

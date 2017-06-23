@@ -3,7 +3,8 @@ import SessionReducer from './session_reducer';
 
 
 const RootReducer = combineReducers({
-  session: SessionReducer
+  session: SessionReducer,
+  teams: TeamsReducer
 });
 
 export default RootReducer;
