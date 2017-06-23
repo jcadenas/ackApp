@@ -24,6 +24,7 @@
 |-------------|-----------|----------------------------|-------------------------|
 | name        | `string`  |    `null-false`            |   `unique` `presence`   |
 | topic       | `string`  |                            |                         |
+| team_id     | `integer` |                            |                         |
 
 *Channel Model Associations:*
 - **Has Many**
@@ -49,8 +50,7 @@
 | column      | type      | database-level validations | model-level validations |
 |-------------|-----------|----------------------------|-------------------------|
 | name        | `string`  |    `null-false`            |   `unique` `presence`   |
-| purpose     | `string`  |                            |                         |
-| channel_id  | `integer` |    `null-false`            |      `presence`         |
+| description | `string`  |                            |                         |
 | owner_id    | `integer` |    `null-false`            |      `presence`         |
 
 *Team Model Associations:*
