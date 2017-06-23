@@ -6,6 +6,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Landing from './landing/landing';
 import SessionWrapper from './session/session_wrapper';
 
+// <ProtectedRoute path='/messages' component={HomeWrapper} />
+
 const App = () => {
   return (
     <header>
