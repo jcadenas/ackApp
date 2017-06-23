@@ -22,7 +22,7 @@ const TeamsReducer = (state = defaultState, action) => {
     }
 
     case RECEIVE_ALL_TEAMS: {
-      newState = merge({}, state, {current_user: action.user});
+      newState = merge({}, state, {entities: action.teams});
       return newState;
     }
 

@@ -41,13 +41,6 @@ export const receiveErrors = (errors) => {
   });
 };
 
-export const updatedOneTeam = (team) => {
-  return ({
-    type: UPDATED_ONE_TEAM,
-    team
-  });
-};
-
 
 
 
@@ -60,22 +53,22 @@ export const createTeam = (team) => (dispatch) => {
       (errors) => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-export const destroyTeam = (team_id) => (dispatch) => {
-  return APIUtil.destroyTeam(team_id)
+export const destroyTeam = (teamId) => (dispatch) => {
+  return APIUtil.destroyTeam(teamId)
     .then(
       (resp) => dispatch(destroyedOneTeam(resp)),
       (errors) => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-export const fetchOneTeam = (team_id) => (dispatch) => {
-  return APIUtil.fetchOneTeam(team_id)
+export const fetchOneTeam = (teamId) => (dispatch) => {
+  return APIUtil.fetchOneTeam(teamId)
     .then(
       (resp) => dispatch(receiveOneTeam(resp)),
       (errors) => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-export const fetchAllTeams = () => (dispatch) => {
-  return APIUtil.fetchAllTeams()
+export const fetchUserTeams = () => (dispatch) => {
+  return APIUtil.fetchUserTeams()
     .then(
       (resp) => dispatch(receiveAllTeams(resp)),
       (errors) => dispatch(receiveErrors(errors.responseJSON)));
