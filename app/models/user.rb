@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
   has_many :teams,
     through: :memberships,
     source: :team
+  has_many :owned_teams,
+    class_name: :Team,
+    foreign_key: :user_id,
+    primary_key: :id
 
   attr_reader :password
 

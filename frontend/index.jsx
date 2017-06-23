@@ -27,10 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // TESTING
   window.store = store;
-  window.APICreateUser = APIUtil.createUser;
-  window.APICreateSession = APIUtil.createSession;
-  window.ActionCreateUser = Actions.createUser;
-  window.ActionCreateSession = Actions.createSession;
-  window.ActionDestroySession = Actions.destroySession;
-  window.APIDestroySession = APIUtil.destroySession;
+  window.APICreateTeam = APIUtil.createTeam;
+  window.APIDestroyTeam = APIUtil.destroyTeam;
+  window.APIFetchOneTeam = APIUtil.fetchOneTeam;
+  window.APIFetchUserTeams = APIUtil.fetchUserTeams;
+  window.APIUpdateOneTeam = APIUtil.updateOneTeam;
+  window.APICreateMembership = APIUtil.createMembership;
+  window.APIDestroyMembership = APIUtil.destroyMembership;
+
 });

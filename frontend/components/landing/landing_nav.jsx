@@ -15,19 +15,19 @@ class LandingNav extends React.Component {
     this.props.destroySession();
   }
 
-  logged_in_nav_list() {
+  loggedInNavList() {
     return (
       <ul className='landing-nav-list'>
         <li><button className='landing-nav-list-item-logout' onClick={this.handleLogout}>Log Out</button></li>
       </ul>
-    )
+    );
   }
 
   handleLoginDemoUser(e){
-    this.props.logInDemoUser({ username:'BartSimpson', password:'BartSimpson' });
+    this.props.logInDemoUser({ username:'GobBluth', password:'GobBluth' });
   }
 
-  logged_out_nav_list () {
+  loggedOutNavList () {
     return(
       <ul className='landing-nav-list'>
         <li className='landing-nav-list-item'><Link to='/signup'>Sign Up</Link></li>
@@ -35,13 +35,13 @@ class LandingNav extends React.Component {
         <li><button onClick={this.handleLoginDemoUser} className='landing-nav-log-in-demo'>Demo User</button></li>
       </ul>
     );
-  };
+  }
 
   determine_nav(){
     if (this.props.loggedIn){
-      return this.logged_in_nav_list()
+      return this.loggedInNavList();
     } else {
-      return this.logged_out_nav_list()
+      return this.loggedOutNavList();
     }
   }
 
@@ -56,6 +56,6 @@ class LandingNav extends React.Component {
     );
   }
 
-};
+}
 
 export default LandingNav;

@@ -2,11 +2,12 @@ class Api::TeamsController < ApplicationController
 
   def index
     @user = current_user
-    @teams = @user.teams.includes(:members)
+    @teams = @user.teams
   end
 
   def create
     @team = Team.new(team_params)
+    @team.user_id = current_user.id
     if @team.save
       render :show
     else
