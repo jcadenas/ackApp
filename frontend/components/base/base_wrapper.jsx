@@ -31,7 +31,7 @@ class BaseWrapper extends React.Component {
     const firstTeam = teams[Object.keys(teams)[0]];
     if (firstTeam) {
       return (
-        <Route path={`/messages/${firstTeam.id}`} component={Base} />
+        <Route path={'/messages/:team_id'} component={Base} />
       );
     } else {
       return (

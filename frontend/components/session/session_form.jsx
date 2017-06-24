@@ -61,7 +61,7 @@ class SessionForm extends React.Component {
       );
     } else {
       return (
-        <div></div>
+        undefined
       );
     }
   }
@@ -73,7 +73,7 @@ class SessionForm extends React.Component {
       );
     } else {
       return (
-        <div></div>
+        undefined
       );
     }
   }

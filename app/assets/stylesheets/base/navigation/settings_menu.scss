@@ -1,0 +1,30 @@
+.settings-menu {
+  border: 1px solid black;
+  height: 61px;
+  position: relative;
+}
+
+.settings-menu-header {
+  display: block;
+}
+
+.settings-drop-down {
+  width: 270px;
+  height: 150px;
+  background: green;
+  z-index: 2;
+  position: absolute;
+  top: 55px;
+  left: 10px;
+}
+
+.clear-drop-down-layer {
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  z-index: 1;
+  background: red;
+  opacity: 0.5;
+}
