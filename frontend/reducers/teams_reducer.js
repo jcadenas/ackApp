@@ -4,6 +4,7 @@ import {
   RECEIVE_ERRORS,
   DESTROYED_TEAM
 } from '../actions/team_actions';
+import { DESTROYED_SESSION } from '../actions/session_actions';
 import { merge } from 'lodash';
 
 const defaultState = {
@@ -36,6 +37,10 @@ const TeamsReducer = (state = defaultState, action) => {
       newState = merge({}, state);
       delete newState.entities[action.team.id];
       return newState;
+    }
+
+    case DESTROYED_SESSION: {
+      return defaultState;
     }
 
     default:

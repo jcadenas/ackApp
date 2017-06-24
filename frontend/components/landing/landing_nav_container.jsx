@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import LandingNav from './landing_nav';
 import { destroySession, createSession } from '../../actions/session_actions';
+import { withRouter } from 'react-router-dom';
+import LandingNav from './landing_nav';
 
 const mapStateToProps = ( state ) => {
   return ({
@@ -15,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(LandingNav);
+)(LandingNav));

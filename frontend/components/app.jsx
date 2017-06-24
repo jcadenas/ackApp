@@ -5,14 +5,15 @@ import SessionFormContainer from './session/session_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Landing from './landing/landing';
 import SessionWrapper from './session/session_wrapper';
+import BaseWrapperContainer from './base/base_wrapper_container';
 
-// <ProtectedRoute path='/messages' component={HomeWrapper} />
 
 const App = () => {
   return (
     <header>
       <switch>
         <Route exact path='/' component={Landing} />
+        <ProtectedRoute path='/messages' component={BaseWrapperContainer} />
         <AuthRoute path='/signup' component={SessionFormContainer} />
         <AuthRoute path='/login' component={SessionFormContainer} />
       </switch>

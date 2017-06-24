@@ -25,6 +25,7 @@ class LandingNav extends React.Component {
 
   handleLoginDemoUser(e){
     this.props.logInDemoUser({ username:'GobBluth', password:'GobBluth' });
+    this.props.history.push('/messages');
   }
 
   loggedOutNavList () {
