@@ -1,4 +1,9 @@
-import { RECEIVE_ONE_USER, RECEIVE_ERRORS, DESTROYED_SESSION, CLEAR_ERRORS } from '../actions/session_actions';
+import {
+  RECEIVE_ONE_USER,
+  RECEIVE_ERRORS,
+  DESTROYED_SESSION,
+  CLEAR_ERRORS
+  } from '../actions/session_actions';
 import { merge } from 'lodash';
 
 const defaultState = {

@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 import SessionReducer from './session_reducer';
-import TeamsReducer from './teams_reducer';
+import TeamReducer from './team_reducer';
+import ModalReducer from './modal_reducer';
 
 
 const RootReducer = combineReducers({
   session: SessionReducer,
-  teams: TeamsReducer
+  modals: ModalReducer,
+  teams: TeamReducer
 });
 
 export default RootReducer;

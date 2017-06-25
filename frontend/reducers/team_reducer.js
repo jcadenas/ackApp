@@ -13,7 +13,7 @@ const defaultState = {
 };
 
 
-const TeamsReducer = (state = defaultState, action) => {
+const TeamReducer = (state = defaultState, action) => {
   let newState;
   switch(action.type){
 
@@ -48,4 +48,4 @@ const TeamsReducer = (state = defaultState, action) => {
   }
 };
 
-export default TeamsReducer;
+export default TeamReducer;

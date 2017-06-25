@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // TESTING
 
-  // window.store = store;
+  window.store = store;
 
   // window.APICreateTeam = APIUtil.createTeam;
   // window.APIDestroyTeam = APIUtil.destroyTeam;

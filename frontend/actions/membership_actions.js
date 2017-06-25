@@ -12,14 +12,14 @@ export const DESTROYED_MEMBERSHIP = 'DESTROYED_MEMBERSHIP';
 export const createdOneMembership = (membership) => {
   return ({
     type: CREATED_ONE_MEMBERSHIP,
-    team
+    membership
   });
 };
 
 export const destroyedOneMembership = (membership) => {
   return ({
     type: DESTROYED_MEMBERSHIP,
-    team
+    membership
   });
 };
 
@@ -30,15 +30,13 @@ export const destroyedOneMembership = (membership) => {
 export const createMembership = (membership) => (dispatch) => {
   return APIUtil.createMembership(membership)
     .then(
-      (resp) => dispatch(createdOneMembership(resp)),
-      (errors) => dispatch(receiveErrors(errors)));
+      (resp) => dispatch(createdOneMembership(resp)));
 };
 
 export const destroyMembership = (membership_id) => (dispatch) => {
   return APIUtil.destroyMembership(membership_id)
     .then(
-      (resp) => dispatch(destroyedOneMembership(resp)),
-      (errors) => dispatch(receiveErrors(errors)));
+      (resp) => dispatch(destroyedOneMembership(resp)));
 };
 
 

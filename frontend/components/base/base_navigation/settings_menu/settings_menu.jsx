@@ -1,4 +1,5 @@
 import React from 'react';
+import SettingsDropDown from './settings_drop_down';
 
 class SettingsMenu extends React.Component {
 
@@ -24,19 +25,25 @@ class SettingsMenu extends React.Component {
   }
 
   collapseDropDown(e) {
-    e.stopPropagation();
+    // Checks e because we also call this function on willreceive props in order to
+    // reset drop down when navigating to a new team.
+    if (e) {
+      e.stopPropagation();
+    }
     this.setState({ expanded: false });
   }
 
-
+  componentWillReceiveProps(newProps) {
+    if(newProps.match.params.team_id !== this.props.match.params.team_id) {
+      this.collapseDropDown();
+    }
+  }
 
   dropDownMenu () {
     if(this.state.expanded){
       return (
         <div>
-          <div className='settings-drop-down'>
-            Hello from the drop down!
-          </div>
+          <SettingsDropDown />
           <div className='clear-drop-down-layer' onClick={this.collapseDropDown}></div>
         </div>
       );
@@ -47,7 +54,6 @@ class SettingsMenu extends React.Component {
 
 
   render() {
-    console.log('rendering!');
     return(
       <section className='settings-menu' onClick={this.expandDropDown}>
         <span className='settings-menu-header'>
