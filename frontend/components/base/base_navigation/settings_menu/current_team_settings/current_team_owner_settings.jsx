@@ -50,14 +50,13 @@ class CurrentTeamOwnerSettings extends React.Component {
 
   render() {
     return (
-      <section>
-        <span onClick={this.handleEditTeam}>Edit</span>
+      <ul className='current-team-owner-settings-list'>
+        <li onClick={this.handleEditTeam}>Edit</li>
         {this.editTeamModalDisplay()}
-        <span onClick={this.handleDeleteTeam}>Delete</span>
-        <span onClick={this.handleAddUser}>Add User</span>
+        <li onClick={this.handleDeleteTeam}>Delete</li>
+        <li onClick={this.handleAddUser}>Add User</li>
         {this.createMembershipModalDisplay()}
-
-      </section>
+      </ul>
     );
   }
 

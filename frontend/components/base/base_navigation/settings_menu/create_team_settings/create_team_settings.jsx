@@ -40,8 +40,8 @@ class CreateTeamSettings extends React.Component {
   render() {
 
     return(
-      <section>
-        <span onClick={this.handleCreateTeam}>Create New Team</span>
+      <section className='create-team-settings settings-menu-component'>
+        <li onClick={this.handleCreateTeam}>Create New Team</li>
         {this.createTeamModalDisplay()}
       </section>
     );

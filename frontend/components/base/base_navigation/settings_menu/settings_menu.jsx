@@ -54,10 +54,10 @@ class SettingsMenu extends React.Component {
     return(
       <section className='settings-menu' onClick={this.expandDropDown}>
         <span className='settings-menu-header'>
-          {this.currentTeam().name}
+          <span>{this.currentTeam().name}</span><i className="fa fa-angle-down" aria-hidden="true"></i>
         </span>
         <span className='settings-menu-username'>
-          {this.props.current_user.username}
+          <i className="fa fa-circle" aria-hidden="true"></i><span>{this.props.current_user.username}</span>
         </span>
         {this.dropDownMenu()}
       </section>

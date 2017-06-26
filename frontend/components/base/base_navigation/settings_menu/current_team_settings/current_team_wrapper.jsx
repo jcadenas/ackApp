@@ -24,7 +24,8 @@ class CurrentTeamWrapper extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='current-team-settings settings-menu-component'>
+        <span className='current-team-settings-header'>{this.props.teams[this.props.match.params.team_id].name}</span>
         {this.currentTeamSettings()}
       </div>
     );

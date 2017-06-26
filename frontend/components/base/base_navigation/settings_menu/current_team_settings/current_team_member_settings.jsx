@@ -19,7 +19,7 @@ class CurrentTeamMemberSettings extends React.Component {
 
   render() {
     return (
-      <span onClick={this.handleLeaveTeam}>Leave {this.current_team_name()}</span>
+      <li onClick={this.handleLeaveTeam}>Leave {this.current_team_name()}</li>
     );
   }
 

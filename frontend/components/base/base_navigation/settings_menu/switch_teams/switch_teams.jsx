@@ -18,7 +18,7 @@ class SwitchTeams extends React.Component {
 
   render() {
     return (
-      <ul>
+      <ul className='settings-menu-component switch-teams-list'>
         {this.listItems()}
       </ul>
     );

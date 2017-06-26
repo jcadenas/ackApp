@@ -1,0 +1,18 @@
+
+.current-team-settings-header {
+  display: block;
+  color: rgb(85, 84, 89);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 22px;
+  margin-bottom: 10px;
+}
+
+.settings-menu-component {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}

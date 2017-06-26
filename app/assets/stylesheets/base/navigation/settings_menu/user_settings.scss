@@ -1,0 +1,38 @@
+.user-settings {
+  margin-bottom: 15px;
+}
+
+.user-settings-header {
+  display: flex;
+  margin: 0 22px;
+  margin-top: 16px;
+  margin-bottom: 10px;
+}
+
+.fa-grav {
+  font-size: 42px;
+  color: rgb(82, 133, 172);
+  margin-right: 10px;
+}
+
+.user-settings-usernames span {
+  display: block;
+}
+
+.user-settings-username-header {
+  color: rgb(85, 84, 89);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-settings-username-handle {
+  color: rgb(160, 160, 162);
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
