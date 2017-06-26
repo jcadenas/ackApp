@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import CurrentTeamMemberSettings from './current_team_member_settings';
-// import { editTeamToggle } from '../../../../../actions/modal_actions';
+// import {  } from '../../../../../actions/modal_actions';
 // import { destroyTeam } from '../../../../../actions/team_actions';
 
 

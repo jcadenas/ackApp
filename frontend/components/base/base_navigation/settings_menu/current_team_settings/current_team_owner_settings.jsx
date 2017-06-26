@@ -1,6 +1,6 @@
 import React from 'react';
 import EditTeamModalContainer from '../../../modals/teams/edit_team_modal_container';
-import { EDIT_TEAM_TOGGLE } from '../../../../../actions/modal_actions';
+import { EDIT_TEAM_MODAL } from '../../../../../reducers/modal_reducer';
 
 class CurrentTeamOwnerSettings extends React.Component {
 
@@ -19,11 +19,11 @@ class CurrentTeamOwnerSettings extends React.Component {
 
   handleEditTeam(e) {
     e.stopPropagation();
-    this.props.editTeamToggle();
+    this.props.expandEditTeamModal();
   }
 
   editTeamModalDisplay(){
-    if (this.props.state.modals[EDIT_TEAM_TOGGLE]){
+    if (this.props.state.modals[EDIT_TEAM_MODAL]){
       return (
         <EditTeamModalContainer />
       );

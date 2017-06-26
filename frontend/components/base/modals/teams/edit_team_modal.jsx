@@ -40,7 +40,7 @@ class EditTeamModal extends React.Component {
   handleCancel(e) {
     e.stopPropagation();
     e.preventDefault();
-    this.props.editTeamToggle();
+    this.props.collapseEditTeamModal();
   }
 
   renderErrors() {

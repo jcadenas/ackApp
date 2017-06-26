@@ -1,24 +1,39 @@
 
 // REDUCER CONSTANTS -----------------------------
 
-export const EDIT_TEAM_TOGGLE = 'EDIT_TEAM_TOGGLE';
-export const CREATE_TEAM_TOGGLE = 'CREATE_TEAM_TOGGLE';
+export const EXPAND_EDIT_TEAM_MODAL = 'EXPAND_EDIT_TEAM_MODAL';
+export const COLLAPSE_EDIT_TEAM_MODAL = 'COLLAPSE_EDIT_TEAM_MODAL';
+export const EXPAND_CREATE_TEAM_MODAL = 'EXPAND_CREATE_TEAM_MODAL';
+export const COLLAPSE_CREATE_TEAM_MODAL = 'COLLAPSE_CREATE_TEAM_MODAL';
 
 
 
 // OBJECT ACTION CREATORS -----------------------------
 
-export const editTeamToggle = () => {
+export const expandEditTeamModal = () => {
   return ({
-    type: EDIT_TEAM_TOGGLE
+    type: EXPAND_EDIT_TEAM_MODAL
   });
 };
 
-export const createTeamToggle = () => {
+export const collapseEditTeamModal = () => {
   return ({
-    type: CREATE_TEAM_TOGGLE
+    type: COLLAPSE_EDIT_TEAM_MODAL
   });
 };
+
+export const expandCreateTeamModal = () => {
+  return ({
+    type: EXPAND_CREATE_TEAM_MODAL
+  });
+};
+
+export const collapseCreateTeamModal = () => {
+  return ({
+    type: COLLAPSE_CREATE_TEAM_MODAL
+  });
+};
+
 
 
 

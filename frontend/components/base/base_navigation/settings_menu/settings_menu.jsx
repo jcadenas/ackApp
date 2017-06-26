@@ -31,6 +31,7 @@ class SettingsMenu extends React.Component {
       e.stopPropagation();
     }
     this.setState({ expanded: false });
+
   }
 
   componentWillReceiveProps(newProps) {

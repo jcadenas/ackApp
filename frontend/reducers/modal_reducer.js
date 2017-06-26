@@ -1,5 +1,14 @@
-import { EDIT_TEAM_TOGGLE, CREATE_TEAM_TOGGLE } from '../actions/modal_actions';
+import {
+  EXPAND_EDIT_TEAM_MODAL,
+  EXPAND_CREATE_TEAM_MODAL,
+  COLLAPSE_EDIT_TEAM_MODAL,
+  COLLAPSE_CREATE_TEAM_MODAL
+ } from '../actions/modal_actions';
 import { merge } from 'lodash';
+
+// MODAL CONSTANTS ----------------------------------------
+export const EDIT_TEAM_MODAL = 'EDIT_TEAM_MODAL';
+export const CREATE_TEAM_MODAL = 'CREATE_TEAM_MODAL';
 
 const defaultState = {};
 
@@ -11,17 +20,26 @@ const ModalReducer = (state = defaultState, action) => {
 
     // ACTION TYPE IS BEING STORED IN STATE
 
-    case EDIT_TEAM_TOGGLE: {
-      newBoolean = !Boolean(state[action.type])
-      newState = merge({}, state, {[action.type]: newBoolean});
+    case EXPAND_EDIT_TEAM_MODAL: {
+      newState = merge({}, state, {EDIT_TEAM_MODAL: true});
       return newState;
     }
 
-    case CREATE_TEAM_TOGGLE: {
-      newBoolean = !Boolean(state[action.type])
-      newState = merge({}, state, {[action.type]: newBoolean});
+    case COLLAPSE_EDIT_TEAM_MODAL: {
+      newState = merge({}, state, {EDIT_TEAM_MODAL: false});
       return newState;
     }
+
+    case EXPAND_CREATE_TEAM_MODAL: {
+      newState = merge({}, state, {CREATE_TEAM_MODAL: true});
+      return newState;
+    }
+
+    case COLLAPSE_CREATE_TEAM_MODAL: {
+      newState = merge({}, state, {CREATE_TEAM_MODAL: false});
+      return newState;
+    }
+
 
     default:
       return state;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CREATE_TEAM_TOGGLE } from '../../../../../actions/modal_actions';
+import { CREATE_TEAM_MODAL } from '../../../../../reducers/modal_reducer';
 import CreateTeamModalContainer from '../../../modals/teams/create_team_modal_container';
 
 class CreateTeamSettings extends React.Component {
@@ -13,20 +13,20 @@ class CreateTeamSettings extends React.Component {
     if (e) {
       e.stopPropagation();
     }
-    this.props.createTeamToggle();
+    this.props.expandCreateTeamModal();
   }
 
   componentWillReceiveProps(newProps) {
-    // On successful create of team, close create team toggle
+    // On successful create of team, close create team modal
     const newTeams = newProps.state.teams.entities;
     const oldTeams = this.props.state.teams.entities;
-    if (newTeams !== oldTeams && this.props.state.modals[CREATE_TEAM_TOGGLE] === true){
-      this.props.createTeamToggle();
+    if (newTeams !== oldTeams && this.props.state.modals[CREATE_TEAM_MODAL] === true){
+      this.props.collapseCreateTeamModal();
     }
   }
 
   createTeamModalDisplay() {
-    if (this.props.state.modals[CREATE_TEAM_TOGGLE]){
+    if (this.props.state.modals[CREATE_TEAM_MODAL]){
       return (
         <CreateTeamModalContainer />
       );

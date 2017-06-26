@@ -36,7 +36,7 @@ class CreateTeamModal extends React.Component {
   handleCancel(e) {
     e.stopPropagation();
     e.preventDefault();
-    this.props.createTeamToggle();
+    this.props.collapseCreateTeamModal();
   }
 
   renderErrors() {
@@ -51,15 +51,6 @@ class CreateTeamModal extends React.Component {
         </ul>
       );
     }
-  }
-
-  // Currently not used
-  esc_button() {
-    return (
-      <div className='form_escape_button'>
-        <i className="fa fa-times-circle-o" aria-hidden="true"></i>
-      </div>
-    );
   }
 
   render() {
