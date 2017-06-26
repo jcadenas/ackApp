@@ -1,5 +1,5 @@
 import React from 'react';
-import SettingsDropDown from './settings_drop_down';
+import SettingsDropDownContainer from './settings_drop_down_container';
 
 class SettingsMenu extends React.Component {
 
@@ -44,7 +44,7 @@ class SettingsMenu extends React.Component {
     if(this.state.expanded){
       return (
         <div>
-          <SettingsDropDown />
+          <SettingsDropDownContainer />
           <div className='clear-drop-down-layer' onClick={this.collapseDropDown}></div>
         </div>
       );
