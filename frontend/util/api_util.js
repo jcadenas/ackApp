@@ -76,10 +76,10 @@ export const createMembership = (membership) => {
   });
 };
 
-export const destroyMembership = (membership_id) => {
+export const destroyMembership = (team_id) => {
   return $.ajax({
     type: 'DELETE',
-    url: `/api/memberships/${membership_id}`
+    url: `/api/memberships/${team_id}`
   });
 };
 

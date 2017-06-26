@@ -9,17 +9,18 @@ export const DESTROYED_MEMBERSHIP = 'DESTROYED_MEMBERSHIP';
 
 // OBJECT ACTION CREATORS -----------------------------
 
-export const createdOneMembership = (membership) => {
+export const createdOneMembership = (team) => {
   return ({
-    type: CREATED_ONE_MEMBERSHIP,
-    membership
+    type: RECEIVE_ONE_TEAM,
+    team
   });
 };
 
-export const destroyedOneMembership = (membership) => {
+  // Returns the team that was left.
+export const destroyedOneMembership = (team) => {
   return ({
     type: DESTROYED_MEMBERSHIP,
-    membership
+    team
   });
 };
 
@@ -33,8 +34,9 @@ export const createMembership = (membership) => (dispatch) => {
       (resp) => dispatch(createdOneMembership(resp)));
 };
 
-export const destroyMembership = (membership_id) => (dispatch) => {
-  return APIUtil.destroyMembership(membership_id)
+  // ID of the Team that is being left.
+export const destroyMembership = (team_id) => (dispatch) => {
+  return APIUtil.destroyMembership(team_id)
     .then(
       (resp) => dispatch(destroyedOneMembership(resp)));
 };
