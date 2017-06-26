@@ -5,7 +5,7 @@ class EditTeamModal extends React.Component {
   constructor(props) {
     super(props);
     let currentTeamId = this.props.match.params.team_id;
-    let currentTeam = this.props.state.teams.entities[currentTeamId];
+    let currentTeam = this.props.teams[currentTeamId];
     this.state = {
       name: currentTeam.name,
       description: currentTeam.description,
@@ -44,10 +44,10 @@ class EditTeamModal extends React.Component {
   }
 
   renderErrors() {
-    if(this.props.state.teams.errors){
+    if(this.props.errors){
       return(
         <ul>
-          {this.props.state.teams.errors.map((error, i) => (
+          {this.props.errors.map((error, i) => (
             <li key={`error-${i}`} className='session-error-item'>
               {error}
             </li>

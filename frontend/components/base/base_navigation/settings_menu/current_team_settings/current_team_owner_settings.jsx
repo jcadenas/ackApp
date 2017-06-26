@@ -12,7 +12,6 @@ class CurrentTeamOwnerSettings extends React.Component {
     this.handleAddUser = this.handleAddUser.bind(this);
   }
 
-
   handleDeleteTeam(e) {
     e.stopPropagation();
     const teamId = this.props.match.params.team_id;
@@ -30,7 +29,7 @@ class CurrentTeamOwnerSettings extends React.Component {
   }
 
   editTeamModalDisplay(){
-    if (this.props.state.modals[EDIT_TEAM_MODAL]){
+    if (this.props.modals[EDIT_TEAM_MODAL]){
       return (
         <EditTeamModalContainer />
       );
@@ -40,7 +39,7 @@ class CurrentTeamOwnerSettings extends React.Component {
   }
 
   createMembershipModalDisplay(){
-    if (this.props.state.modals[CREATE_MEMBERSHIP_MODAL]){
+    if (this.props.modals[CREATE_MEMBERSHIP_MODAL]){
       return (
         <CreateMembershipModalContainer />
       );

@@ -41,7 +41,7 @@ class CreateMembershipModal extends React.Component {
   }
 
   currentTeamName () {
-    return this.props.state.teams.entities[this.props.match.params.team_id].name;
+    return this.props.teams[this.props.match.params.team_id].name;
   }
 
   renderErrors() {

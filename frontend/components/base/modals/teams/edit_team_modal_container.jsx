@@ -8,7 +8,8 @@ import EditTeamModal from './edit_team_modal';
 
 const mapStateToProps = (state) => {
   return ({
-    state
+    teams: state.teams.entities,
+    errors: state.teams.errors
   });
 };
 

@@ -6,10 +6,10 @@ class SwitchTeams extends React.Component {
 
   listItems () {
     const switchTeams = [];
-    for (let key in this.props.state.teams.entities) {
+    for (let key in this.props.teams) {
       if (key !== this.props.match.params.team_id) {
         switchTeams.push(
-          <li key={`${key}`}><Link to={`/messages/${key}`}>Switch to {this.props.state.teams.entities[key].name}</Link></li>
+          <li key={`${key}`}><Link to={`/messages/${key}`}>Switch to {this.props.teams[key].name}</Link></li>
         );
       }
     }

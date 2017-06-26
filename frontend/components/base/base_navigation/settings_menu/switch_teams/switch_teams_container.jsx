@@ -5,7 +5,7 @@ import SwitchTeams from './switch_teams';
 
 const mapStateToProps = (state) => {
   return ({
-    state
+    teams: state.teams.entities
   });
 }
 

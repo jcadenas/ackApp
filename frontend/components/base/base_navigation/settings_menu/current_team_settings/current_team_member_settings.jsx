@@ -13,7 +13,7 @@ class CurrentTeamMemberSettings extends React.Component {
   }
 
   current_team_name() {
-    const currentTeamName = this.props.state.teams.entities[this.props.match.params.team_id].name;
+    const currentTeamName = this.props.teams[this.props.match.params.team_id].name;
     return currentTeamName;
   }
 

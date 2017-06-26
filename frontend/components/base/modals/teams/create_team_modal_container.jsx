@@ -8,7 +8,7 @@ import CreateTeamModal from './create_team_modal';
 
 const mapStateToProps = (state) => {
   return ({
-    state
+    errors: state.teams.errors
   });
 };
 

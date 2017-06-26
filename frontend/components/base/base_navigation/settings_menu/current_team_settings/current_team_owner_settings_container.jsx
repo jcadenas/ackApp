@@ -12,7 +12,7 @@ import { destroyTeam } from '../../../../../actions/team_actions';
 
 const mapStateToProps = (state) => {
   return ({
-    state
+    modals: state.modals
   });
 }
 
@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch) => {
   return ({
     destroyTeam: (teamId) => dispatch(destroyTeam(teamId)),
     collapseEditTeamModal: () => dispatch(collapseEditTeamModal()),
+    expandEditTeamModal: () => dispatch(expandEditTeamModal()),
     collapseCreateMembershipModal: () => dispatch(collapseCreateMembershipModal()),
     expandCreateMembershipModal: () => dispatch(expandCreateMembershipModal())
   });

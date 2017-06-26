@@ -40,10 +40,10 @@ class CreateTeamModal extends React.Component {
   }
 
   renderErrors() {
-    if(this.props.state.teams.errors){
+    if(this.props.errors){
       return(
         <ul>
-          {this.props.state.teams.errors.map((error, i) => (
+          {this.props.errors.map((error, i) => (
             <li key={`error-${i}`} className='session-error-item'>
               {error}
             </li>

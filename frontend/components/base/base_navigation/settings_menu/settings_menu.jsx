@@ -12,12 +12,8 @@ class SettingsMenu extends React.Component {
 
   currentTeam() {
     const currenTeamId = this.props.match.params.team_id;
-    const currentTeam = this.props.state.teams.entities[currenTeamId];
+    const currentTeam = this.props.teams[currenTeamId];
     return currentTeam;
-  }
-
-  currentUser() {
-    return this.props.state.session.current_user;
   }
 
   expandDropDown(e) {
@@ -61,7 +57,7 @@ class SettingsMenu extends React.Component {
           {this.currentTeam().name}
         </span>
         <span className='settings-menu-username'>
-          {this.currentUser().username}
+          {this.props.current_user.username}
         </span>
         {this.dropDownMenu()}
       </section>

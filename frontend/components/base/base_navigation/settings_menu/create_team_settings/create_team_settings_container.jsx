@@ -4,7 +4,8 @@ import CreateTeamSettings from './create_team_settings';
 
 const mapStateToProps = (state) => {
   return ({
-    state
+    teams: state.teams.entities,
+    modals: state.modals
   });
 }
 

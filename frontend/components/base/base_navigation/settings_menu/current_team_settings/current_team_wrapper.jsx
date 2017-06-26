@@ -7,9 +7,9 @@ class CurrentTeamWrapper extends React.Component {
 
 
   currentTeamSettings() {
-    const currentUserId = this.props.state.session.current_user.id;
+    const currentUserId = this.props.current_user.id;
     const currentTeamId = this.props.match.params.team_id;
-    const currentTeamOwnerId = this.props.state.teams.entities[currentTeamId].owner_id;
+    const currentTeamOwnerId = this.props.teams[currentTeamId].owner_id;
 
     if (currentUserId === currentTeamOwnerId) {
       return (

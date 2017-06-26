@@ -15,7 +15,7 @@ class UserSettings extends React.Component {
   render () {
     return (
       <section>
-        <span>{this.props.state.session.current_user.username}</span>
+        <span>{this.props.current_user.username}</span>
         <div onClick={this.handleLogOut}>Log Out</div>
       </section>
     );

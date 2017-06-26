@@ -1,7 +1,6 @@
 class Api::MembershipsController < ApplicationController
 
   def create
-    debugger
     @newMembershipUser = User.find_by(username: params[:membership][:username])
     params[:membership][:user_id] = @newMembershipUser.id
     @membership = Membership.new(membership_params)

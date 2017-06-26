@@ -5,7 +5,8 @@ import SettingsMenu from './settings_menu';
 
 const mapStateToProps = (state) => {
   return ({
-    state
+    current_user: state.session.current_user,
+    teams: state.teams.entities
   });
 }
 

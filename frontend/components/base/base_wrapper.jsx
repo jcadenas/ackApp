@@ -12,7 +12,7 @@ class BaseWrapper extends React.Component {
     this.props.fetchUserTeams();
   }
 
-  // TODO this will break once we have click to navigate teams
+  // TODO will this break once we have click to navigate teams?
   componentWillReceiveProps(newProps){
     let oldTeams = this.props.state.teams.entities;
     let newTeams = newProps.state.teams.entities;

@@ -6,7 +6,7 @@ import { destroyMembership } from '../../../../../actions/membership_actions';
 
 const mapStateToProps = (state) => {
   return ({
-    state
+    teams: state.teams.entities
   });
 }
 

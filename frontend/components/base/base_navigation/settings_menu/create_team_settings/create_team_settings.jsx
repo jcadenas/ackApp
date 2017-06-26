@@ -18,15 +18,15 @@ class CreateTeamSettings extends React.Component {
 
   componentWillReceiveProps(newProps) {
     // On successful create of team, close create team modal
-    const newTeams = newProps.state.teams.entities;
-    const oldTeams = this.props.state.teams.entities;
-    if (newTeams !== oldTeams && this.props.state.modals[CREATE_TEAM_MODAL] === true){
+    const newTeams = newProps.teams;
+    const oldTeams = this.props.teams;
+    if (newTeams !== oldTeams && this.props.modals[CREATE_TEAM_MODAL] === true){
       this.props.collapseCreateTeamModal();
     }
   }
 
   createTeamModalDisplay() {
-    if (this.props.state.modals[CREATE_TEAM_MODAL]){
+    if (this.props.modals[CREATE_TEAM_MODAL]){
       return (
         <CreateTeamModalContainer />
       );
