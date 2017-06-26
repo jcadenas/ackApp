@@ -9,7 +9,7 @@ class SwitchTeams extends React.Component {
     for (let key in this.props.state.teams.entities) {
       if (key !== this.props.match.params.team_id) {
         switchTeams.push(
-          <li key={`${key}`}><Link to={`/messages/${key}`}>{this.props.state.teams.entities[key].name}</Link></li>
+          <li key={`${key}`}><Link to={`/messages/${key}`}>Switch to {this.props.state.teams.entities[key].name}</Link></li>
         );
       }
     }

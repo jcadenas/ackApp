@@ -1,6 +1,7 @@
 import React from 'react';
 import EditTeamModalContainer from '../../../modals/teams/edit_team_modal_container';
-import { EDIT_TEAM_MODAL } from '../../../../../reducers/modal_reducer';
+import CreateMembershipModalContainer from '../../../modals/memberships/create_membership_modal_container';
+import { EDIT_TEAM_MODAL, CREATE_MEMBERSHIP_MODAL } from '../../../../../reducers/modal_reducer';
 
 class CurrentTeamOwnerSettings extends React.Component {
 
@@ -8,6 +9,7 @@ class CurrentTeamOwnerSettings extends React.Component {
     super(props);
     this.handleDeleteTeam = this.handleDeleteTeam.bind(this);
     this.handleEditTeam = this.handleEditTeam.bind(this);
+    this.handleAddUser = this.handleAddUser.bind(this);
   }
 
 
@@ -22,6 +24,11 @@ class CurrentTeamOwnerSettings extends React.Component {
     this.props.expandEditTeamModal();
   }
 
+  handleAddUser(e) {
+    e.stopPropagation();
+    this.props.expandCreateMembershipModal();
+  }
+
   editTeamModalDisplay(){
     if (this.props.state.modals[EDIT_TEAM_MODAL]){
       return (
@@ -32,12 +39,25 @@ class CurrentTeamOwnerSettings extends React.Component {
     }
   }
 
+  createMembershipModalDisplay(){
+    if (this.props.state.modals[CREATE_MEMBERSHIP_MODAL]){
+      return (
+        <CreateMembershipModalContainer />
+      );
+    } else {
+      return undefined;
+    }
+  }
+
   render() {
     return (
       <section>
         <span onClick={this.handleEditTeam}>Edit</span>
-        <span onClick={this.handleDeleteTeam}>Delete</span>
         {this.editTeamModalDisplay()}
+        <span onClick={this.handleDeleteTeam}>Delete</span>
+        <span onClick={this.handleAddUser}>Add User</span>
+        {this.createMembershipModalDisplay()}
+
       </section>
     );
   }

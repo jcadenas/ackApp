@@ -1,9 +1,12 @@
 class Api::MembershipsController < ApplicationController
 
   def create
+    debugger
+    @newMembershipUser = User.find_by(username: params[:membership][:username])
+    params[:membership][:user_id] = @newMembershipUser.id
     @membership = Membership.new(membership_params)
     if @membership.save
-      @team = Team.find(params.membership.team_id)
+      @team = Team.find(params[:membership][:team_id])
       render 'api/teams/show';
     else
       render json: @membership.errors.full_messages, status: 422
