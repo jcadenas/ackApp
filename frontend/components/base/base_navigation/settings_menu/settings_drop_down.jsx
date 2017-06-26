@@ -2,7 +2,7 @@ import React from 'react';
 import UserSettingsContainer from './user_settings_container';
 import CurrentTeamWrapperContainer from './current_team_settings/current_team_wrapper_container';
 import SwitchTeamsContainer from './switch_teams/switch_teams_container';
-// import CreateTeamContainer from './create_team_container';
+import CreateTeamSettingsContainer from './create_team_settings/create_team_settings_container';
 
 class SettingsDropDown extends React.Component {
 
@@ -16,6 +16,7 @@ class SettingsDropDown extends React.Component {
         <UserSettingsContainer />
         <CurrentTeamWrapperContainer />
         <SwitchTeamsContainer />
+        <CreateTeamSettingsContainer />
       </section>
     );
   }
@@ -23,6 +24,3 @@ class SettingsDropDown extends React.Component {
 }
 
 export default SettingsDropDown;
-
-
-// <CreateTeamContainer />

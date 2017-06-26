@@ -1,4 +1,6 @@
 import React from 'react';
+import EditTeamModalContainer from '../../../modals/teams/edit_team_modal_container';
+import { EDIT_TEAM_TOGGLE } from '../../../../../actions/modal_actions';
 
 class CurrentTeamOwnerSettings extends React.Component {
 
@@ -20,11 +22,22 @@ class CurrentTeamOwnerSettings extends React.Component {
     this.props.editTeamToggle();
   }
 
+  editTeamModalDisplay(){
+    if (this.props.state.modals[EDIT_TEAM_TOGGLE]){
+      return (
+        <EditTeamModalContainer />
+      );
+    } else {
+      return undefined;
+    }
+  }
+
   render() {
     return (
       <section>
         <span onClick={this.handleEditTeam}>Edit</span>
         <span onClick={this.handleDeleteTeam}>Delete</span>
+        {this.editTeamModalDisplay()}
       </section>
     );
   }

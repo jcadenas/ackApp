@@ -6,6 +6,7 @@ export const RECEIVE_ONE_TEAM = 'RECEIVE_ONE_TEAM';
 export const RECEIVE_ALL_TEAMS = 'RECEIVE_ALL_TEAMS';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const DESTROYED_TEAM = 'DESTROYED_TEAM';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
 
@@ -37,6 +38,13 @@ export const receiveAllTeams = (teams) => {
 export const receiveErrors = (errors) => {
   return ({
     type: RECEIVE_ERRORS,
+    errors
+  });
+};
+
+export const clearErrors = (errors) => {
+  return ({
+    type: CLEAR_ERRORS,
     errors
   });
 };

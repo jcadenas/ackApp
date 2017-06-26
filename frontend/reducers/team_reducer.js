@@ -2,7 +2,8 @@ import {
   RECEIVE_ONE_TEAM,
   RECEIVE_ALL_TEAMS,
   RECEIVE_ERRORS,
-  DESTROYED_TEAM
+  DESTROYED_TEAM,
+  CLEAR_ERRORS
 } from '../actions/team_actions';
 import { DESTROYED_SESSION } from '../actions/session_actions';
 import { merge } from 'lodash';
@@ -30,6 +31,11 @@ const TeamReducer = (state = defaultState, action) => {
     case RECEIVE_ERRORS: {
       const errors = action.errors;
       newState = merge({}, state, { errors });
+      return newState;
+    }
+
+    case CLEAR_ERRORS: {
+      newState = Object.assign({}, state, { errors: action.errors });
       return newState;
     }
 
