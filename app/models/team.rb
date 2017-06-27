@@ -12,6 +12,8 @@
 
 class Team < ActiveRecord::Base
   validates :name, :owner, presence: true
+  validates :name, uniqueness: true
+  validates :name, format: { without: /\s/ }
 
   belongs_to :owner,
     class_name: :User,
@@ -22,6 +24,8 @@ class Team < ActiveRecord::Base
   has_many :members,
     through: :memberships,
     source: :member
+
+  has_many :channels, dependent: :destroy
 
 
 end

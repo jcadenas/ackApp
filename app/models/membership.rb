@@ -11,6 +11,7 @@
 
 class Membership < ActiveRecord::Base
   validates :member, :team, presence: true
+  validates :member, uniqueness: { scope: [:team]}
 
   belongs_to :member,
     class_name: :User,
