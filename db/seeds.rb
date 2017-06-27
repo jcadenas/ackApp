@@ -24,8 +24,8 @@ Team.destroy_all
 
 team1 = Team.create!({name: 'bluth-company', owner: user2, description: 'Weve made huge mistakes'  })
 team2 = Team.create!({name: 'banana-stand', owner: user3, description: 'Theres always money in the banana stand' })
-team3 = Team.create!({name: 'gobias-industries', owner: user1, description: 'Gobias Industries is going global' })
-team4 = Team.create!({name: 'funke-industries', owner: user9, description: 'Just blue ourselves and are ready to stand in' })
+team3 = Team.create!({name: 'gobias-industries', owner: user1, description: 'As in go buy us some coffee' })
+team4 = Team.create!({name: 'funke-productions', owner: user9, description: 'WHO ATE MY HARD BOILED EGGS' })
 
 Membership.destroy_all
 
