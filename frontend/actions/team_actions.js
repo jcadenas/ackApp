@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/api_util';
+import { collapseCreateTeamModal } from './modal_actions';
 
 // REDUCER CONSTANTS -----------------------------
 
@@ -42,10 +43,10 @@ export const receiveErrors = (errors) => {
   });
 };
 
-export const clearErrors = (errors) => {
+export const clearErrors = () => {
   return ({
     type: CLEAR_ERRORS,
-    errors
+    errors: []
   });
 };
 
@@ -58,7 +59,10 @@ export const createTeam = (team) => (dispatch) => {
   return APIUtil.createTeam(team)
     .then(
       (resp) => dispatch(receiveOneTeam(resp)),
-      (errors) => dispatch(receiveErrors(errors.responseJSON)));
+      (errors) => dispatch(receiveErrors(errors.responseJSON)))
+    .then(
+      () => dispatch(collapseCreateTeamModal())
+    );
 };
 
 export const destroyTeam = (teamId) => (dispatch) => {

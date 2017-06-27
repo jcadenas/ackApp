@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Base from './base';
+import BaseContainer from './base_container';
 
 class BaseWrapper extends React.Component {
 
@@ -31,7 +31,7 @@ class BaseWrapper extends React.Component {
     const firstTeam = teams[Object.keys(teams)[0]];
     if (firstTeam) {
       return (
-        <Route path={'/messages/:team_id'} component={Base} />
+        <Route path={'/messages/:team_id'} component={BaseContainer} />
       );
     } else {
       return (

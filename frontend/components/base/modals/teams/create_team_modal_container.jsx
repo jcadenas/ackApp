@@ -16,7 +16,8 @@ const mapDispatchToProps = (dispatch) => {
   return ({
     createTeam: (team) => dispatch(createTeam(team)),
     clearErrors: () => dispatch(clearErrors([])),
-    collapseCreateTeamModal: () => dispatch(collapseCreateTeamModal())
+    collapseCreateTeamModal: () => dispatch(collapseCreateTeamModal()),
+    clearErrors: () => dispatch(clearErrors())
   });
 };
 

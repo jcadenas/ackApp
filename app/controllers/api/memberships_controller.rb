@@ -2,13 +2,16 @@ class Api::MembershipsController < ApplicationController
 
   def create
     @newMembershipUser = User.find_by(username: params[:membership][:username])
-    params[:membership][:user_id] = @newMembershipUser.id
-    @membership = Membership.new(membership_params)
-    if @membership.save
-      @team = Team.find(params[:membership][:team_id])
-      render 'api/teams/show';
+    if @newMembershipUser
+      @membership = Membership.new({ user_id: @newMembershipUser.id, team_id: params[:membership][:team_id]})
+      if @membership.save
+        @team = Team.find(params[:membership][:team_id])
+        render 'api/teams/show';
+      else
+        render json: @membership.errors.full_messages, status: 422
+      end
     else
-      render json: @membership.errors.full_messages, status: 422
+      render json: ['Failed to find user'], status: 422
     end
   end
 

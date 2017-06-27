@@ -28,34 +28,34 @@ class CurrentTeamOwnerSettings extends React.Component {
     this.props.expandCreateMembershipModal();
   }
 
-  editTeamModalDisplay(){
-    if (this.props.modals[EDIT_TEAM_MODAL]){
-      return (
-        <EditTeamModalContainer />
-      );
-    } else {
-      return undefined;
-    }
-  }
-
-  createMembershipModalDisplay(){
-    if (this.props.modals[CREATE_MEMBERSHIP_MODAL]){
-      return (
-        <CreateMembershipModalContainer />
-      );
-    } else {
-      return undefined;
-    }
-  }
+  // editTeamModalDisplay(){
+  //   if (this.props.modals[EDIT_TEAM_MODAL]){
+  //     return (
+  //       <EditTeamModalContainer />
+  //     );
+  //   } else {
+  //     return undefined;
+  //   }
+  // }
+  //
+  // createMembershipModalDisplay(){
+  //   if (this.props.modals[CREATE_MEMBERSHIP_MODAL]){
+  //     return (
+  //       <CreateMembershipModalContainer />
+  //     );
+  //   } else {
+  //     return undefined;
+  //   }
+  // }
+  // {this.editTeamModalDisplay()}
+  // {this.createMembershipModalDisplay()}
 
   render() {
     return (
       <ul className='current-team-owner-settings-list'>
         <li onClick={this.handleEditTeam}>Edit</li>
-        {this.editTeamModalDisplay()}
         <li onClick={this.handleDeleteTeam}>Delete</li>
         <li onClick={this.handleAddUser}>Add User</li>
-        {this.createMembershipModalDisplay()}
       </ul>
     );
   }

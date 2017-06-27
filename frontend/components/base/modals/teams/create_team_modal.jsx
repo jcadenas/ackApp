@@ -14,7 +14,7 @@ class CreateTeamModal extends React.Component {
   }
 
   componentDidMount() {
-    this.props.clearErrors([]);
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {
@@ -55,34 +55,34 @@ class CreateTeamModal extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="create-team-form-container">
+      <div className='form-modal'>
+        <div className="create-team-form-container form-container">
           <form onSubmit={this.handleSubmit} className="create-team-form-box">
             <br/>
-            <h3 className='create-team-form-header'>Create New Team</h3>
-            <p className='create-team-form-blerb'>Create a new team and begin chatting with your coworkers faster</p>
+            <h3 className='create-team-form-header form-header'>Create New Team</h3>
+            <p className='create-team-form-blerb form-blerb'>Create a new team and begin chatting with your coworkers faster</p>
             {this.renderErrors()}
-            <div className="create-team-form">
+            <div className="create-team-form form">
               <br/>
-              <label htmlFor='name' className='create-team-form-label'>Team Name</label>
+              <label htmlFor='name' className='create-team-form-label form-label'>Team Name</label>
               <input type="text"
                 id='name'
                 value={this.state.name}
                 onChange={this.handleChange('name')}
-                className="create-team-input"
+                className="create-team-input form-input"
                 ></input>
               <br/>
-              <label htmlFor='description' className='create-team-form-label'>Description</label>
+              <label htmlFor='description' className='create-team-form-label form-label'>Description</label>
               <input type="text"
                 id='description'
                 value={this.state.description}
                 onChange={this.handleChange('description')}
-                className="create-team-input"
+                className="create-team-input form-input"
                 ></input>
               <br/>
-              <div className='create-team-form-buttons'>
-                <button className='create-team-form-submit'>Create Team</button>
-                <button onClick={this.handleCancel} className='cancel-create-team-form'>Cancel</button>
+              <div className='create-team-form-buttons form-buttons'>
+                <button className='create-team-form-submit form-submit'>Create Team</button>
+                <button onClick={this.handleCancel} className='cancel-create-team-form form-cancel'>Cancel</button>
               </div>
               <br/>
             </div>

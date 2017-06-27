@@ -16,24 +16,40 @@ class CreateTeamSettings extends React.Component {
     this.props.expandCreateTeamModal();
   }
 
-  componentWillReceiveProps(newProps) {
-    // On successful create of team, close create team modal
-    const newTeams = newProps.teams;
-    const oldTeams = this.props.teams;
-    if (newTeams !== oldTeams && this.props.modals[CREATE_TEAM_MODAL] === true){
-      this.props.collapseCreateTeamModal();
+  arraysEqual(arr1, arr2) {
+    if(arr1.length !== arr2.length)
+        return false;
+    for(var i = arr1.length; i--;) {
+        if(arr1[i] !== arr2[i])
+            return false;
     }
+
+    return true;
   }
 
-  createTeamModalDisplay() {
-    if (this.props.modals[CREATE_TEAM_MODAL]){
-      return (
-        <CreateTeamModalContainer />
-      );
-    } else {
-      return undefined;
-    }
-  }
+  // componentWillReceiveProps(newProps) {
+  //   // On successful create of team, close create team modal
+  //   const newTeams = newProps.teams;
+  //   const oldTeams = this.props.teams;
+  //   debugger;
+  //   if (newTeams !== oldTeams
+  //     && this.arraysEqual(this.props.teamErrors, newProps.teamErrors)
+  //     && this.props.modals[CREATE_TEAM_MODAL] === true)
+  //     {
+  //     this.props.collapseCreateTeamModal();
+  //   }
+  // }
+
+  // createTeamModalDisplay() {
+  //   if (this.props.modals[CREATE_TEAM_MODAL]){
+  //     return (
+  //       <CreateTeamModalContainer />
+  //     );
+  //   } else {
+  //     return undefined;
+  //   }
+  // }
+  // {this.createTeamModalDisplay()}
 
 
   // TODO add conditional rendering of Create Team modal
@@ -42,7 +58,6 @@ class CreateTeamSettings extends React.Component {
     return(
       <section className='create-team-settings settings-menu-component'>
         <li onClick={this.handleCreateTeam}>Create New Team</li>
-        {this.createTeamModalDisplay()}
       </section>
     );
   }

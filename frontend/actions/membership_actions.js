@@ -1,10 +1,12 @@
 import * as APIUtil from '../util/api_util';
 import { RECEIVE_ONE_TEAM } from './team_actions';
+import { collapseCreateMembershipModal } from './modal_actions';
 
 // REDUCER CONSTANTS -----------------------------
 
 export const CREATED_ONE_MEMBERSHIP = 'CREATED_ONE_MEMBERSHIP';
 export const DESTROYED_MEMBERSHIP = 'DESTROYED_MEMBERSHIP';
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 
 
@@ -26,14 +28,26 @@ export const destroyedOneMembership = (team) => {
   });
 };
 
+export const receiveMembershipErrors = (errors) => {
+  return ({
+    type: RECEIVE_ERRORS,
+    errors
+  });
+};
+
 
 
 // ASYNC ACTION CREATORS -----------------------------
 
+// takes a username & a team_id
 export const createMembership = (membership) => (dispatch) => {
   return APIUtil.createMembership(membership)
     .then(
-      (resp) => dispatch(createdOneMembership(resp)));
+      (resp) => dispatch(createdOneMembership(resp)),
+      (errors) => dispatch(receiveMembershipErrors(errors.responseJSON)))
+    .then(
+      (resp) => dispatch(collapseCreateMembershipModal())
+    );
 };
 
   // ID of the Team that is being left.

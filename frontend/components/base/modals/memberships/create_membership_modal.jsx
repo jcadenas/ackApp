@@ -46,27 +46,26 @@ class CreateMembershipModal extends React.Component {
 
   renderErrors() {
     // TODO Error Handling
-    return undefined;
-    // if(this.props.state.teams.errors){
-    //   return(
-    //     <ul>
-    //       {this.props.state.teams.errors.map((error, i) => (
-    //         <li key={`error-${i}`} className='session-error-item'>
-    //           {error}
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   );
-    // }
+    if(this.props.teamErrors){
+      return(
+        <ul>
+          {this.props.teamErrors.map((error, i) => (
+            <li key={`error-${i}`} className='session-error-item'>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render() {
     return (
-      <div>
+      <div className='form-modal'>
         <div className="form-container">
           <form onSubmit={this.handleSubmit} className="form-box">
             <br/>
-            <h3 className='form-header'>Add User to {this.currentTeamName()}</h3>
+            <h3 className='form-header'>Add User to <span className='add-user-to-this-team'>{this.currentTeamName()}</span></h3>
             <p className='form-blerb'>Add a new user & start chattin!</p>
             {this.renderErrors()}
             <div className="form">
@@ -81,7 +80,7 @@ class CreateMembershipModal extends React.Component {
               <br/>
               <div className='form-buttons'>
                 <button className='form-submit'>Add User</button>
-                <button onClick={this.handleCancel} className='cancel-form'>Cancel</button>
+                <button onClick={this.handleCancel} className='form-cancel'>Cancel</button>
               </div>
               <br/>
             </div>

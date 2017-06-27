@@ -8,7 +8,8 @@ import CreateMembershipModal from './create_membership_modal';
 
 const mapStateToProps = (state) => {
   return ({
-    teams: state.teams.entities
+    teams: state.teams.entities,
+    teamErrors: state.teams.errors
   });
 };
 

@@ -5,6 +5,7 @@ import CreateTeamSettings from './create_team_settings';
 const mapStateToProps = (state) => {
   return ({
     teams: state.teams.entities,
+    teamErrors: state.teams.errors,
     modals: state.modals
   });
 }

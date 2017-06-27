@@ -1,0 +1,152 @@
+
+
+.form-modal {
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(255, 255, 255);
+  color: rgb(44, 45, 48);
+}
+
+.form-container {
+  width: 640px;
+  margin: 0 auto;
+  padding: 82px;
+  background: rgb(255, 255, 255);
+  color: rgb(44, 45, 48);
+}
+
+.form-header {
+  display: block;
+  box-sizing: border-box;
+  color: rgb(44, 45, 48);
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 41px;
+  margin-bottom: 16px;
+}
+
+.form-blerb {
+  box-sizing: border-box;
+  color: rgb(113, 114, 116);
+  display: block;
+  font-size: 14.4px;
+  line-height: 20px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  cursor: pointer;
+  color: rgb(85, 84, 89);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+.form-input {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 4px;
+  color: rgb(85, 84, 89);
+  font-size: 18px;
+  letter-spacing: normal;
+  cursor: auto;
+  padding: 12px;
+  padding-left: 32px;
+  vertical-align: middle;
+  max-width: 100%;
+  width: 640px;
+}
+
+.form-reqs {
+  box-sizing: border-box;
+  display: block;
+  color: rgb(113, 114, 116);
+  font-size: 12.8px;
+  line-height: 16px;
+  margin-top: 4px;
+}
+
+.form-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 38px;
+}
+
+.form-submit {
+  background: rgb(42, 178, 123);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 19.2px;
+  padding: 14px 18px 16px 18px;
+  text-align: center;
+}
+
+.form-submit:hover {
+  background: rgb(39, 173, 119);
+}
+
+.form-cancel {
+  background: rgb(251, 251, 250);
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  color: rgb(85, 84, 89);
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 19.2px;
+  margin-right: 8px;
+  padding: 14px 18px 16px 18px;
+  text-align: center;
+}
+
+.form-cancel:hover {
+  color: rgb(0, 122, 184);
+}
+
+.form-orlink {
+  box-sizing: border-box;
+  display: block;
+  text-align: right;
+  color: rgb(113, 114, 116);
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 4px;
+}
+
+.form-orlink a {
+  text-decoration: underline;
+}
+
+.fa-times-circle-o {
+  font-size: 32px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: rgb(113, 114, 116);
+}
+
+.form-error-item {
+  color: rgb(235, 34, 71);
+}
+
+
+
+
+
+
+// Bottom of file

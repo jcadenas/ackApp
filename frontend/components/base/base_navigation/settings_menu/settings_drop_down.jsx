@@ -11,9 +11,6 @@ class SettingsDropDown extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.collapseCreateTeamModal();
-    this.props.collapseEditTeamModal();
-    this.props.collapseCreateMembershipModal();
   }
 
   render() {
