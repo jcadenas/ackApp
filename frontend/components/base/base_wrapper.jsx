@@ -10,7 +10,11 @@ class BaseWrapper extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchUserTeams();
+    if (!Boolean(this.props.teams.first)){
+      this.props.fetchUserTeams();
+    } else {
+      this.props.history.push(`/messages/${newFirstTeam.id}`);
+    }
   }
 
   // TODO will this break once we have click to navigate teams?
