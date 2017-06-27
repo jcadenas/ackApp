@@ -18,7 +18,7 @@ class BaseWrapper extends React.Component {
     let newTeams = newProps.state.teams.entities;
     const oldFirstTeam = oldTeams[Object.keys(oldTeams)[0]];
     const newFirstTeam = newTeams[Object.keys(newTeams)[0]];
-    if (oldFirstTeam !== newFirstTeam) {
+    if (oldFirstTeam === undefined) {
       this.props.history.push(`/messages/${newFirstTeam.id}`);
     }
   }

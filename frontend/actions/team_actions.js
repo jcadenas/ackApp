@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/api_util';
-import { collapseCreateTeamModal } from './modal_actions';
+import { collapseCreateTeamModal, collapseEditTeamModal } from './modal_actions';
 
 // REDUCER CONSTANTS -----------------------------
 
@@ -90,7 +90,10 @@ export const updateOneTeam = (team) => (dispatch) => {
   return APIUtil.updateOneTeam(team)
     .then(
       (resp) => dispatch(receiveOneTeam(resp)),
-      (errors) => dispatch(receiveErrors(errors.responseJSON)));
+      (errors) => dispatch(receiveErrors(errors.responseJSON)))
+    .then(
+      () => dispatch(collapseEditTeamModal())
+    );
 };
 
 

@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { fetchUserTeams } from '../../actions/team_actions';
 import BaseWrapper from './base_wrapper';
 
@@ -15,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(BaseWrapper);
+)(BaseWrapper));

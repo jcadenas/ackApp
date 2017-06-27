@@ -67,7 +67,7 @@ class EditTeamModal extends React.Component {
 
   render() {
     return (
-      <div className='form-'>
+      <div className='form-modal'>
         <div className="edit-team-form-container form-container">
           <form onSubmit={this.handleSubmit} className="edit-team-form-box form-box">
             <br/>
