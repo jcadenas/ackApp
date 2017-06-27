@@ -20,7 +20,7 @@ class BaseWrapper extends React.Component {
     const oldFirstTeam = oldTeams[Object.keys(oldTeams)[0]];
     const newFirstTeam = newTeams[Object.keys(newTeams)[0]];
     if (oldFirstTeam === undefined
-      || Object.keys(oldTeams).length !== Object.keys(newTeams).length) {
+      || Object.keys(oldTeams).length > Object.keys(newTeams).length) {
       this.props.history.push(`/messages/${newFirstTeam.id}`);
     }
   }
