@@ -6,7 +6,7 @@ import BaseWrapper from './base_wrapper';
 
 const mapStateToProps = (state) => {
   return ({
-    state
+    teams: state.teams.entities
   });
 };
 
