@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 // TESTING
-// import * as APIUtil from './util/api_util';
+import * as APIUtil from './util/api_util';
 // import * as Actions from './actions/team_actions';
 
 
@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.store = store;
 
-  // window.APICreateTeam = APIUtil.createTeam;
-  // window.APIDestroyTeam = APIUtil.destroyTeam;
-  // window.APIFetchOneTeam = APIUtil.fetchOneTeam;
-  // window.APIFetchUserTeams = APIUtil.fetchUserTeams;
-  // window.APIUpdateOneTeam = APIUtil.updateOneTeam;
-  // window.APICreateMembership = APIUtil.createMembership;
-  // window.APIDestroyMembership = APIUtil.destroyMembership;
+  window.APICreateChannel = APIUtil.createChannel;
+  window.APIDestroyChannel = APIUtil.destroyChannel;
+  window.APIFetchOneChannel = APIUtil.fetchOneChannel;
+  window.APIFetchTeamChannels = APIUtil.fetchTeamChannels;
+  window.APIUpdateOneChannel = APIUtil.updateOneChannel;
+  window.APICreateSubscription = APIUtil.createSubscription;
+  window.APIDestroySubscription = APIUtil.destroySubscription;
   //
   // window.ActionCreateTeam = Actions.createTeam;
   // window.ActionDestroyTeam = Actions.destroyTeam;

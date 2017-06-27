@@ -12,6 +12,7 @@ class Api::SubscriptionsController < ApplicationController
   end
 
   def destroy
+    # ID being passed in params is the channel_id
     @subscription = Subscription.find_by(user_id: current_user.id, channel_id: params[:id])
     if @subscription
       @subscription.destroy
