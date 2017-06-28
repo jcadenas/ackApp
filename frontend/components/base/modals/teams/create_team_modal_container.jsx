@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { createTeam, clearErrors } from '../../../../actions/team_actions';
 import { collapseCreateTeamModal } from '../../../../actions/modal_actions';
-import { withRouter } from 'react-router-dom';
 import CreateTeamModal from './create_team_modal';
 
 
@@ -21,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default withRouter(connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CreateTeamModal));
+)(CreateTeamModal);

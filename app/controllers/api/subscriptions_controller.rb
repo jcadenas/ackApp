@@ -5,7 +5,8 @@ class Api::SubscriptionsController < ApplicationController
     @subscription.user_id = current_user.id
     if @subscription.save
       @channel = Channel.find(params[:subscription][:channel_id])
-      render 'api/channels/show'
+      @user = current_user
+      render :show
     else
       render json: @subscription.errors.full_messages, status: 422
     end

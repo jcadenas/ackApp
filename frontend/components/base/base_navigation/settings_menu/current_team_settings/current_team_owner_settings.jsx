@@ -14,7 +14,7 @@ class CurrentTeamOwnerSettings extends React.Component {
 
   handleDeleteTeam(e) {
     e.stopPropagation();
-    const teamId = this.props.match.params.team_id;
+    const teamId = this.props.baseCurrentTeamId;
     this.props.destroyTeam(teamId);
   }
 
@@ -27,28 +27,6 @@ class CurrentTeamOwnerSettings extends React.Component {
     e.stopPropagation();
     this.props.expandCreateMembershipModal();
   }
-
-  // editTeamModalDisplay(){
-  //   if (this.props.modals[EDIT_TEAM_MODAL]){
-  //     return (
-  //       <EditTeamModalContainer />
-  //     );
-  //   } else {
-  //     return undefined;
-  //   }
-  // }
-  //
-  // createMembershipModalDisplay(){
-  //   if (this.props.modals[CREATE_MEMBERSHIP_MODAL]){
-  //     return (
-  //       <CreateMembershipModalContainer />
-  //     );
-  //   } else {
-  //     return undefined;
-  //   }
-  // }
-  // {this.editTeamModalDisplay()}
-  // {this.createMembershipModalDisplay()}
 
   render() {
     return (

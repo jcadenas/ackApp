@@ -4,9 +4,10 @@ import CurrentTeamMemberSettings from './current_team_member_settings';
 import { destroyMembership } from '../../../../../actions/membership_actions';
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return ({
-    teams: state.teams.entities
+    teams: state.teams.entities,
+    baseCurrentTeamId: ownProps.baseCurrentTeamId
   });
 }
 

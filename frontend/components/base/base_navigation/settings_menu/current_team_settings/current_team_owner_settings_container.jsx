@@ -10,9 +10,10 @@ import {
 import { destroyTeam } from '../../../../../actions/team_actions';
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return ({
-    modals: state.modals
+    modals: state.modals,
+    baseCurrentTeamId: ownProps.baseCurrentTeamId
   });
 }
 

@@ -4,6 +4,7 @@ import {
   DESTROYED_SESSION,
   CLEAR_ERRORS
   } from '../actions/session_actions';
+import { CREATED_ONE_SUBSCRIPTION } from '../actions/subscription_actions';
 import { merge } from 'lodash';
 
 const defaultState = {
@@ -34,6 +35,11 @@ const SessionReducer = (state = defaultState, action) => {
 
     case DESTROYED_SESSION: {
       newState = merge({}, state, {current_user: null});
+      return newState;
+    }
+
+    case CREATED_ONE_SUBSCRIPTION: {
+      newState = Object.assign({}, state, { current_user: action.user });
       return newState;
     }
 

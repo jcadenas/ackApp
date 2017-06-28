@@ -3,14 +3,15 @@ import { withRouter } from 'react-router-dom';
 import CurrentTeamWrapper from './current_team_wrapper';
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return ({
     current_user: state.session.current_user,
-    teams: state.teams.entities
+    teams: state.teams.entities,
+    baseCurrentTeamId: ownProps.baseCurrentTeamId
   });
 }
 
-export default withRouter(connect(
+export default connect(
   mapStateToProps,
   null
-)(CurrentTeamWrapper));
+)(CurrentTeamWrapper);
