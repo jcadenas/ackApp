@@ -13,7 +13,7 @@ class SettingsMenu extends React.Component {
   }
 
   currentTeam() {
-    const currenTeamId = this.props.match.params.team_id;
+    const currenTeamId = this.props.baseCurrentTeamId;
     const currentTeam = this.props.teams[currenTeamId];
     return currentTeam;
   }

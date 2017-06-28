@@ -32,11 +32,6 @@
   cursor: pointer;
 }
 
-.channel-nav-list-item-selected {
-  background-color: rgb(56, 151, 141);
-  color: rgb(255, 255, 255);
-}
-
 .channel-navigation-list li {
   padding-left: 16px;
   border-top-right-radius: 6px;
@@ -47,10 +42,21 @@
   font-weight: 100;
   box-sizing: border-box;
   text-align: middle;
+  cursor:pointer;
 }
 
-.channel-navigation-list li:hover {
+.channel-nav-list-item-unselected:hover {
   background-color: rgb(62, 49, 60);
+}
+
+.channel-nav-list-item-selected {
+  background-color: rgb(56, 151, 141);
+  color: rgb(255, 255, 255);
+}
+
+.channel-nav-list-item-selected:hover {
+  background-color: rgb(56, 151, 141);
+  color: rgb(255, 255, 255);
 }
 
 .channel-nav-hash {

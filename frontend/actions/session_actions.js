@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/api_util';
+import { fetchUserTeams } from './team_actions';
 
 export const RECEIVE_ONE_USER = 'RECEIVE_ONE_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
@@ -37,10 +38,11 @@ export const destroyedSession = () => {
 export const createUser = (user) => (dispatch) => {
   return (
     APIUtil.createUser(user).then(
-      (resp) => dispatch(receiveOneUser(resp)),
-      (errors) => {
-        return dispatch(receiveErrors(errors.responseJSON))
-      }
+      (resp) => {
+        dispatch(receiveOneUser(resp));
+        dispatch(fetchUserTeams());
+      },
+      (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
   );
 };
@@ -48,7 +50,10 @@ export const createUser = (user) => (dispatch) => {
 export const createSession = (user) => (dispatch) => {
   return (
     APIUtil.createSession(user).then(
-      (resp) => dispatch(receiveOneUser(resp)),
+      (resp) => {
+        dispatch(receiveOneUser(resp));
+        dispatch(fetchUserTeams());
+      },
       (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
   );

@@ -13,3 +13,11 @@ export const nonUserTeamChannels = (state, ownProps) => {
   const userTeamChannels = teamChannelsById.filter((x) => !userChannels.includes(parseInt(x)));
   return userTeamChannels;
 }
+
+export const firstTeamId = (state, ownProps) => {
+
+}
+
+export const firstChannelId = (state, ownProps) => {
+  
+}

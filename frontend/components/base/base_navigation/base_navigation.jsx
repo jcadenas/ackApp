@@ -11,15 +11,10 @@ class BaseNavigation extends React.Component{
     return (
       <nav className='base-navigation'>
         <SettingsMenuContainer baseCurrentTeamId={this.props.baseCurrentTeamId} />
-        <Route path='/messages/:team_id' baseCurrentTeamId={this.props.baseCurrentTeamId} baseCurrentChannelId={this.props.baseCurrentChannelId} component={ChannelNavigationContainer} />
+        <ChannelNavigationContainer baseCurrentTeamId={this.props.baseCurrentTeamId} baseCurrentChannelId={this.props.baseCurrentChannelId} />
       </nav>
     );
   }
-
-  // <nav>
-  // <Settings></Settings>
-  // <ChannelNav></ChannelNav>
-// </nav>
 }
 
 const mapStateToProps = (state, ownProps) => {

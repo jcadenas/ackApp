@@ -1,5 +1,6 @@
 import * as APIUtil from '../util/api_util';
 import { collapseCreateTeamModal, collapseEditTeamModal } from './modal_actions';
+import { fetchTeamChannels } from './channel_actions';
 
 // REDUCER CONSTANTS -----------------------------
 
@@ -82,7 +83,12 @@ export const fetchOneTeam = (teamId) => (dispatch) => {
 export const fetchUserTeams = () => (dispatch) => {
   return APIUtil.fetchUserTeams()
     .then(
-      (resp) => dispatch(receiveAllTeams(resp)),
+      (resp) => {
+        dispatch(receiveAllTeams(resp));
+        if (resp[Object.keys(resp)[0]]){
+          dispatch(fetchTeamChannels(resp[Object.keys(resp)[0]].id))
+        }
+      },
       (errors) => dispatch(receiveErrors(errors.responseJSON)));
 };
 

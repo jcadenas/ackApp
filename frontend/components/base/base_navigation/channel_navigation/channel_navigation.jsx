@@ -15,25 +15,16 @@ class ChannelNavigation extends React.Component {
   }
 
   componentDidMount() {
-    if (!this.props.baseCurrentChannelId) {
-      const currentTeamId = this.props.match.params.team_id;
-      this.props.fetchTeamChannels(currentTeamId);
-    }
   }
 
   componentWillReceiveProps(newProps){
-    let oldChannels = this.props.teamChannels;
-    let newChannels = newProps.teamChannels;
-    if (this.props.teamChannels[Object.keys(newProps.teamChannels)[0]] === undefined && newProps.teamChannels[Object.keys(newProps.teamChannels)[0]] !== undefined) {
-      newProps.history.push(`/messages/${this.props.match.params.team_id}/${newProps.teamChannels[Object.keys(newProps.teamChannels)[0]].id}`)
-    };
   }
 
   isSelected(channelId){
     if (channelId === this.props.baseCurrentChannelId){
       return 'channel-nav-list-item-selected';
     } else {
-      return '';
+      return 'channel-nav-list-item-unselected';
     }
   }
 
@@ -42,7 +33,7 @@ class ChannelNavigation extends React.Component {
       const switchChannels = [];
       this.props.userTeamChannels.forEach((channelId) => {
         switchChannels.push(
-          <li key={`${this.props.currentChannelId}`} className={`${this.isSelected(channelId)}`}>
+          <li key={channelId} className={`${this.isSelected(channelId)}`}>
             <Link to={`/messages/${this.props.baseCurrentTeamId}/${channelId}`}>
               <span className='channel-nav-hash'>#</span>
               <span className='switch-to-channel'>{this.props.teamChannels[channelId].name}</span>
