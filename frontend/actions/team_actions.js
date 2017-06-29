@@ -9,6 +9,7 @@ export const RECEIVE_ALL_TEAMS = 'RECEIVE_ALL_TEAMS';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const DESTROYED_TEAM = 'DESTROYED_TEAM';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const UPDATED_ONE_TEAM = 'UPDATED_ONE_TEAM';
 
 
 
@@ -22,6 +23,13 @@ export const receiveOneTeam = (resp) => {
     team: resp.team,
     user: resp.user,
     channel: resp.channel
+  });
+};
+
+export const updatedOneTeam = (team) => {
+  return ({
+    type: UPDATED_ONE_TEAM,
+    team
   });
 };
 
@@ -93,7 +101,7 @@ export const fetchUserTeams = () => (dispatch) => {
 export const updateOneTeam = (team) => (dispatch) => {
   return APIUtil.updateOneTeam(team)
     .then(
-      (resp) => dispatch(receiveOneTeam(resp)),
+      (resp) => dispatch(updatedOneTeam(resp)),
       (errors) => dispatch(receiveErrors(errors.responseJSON)))
     .then(
       () => dispatch(collapseEditTeamModal())

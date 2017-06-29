@@ -3,10 +3,12 @@ import {
   RECEIVE_ALL_TEAMS,
   RECEIVE_ERRORS,
   DESTROYED_TEAM,
-  CLEAR_ERRORS
+  CLEAR_ERRORS,
+  UPDATED_ONE_TEAM
 } from '../actions/team_actions';
 import {
-  DESTROYED_MEMBERSHIP
+  DESTROYED_MEMBERSHIP,
+  CREATED_ONE_MEMBERSHIP
 } from '../actions/membership_actions';
 import { DESTROYED_SESSION } from '../actions/session_actions';
 import { RECEIVE_ONE_CHANNEL } from '../actions/channel_actions';
@@ -23,6 +25,16 @@ const TeamReducer = (state = defaultState, action) => {
   switch(action.type){
 
     case RECEIVE_ONE_TEAM: {
+      newState = merge({}, state, {entities: { [action.team.id]: action.team}});
+      return newState;
+    }
+
+    case UPDATED_ONE_TEAM: {
+      newState = merge({}, state, {entities: { [action.team.id]: action.team}});
+      return newState;
+    }
+
+    case CREATED_ONE_MEMBERSHIP: {
       newState = merge({}, state, {entities: { [action.team.id]: action.team}});
       return newState;
     }

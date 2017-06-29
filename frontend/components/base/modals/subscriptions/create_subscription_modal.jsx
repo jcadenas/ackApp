@@ -28,7 +28,7 @@ class CreateSubscriptionModal extends React.Component {
 
   listItemsDisplay() {
     let listItemsToDisplay = this.props.nonUserTeamChannelsArr.map((channelId) => (
-      <CreateSubscriptionListItemContainer channelId={channelId} />
+      <CreateSubscriptionListItemContainer key={channelId} channelId={channelId} />
     ));
 
     return listItemsToDisplay;

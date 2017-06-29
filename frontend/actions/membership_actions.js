@@ -15,7 +15,7 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 export const createdOneMembership = (team) => {
   return ({
-    type: RECEIVE_ONE_TEAM,
+    type: CREATED_ONE_MEMBERSHIP,
     team
   });
 };
