@@ -2,7 +2,11 @@ import React from 'react';
 
 const BaseChannelActivity = () => {
   return (
-    <h1>Hello from Base Channel Activity!</h1>
+    <div className='base-channel-activity'>
+      <div className='channel-detail'>Hello from Base Channel Detail!</div>
+      <div className='message-thread'>Hello from Base Message Thread!</div>
+      <div className='message-form'>Hello from Base Message Form!</div>
+    </div>
   );
 }
 
