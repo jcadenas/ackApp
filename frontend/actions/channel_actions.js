@@ -16,10 +16,12 @@ export const CLEAR_CHANNEL_ERRORS = 'CLEAR_CHANNEL_ERRORS';
 // OBJECT ACTION CREATORS -----------------------------
 
 
-export const receiveOneChannel = (channel) => {
+export const receiveOneChannel = (channel_user_team) => {
   return ({
     type: RECEIVE_ONE_CHANNEL,
-    channel
+    channel: channel_user_team.channel,
+    user: channel_user_team.user,
+    team: channel_user_team.team
   });
 };
 

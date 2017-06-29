@@ -7,11 +7,11 @@ import { nonUserTeamChannels } from '../../../../selectors/selectors';
 
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return ({
     teamChannels: state.channels.entities,
     session: state.session,
-    nonUserTeamChannels: nonUserTeamChannels(state)
+    nonUserTeamChannelsArr: nonUserTeamChannels(state, ownProps)
   });
 };
 

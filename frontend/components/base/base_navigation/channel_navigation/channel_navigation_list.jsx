@@ -10,7 +10,7 @@ class ChannelNavigationList extends React.Component {
       const switchChannels = [];
       this.props.userTeamChannels.forEach((channelId) => {
         switchChannels.push(
-          <ChannelNavigationListItem teamId={this.props.match.params.team_id} listChannelId={channelId} baseCurrentChannelId={this.props.baseCurrentChannelId} />
+          <ChannelNavigationListItem teamId={this.props.match.params.team_id} listChannelId={channelId} baseCurrentChannelId={this.props.match.params.channel_id} />
         );
       });
       return switchChannels;
@@ -20,7 +20,6 @@ class ChannelNavigationList extends React.Component {
   }
 
   render() {
-
     return (
         <ul className='channel-navigation-list'>
           {this.listItems()}
@@ -31,9 +30,7 @@ class ChannelNavigationList extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-
   return({
-    baseCurrentChannelId: ownProps.match.params.channel_id,
     userTeamChannels: userTeamChannels(state, ownProps)
   });
 };

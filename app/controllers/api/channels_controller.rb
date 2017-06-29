@@ -13,7 +13,9 @@ class Api::ChannelsController < ApplicationController
     @channel = Channel.new(channel_params)
     if @channel.save
       @subscription = Subscription.create!({user_id: current_user.id, channel_id: @channel.id})
-      render :show
+      @team = Team.find(params[:channel][:team_id])
+      @user = current_user
+      render :create
     else
       render json: @channel.errors.full_messages, status: 422
     end

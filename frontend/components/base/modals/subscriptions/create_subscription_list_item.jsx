@@ -32,19 +32,23 @@ class CreateSubscriptionListItem extends React.Component {
 
   render() {
     const currentChannel = this.currentChannel();
-    return (
-      <li className='create-subscription-list-item'>
-        <form onSubmit={this.handleSubmit} className='create-subscription-list-item-form'>
-          <div className='create-subscription-list-item-description'>
-            <span className='create-subscription-list-item-name'>{currentChannel.name}</span>
-            <span className='create-subscription-list-item-purpose'>{currentChannel.purpose}</span>
-          </div>
-          <div className='create-subscription-form-buttons form-buttons'>
-            <button className='form-join-channel-button'>Join</button>
-          </div>
-        </form>
-      </li>
-    );
+    if (currentChannel){
+      return (
+        <li className='create-subscription-list-item'>
+          <form onSubmit={this.handleSubmit} className='create-subscription-list-item-form'>
+            <div className='create-subscription-list-item-description'>
+              <span className='create-subscription-list-item-name'># {currentChannel.name}</span>
+              <span className='create-subscription-list-item-purpose'>purpose: {currentChannel.purpose}</span>
+            </div>
+            <div className='create-subscription-form-buttons'>
+              <button className='form-join-channel-button'>Join</button>
+            </div>
+          </form>
+        </li>
+      );
+    } else {
+      return <span></span>
+    }
   }
 
 

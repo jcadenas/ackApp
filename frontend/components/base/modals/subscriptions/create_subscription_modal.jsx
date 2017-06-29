@@ -27,8 +27,7 @@ class CreateSubscriptionModal extends React.Component {
   }
 
   listItemsDisplay() {
-
-    let listItemsToDisplay = this.props.nonUserTeamChannels.map((channelId) => (
+    let listItemsToDisplay = this.props.nonUserTeamChannelsArr.map((channelId) => (
       <CreateSubscriptionListItemContainer channelId={channelId} />
     ));
 
@@ -46,7 +45,7 @@ class CreateSubscriptionModal extends React.Component {
             <p className='create-subscription-form-blerb form-blerb'>Find and Join the Channels that you would like...to...join...? And start chattin!</p>
             <div className="create-subscription-form form">
               <br/>
-              <ul>
+              <ul className='create-subscription-list'>
                 {this.listItemsDisplay()}
               </ul>
               <br/>

@@ -23,6 +23,10 @@
   vertical-align: middle;
 }
 
+.nav-header-title:hover {
+  color: rgb(255, 255, 255);
+}
+
 .nav-header-create {
   font-size: 18px;
   opacity: 0.4;
@@ -30,6 +34,10 @@
   margin-top: 4px;
   vertical-align: middle;
   cursor: pointer;
+}
+
+.nav-header-create:hover {
+  opacity: 1;
 }
 
 .channel-navigation-list li {
