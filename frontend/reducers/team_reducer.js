@@ -9,6 +9,7 @@ import {
   DESTROYED_MEMBERSHIP
 } from '../actions/membership_actions';
 import { DESTROYED_SESSION } from '../actions/session_actions';
+import { RECEIVE_ONE_CHANNEL } from '../actions/channel_actions';
 import { merge } from 'lodash';
 
 const defaultState = {
@@ -22,6 +23,11 @@ const TeamReducer = (state = defaultState, action) => {
   switch(action.type){
 
     case RECEIVE_ONE_TEAM: {
+      newState = merge({}, state, {entities: { [action.team.id]: action.team}});
+      return newState;
+    }
+
+    case RECEIVE_ONE_CHANNEL: {
       newState = merge({}, state, {entities: { [action.team.id]: action.team}});
       return newState;
     }

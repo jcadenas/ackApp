@@ -144,6 +144,76 @@
   color: rgb(235, 34, 71);
 }
 
+.form-join-channel-button {
+  background: rgb(42, 178, 123);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19.2px;
+  padding: 14px 18px 16px 18px;
+  text-align: center;
+  margin-top: 11px;
+}
+
+.form-join-channel-button:hover {
+  background: rgb(39, 173, 119);
+}
+
+.form-submit:hover {
+  background: rgb(39, 173, 119);
+}
+
+.create-subscription-list {
+  height: 260px;
+  overflow: scroll;
+  padding: 20px;
+}
+
+.create-subscription-list-item-name, .create-subscription-list-item-purpose {
+  display: block;
+}
+
+.create-subscription-list-item-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.create-subscription-list-item-description {
+  display: inline-block;
+}
+
+.create-subscription-list-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 20px;
+
+}
+.create-subscription-list-item:first-child {
+  border-top: none;
+
+}
+
+.create-subscription-list-item-name {
+  display: block;
+  box-sizing: border-box;
+  color: rgb(44, 45, 48);
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 41px;
+  margin-bottom: 16px;
+}
+
+.create-subscription-list-item-purpose {
+  box-sizing: border-box;
+  display: block;
+  color: rgb(113, 114, 116);
+  font-size: 12.8px;
+  line-height: 16px;
+  margin-top: 4px;
+}
 
 
 

@@ -4,7 +4,11 @@ import {
   COLLAPSE_EDIT_TEAM_MODAL,
   COLLAPSE_CREATE_TEAM_MODAL,
   EXPAND_CREATE_MEMBERSHIP_MODAL,
-  COLLAPSE_CREATE_MEMBERSHIP_MODAL
+  COLLAPSE_CREATE_MEMBERSHIP_MODAL,
+  EXPAND_CREATE_CHANNEL_MODAL,
+  COLLAPSE_CREATE_CHANNEL_MODAL,
+  EXPAND_CREATE_SUBSCRIPTION_MODAL,
+  COLLAPSE_CREATE_SUBSCRIPTION_MODAL
  } from '../actions/modal_actions';
 import { merge } from 'lodash';
 
@@ -12,6 +16,8 @@ import { merge } from 'lodash';
 export const EDIT_TEAM_MODAL = 'EDIT_TEAM_MODAL';
 export const CREATE_TEAM_MODAL = 'CREATE_TEAM_MODAL';
 export const CREATE_MEMBERSHIP_MODAL = 'CREATE_MEMBERSHIP_MODAL';
+export const CREATE_CHANNEL_MODAL = 'CREATE_CHANNEL_MODAL';
+export const CREATE_SUBSCRIPTION_MODAL = 'CREATE_SUBSCRIPTION_MODAL';
 
 const defaultState = {};
 
@@ -50,6 +56,25 @@ const ModalReducer = (state = defaultState, action) => {
 
     case COLLAPSE_CREATE_MEMBERSHIP_MODAL: {
       newState = merge({}, state, {CREATE_MEMBERSHIP_MODAL: false});
+      return newState;
+    }
+
+    case EXPAND_CREATE_CHANNEL_MODAL: {
+      newState = merge({}, state, {CREATE_CHANNEL_MODAL: true});
+      return newState;
+    }
+
+    case COLLAPSE_CREATE_CHANNEL_MODAL: {
+      newState = merge({}, state, {CREATE_CHANNEL_MODAL: false});
+      return newState;
+    }
+    case EXPAND_CREATE_SUBSCRIPTION_MODAL: {
+      newState = merge({}, state, {CREATE_SUBSCRIPTION_MODAL: true});
+      return newState;
+    }
+
+    case COLLAPSE_CREATE_SUBSCRIPTION_MODAL: {
+      newState = merge({}, state, {CREATE_SUBSCRIPTION_MODAL: false});
       return newState;
     }
 

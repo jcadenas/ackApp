@@ -6,7 +6,7 @@ class Api::MembershipsController < ApplicationController
       @membership = Membership.new({ user_id: @newMembershipUser.id, team_id: params[:membership][:team_id]})
       if @membership.save
         @team = Team.find(params[:membership][:team_id])
-        render 'api/teams/show';
+        render 'api/teams/show'
       else
         render json: @membership.errors.full_messages, status: 422
       end

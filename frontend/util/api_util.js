@@ -83,11 +83,59 @@ export const destroyMembership = (team_id) => {
   });
 };
 
+// CHANNELS API -----------------------------
 
+export const createChannel = (channel) => {
+  return $.ajax({
+    type: 'POST',
+    url: '/api/channels',
+    data: { channel }
+  });
+};
 
+export const destroyChannel = (channel_id) => {
+  return $.ajax({
+    type: 'DELETE',
+    url: `/api/channels/${channel_id}`
+  });
+};
 
+export const fetchTeamChannels = (team_id) => {
+  return $.ajax({
+    url: `/api/teams/${team_id}/channels`
+  });
+};
 
+export const fetchOneChannel = (channel_id) => {
+  return $.ajax({
+    url: `/api/channels/${channel_id}`
+  });
+};
 
+export const updateOneChannel = (channel) => {
+  return $.ajax({
+    type: 'PATCH',
+    url: `/api/channels/${channel.id}`,
+    data: { channel }
+  });
+};
+
+// SUBSCRIPTIONS API -----------------------------
+
+export const createSubscription = (subscription) => {
+  return $.ajax({
+    type: 'POST',
+    url: '/api/subscriptions',
+    data: { subscription }
+  });
+};
+
+export const destroySubscription = (channel_id) => {
+  return $.ajax({
+    type: 'DELETE',
+    url: `/api/subscriptions/${channel_id}`
+  });
+};
 
 
 

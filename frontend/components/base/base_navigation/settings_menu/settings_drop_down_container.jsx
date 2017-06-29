@@ -10,7 +10,13 @@ const mapDispatchToProps = (dispatch) => {
   });
 }
 
+const mapStateToProps = (state, ownProps) => {
+  return({
+    baseCurrentTeamId: ownProps.baseCurrentTeamId
+  });
+}
+
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(SettingsDropDown);

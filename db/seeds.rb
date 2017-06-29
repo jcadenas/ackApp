@@ -46,3 +46,76 @@ membership1 = Membership.create!({ member: user1, team: team3 })
 membership12 = Membership.create!({ member: user9, team: team3 })
 
 membership13 = Membership.create!({ member: user9, team: team4 })
+
+
+Channel.destroy_all
+
+channel1 = Channel.create!({team: team1 , name: 'general'})
+channel2 = Channel.create!({team: team1 , name: 'gaming-ship'})
+channel3 = Channel.create!({team: team1 , name: 'company-xmas-party'})
+channel4 = Channel.create!({team: team1 , name: 'company-credit-card'})
+channel5 = Channel.create!({team: team1 , name: 'sheep-1', purpose: 'ya lost the sheep'})
+channel16 = Channel.create!({team: team1 , name: 'sheep-2', purpose: 'ya lost the sheep'})
+channel17 = Channel.create!({team: team1 , name: 'sheep-3', purpose: 'ya lost the sheep'})
+
+channel6 = Channel.create!({team: team2 , name: 'general'})
+channel7 = Channel.create!({team: team2 , name: 'health-code-violations'})
+channel8 = Channel.create!({team: team2 , name: 'embezzlement'})
+channel9 = Channel.create!({team: team2 , name: 'cartoon-spin-offs'})
+
+channel10 = Channel.create!({team: team3 , name: 'general'})
+channel11 = Channel.create!({team: team3 , name: 'ideas'})
+channel12 = Channel.create!({team: team3 , name: 'coffee-break'})
+
+channel13 = Channel.create!({team: team4 , name: 'general'})
+channel14 = Channel.create!({team: team4 , name: 'leading-male-parts'})
+channel15 = Channel.create!({team: team4 , name: 'blue-man-group'})
+
+
+Subscription.destroy_all
+
+subscription1 = Subscription.create!({ subscriber: user1, channel: channel1 })
+subscription2 = Subscription.create!({ subscriber: user1, channel: channel2 })
+subscription3 = Subscription.create!({ subscriber: user1, channel: channel3 })
+subscription4 = Subscription.create!({ subscriber: user1, channel: channel4 })
+subscription5 = Subscription.create!({ subscriber: user1, channel: channel6 })
+subscription6 = Subscription.create!({ subscriber: user1, channel: channel7 })
+subscription7 = Subscription.create!({ subscriber: user1, channel: channel8 })
+subscription8 = Subscription.create!({ subscriber: user1, channel: channel9 })
+subscription9 = Subscription.create!({ subscriber: user1, channel: channel10 })
+subscription10 = Subscription.create!({ subscriber: user1, channel: channel11 })
+subscription11 = Subscription.create!({ subscriber: user1, channel: channel12 })
+
+subscription12 = Subscription.create!({ subscriber: user9, channel: channel10 })
+subscription13 = Subscription.create!({ subscriber: user9, channel: channel11 })
+subscription14 = Subscription.create!({ subscriber: user9, channel: channel12 })
+
+subscription15 = Subscription.create!({ subscriber: user2, channel: channel1 })
+subscription16 = Subscription.create!({ subscriber: user2, channel: channel2 })
+subscription17 = Subscription.create!({ subscriber: user2, channel: channel3 })
+subscription18 = Subscription.create!({ subscriber: user2, channel: channel4 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Bottom of file

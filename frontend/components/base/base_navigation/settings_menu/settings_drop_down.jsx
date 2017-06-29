@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import UserSettingsContainer from './user_settings/user_settings_container';
 import CurrentTeamWrapperContainer from './current_team_settings/current_team_wrapper_container';
 import SwitchTeamsContainer from './switch_teams/switch_teams_container';
@@ -17,8 +18,8 @@ class SettingsDropDown extends React.Component {
     return(
       <section className='settings-drop-down'>
         <UserSettingsContainer />
-        <CurrentTeamWrapperContainer />
-        <SwitchTeamsContainer />
+        <CurrentTeamWrapperContainer baseCurrentTeamId={this.props.baseCurrentTeamId} />
+        <SwitchTeamsContainer baseCurrentTeamId={this.props.baseCurrentTeamId} />
         <CreateTeamSettingsContainer />
       </section>
     );

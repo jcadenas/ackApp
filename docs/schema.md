@@ -22,8 +22,8 @@
 
 | column      | type      | database-level validations | model-level validations |
 |-------------|-----------|----------------------------|-------------------------|
-| name        | `string`  |    `null-false`            |   `unique` `presence`   |
-| topic       | `string`  |                            |                         |
+| name        | `string`  |       `null-false`         |   `unique` `presence`   |
+| purpose     | `string`  |                            |                         |
 | team_id     | `integer` |                            |                         |
 
 *Channel Model Associations:*

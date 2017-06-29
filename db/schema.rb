@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170622230418) do
+ActiveRecord::Schema.define(version: 20170627135430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "channels", force: :cascade do |t|
+    t.integer  "team_id",    null: false
+    t.string   "name",       null: false
+    t.string   "purpose"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "channels", ["team_id", "name"], name: "index_channels_on_team_id_and_name", unique: true, using: :btree
 
   create_table "memberships", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -24,6 +34,15 @@ ActiveRecord::Schema.define(version: 20170622230418) do
   end
 
   add_index "memberships", ["user_id", "team_id"], name: "index_memberships_on_user_id_and_team_id", unique: true, using: :btree
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer  "channel_id", null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "subscriptions", ["user_id", "channel_id"], name: "index_subscriptions_on_user_id_and_channel_id", unique: true, using: :btree
 
   create_table "teams", force: :cascade do |t|
     t.string   "name",        null: false
