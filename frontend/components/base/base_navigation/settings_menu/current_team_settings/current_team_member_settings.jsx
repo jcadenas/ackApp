@@ -9,11 +9,11 @@ class CurrentTeamMemberSettings extends React.Component {
 
   handleLeaveTeam(e) {
     e.stopPropagation();
-    this.props.destroyMembership(this.props.baseCurrentTeamId);
+    this.props.destroyMembership(this.props.currentTeam.id);
   }
 
   current_team_name() {
-    const currentTeamName = this.props.teams[this.props.baseCurrentTeamId].name;
+    const currentTeamName = this.props.teams[this.props.currentTeam.id].name;
     return currentTeamName;
   }
 

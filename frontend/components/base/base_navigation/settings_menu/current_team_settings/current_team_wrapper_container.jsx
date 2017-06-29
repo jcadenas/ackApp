@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import CurrentTeamWrapper from './current_team_wrapper';
+import { currentTeam } from '../../../../../selectors/selectors';
 
 
 const mapStateToProps = (state, ownProps) => {
   return ({
     current_user: state.session.current_user,
-    teams: state.teams.entities,
-    baseCurrentTeamId: ownProps.baseCurrentTeamId
+    currentTeam: state.teams.entities[ownProps.baseCurrentTeamId]
   });
 }
 

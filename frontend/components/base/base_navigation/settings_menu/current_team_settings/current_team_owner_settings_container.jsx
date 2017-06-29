@@ -8,11 +8,13 @@ import {
   collapseCreateMembershipModal
   } from '../../../../../actions/modal_actions';
 import { destroyTeam } from '../../../../../actions/team_actions';
+import { currentTeam } from '../../../../../selectors/selectors';
 
 
 const mapStateToProps = (state, ownProps) => {
   return ({
     modals: state.modals,
+    currentTeam: currentTeam(state, ownProps),
     baseCurrentTeamId: ownProps.baseCurrentTeamId
   });
 }

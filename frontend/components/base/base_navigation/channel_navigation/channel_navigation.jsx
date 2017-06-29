@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import ChannelNavigationHeaderContainer from './channel_navigation_header_container';
+// import ChannelNavigationListItemAbstraction from './channel_navigation_list_item_abstraction';
+import ChannelNavigationList from './channel_navigation_list';
 
 class ChannelNavigation extends React.Component {
 
@@ -15,46 +17,39 @@ class ChannelNavigation extends React.Component {
   }
 
   componentDidMount() {
+    if(!this.props.teamChannels[Object.keys(this.props.teamChannels)[0]]){
+      this.props.fetchTeamChannels(this.props.match.params.team_id);
+    }
   }
 
   componentWillReceiveProps(newProps){
-  }
-
-  isSelected(channelId){
-    if (channelId === this.props.baseCurrentChannelId){
-      return 'channel-nav-list-item-selected';
-    } else {
-      return 'channel-nav-list-item-unselected';
+    if (this.props.teamChannels[Object.keys(this.props.teamChannels)[0]] === undefined && newProps.teamChannels[Object.keys(newProps.teamChannels)[0]] !== undefined){
+      newProps.history.push(`/messages/${this.props.match.params.team_id}/${newProps.teamChannels[Object.keys(newProps.teamChannels)[0]].id}`);
     }
   }
 
-  listItems () {
-    if (this.props.baseCurrentChannelId){
-      const switchChannels = [];
-      this.props.userTeamChannels.forEach((channelId) => {
-        switchChannels.push(
-          <li key={channelId} className={`${this.isSelected(channelId)}`}>
-            <Link to={`/messages/${this.props.baseCurrentTeamId}/${channelId}`}>
-              <span className='channel-nav-hash'>#</span>
-              <span className='switch-to-channel'>{this.props.teamChannels[channelId].name}</span>
-            </Link>
-          </li>
-        );
-      });
-      return switchChannels;
-    } else {
-      return undefined
-    }
-  }
+
+
+  // listItems () {
+  //   if (this.props.teamChannels[Object.keys(this.props.teamChannels)[0]]){
+  //     const switchChannels = [];
+  //     this.props.userTeamChannels.forEach((channelId) => {
+  //       switchChannels.push(
+  //         <Route path='/messages/:team_id/:channel_id' component={ChannelNavigationListItemAbstraction} />
+  //       );
+  //     });
+  //     return switchChannels;
+  //   } else {
+  //     return undefined;
+  //   }
+  // }
 
   render() {
 
     return (
       <section className='channel-navigation'>
         <ChannelNavigationHeaderContainer />
-        <ul className='channel-navigation-list'>
-          {this.listItems()}
-        </ul>
+        <Route path='/messages/:team_id/:channel_id' component={ChannelNavigationList} />
       </section>
     );
   }

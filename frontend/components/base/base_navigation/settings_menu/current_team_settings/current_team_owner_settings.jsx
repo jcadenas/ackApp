@@ -14,7 +14,7 @@ class CurrentTeamOwnerSettings extends React.Component {
 
   handleDeleteTeam(e) {
     e.stopPropagation();
-    const teamId = this.props.baseCurrentTeamId;
+    const teamId = this.props.currentTeam.id;
     this.props.destroyTeam(teamId);
   }
 

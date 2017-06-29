@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import SettingsDropDownContainer from './settings_drop_down_container';
+import SettingsMenuHeader from './settings_menu_header';
 
 
 class SettingsMenu extends React.Component {
@@ -13,22 +14,18 @@ class SettingsMenu extends React.Component {
   }
 
   currentTeam() {
-    const currenTeamId = this.props.baseCurrentTeamId;
-    const currentTeam = this.props.teams[currenTeamId];
-    return currentTeam;
   }
 
   componentDidMount() {
-    if(!this.props.baseCurrentTeamId){
-      this.props.fetchUserTeams();
-    }
+  }
+
+  componentWillUnmount() {
+    this.collapseDropDown();
   }
 
   componentWillReceiveProps(newProps) {
-    // if (this.props.teams[Object.keys(this.props.teams)[0]] === undefined && newProps.teams[Object.keys(newProps.teams)[0]] !== undefined) {
-    //   this.props.history.push(`/messages/${newProps.teams[Object.keys(newProps.teams)[0]].id}`);
-    // }
-    if (this.props.teams[Object.keys(this.props.teams)[0]] === undefined && newProps.teams[Object.keys(newProps.teams)[0]] !== undefined){
+    this.collapseDropDown();
+    if (Object.keys(this.props.teams).length > Object.keys(newProps.teams).length){
       newProps.history.push(`/messages/${newProps.teams[Object.keys(newProps.teams)[0]].id}`);
     }
   }
@@ -51,7 +48,7 @@ class SettingsMenu extends React.Component {
     if(this.state.expanded){
       return (
         <div>
-          <SettingsDropDownContainer baseCurrentTeamId={this.props.baseCurrentTeamId}/>
+          <SettingsDropDownContainer baseCurrentTeamId={this.props.match.params.team_id}/>
           <div className='clear-drop-down-layer' onClick={this.collapseDropDown}></div>
         </div>
       );
@@ -62,11 +59,11 @@ class SettingsMenu extends React.Component {
 
 
   render() {
-    if (this.props.baseCurrentTeamId){
+    if(this.props.teams[this.props.match.params.team_id]) {
       return(
         <section className='settings-menu' onClick={this.expandDropDown}>
           <span className='settings-menu-header'>
-            <span>{this.props.teams[this.props.baseCurrentTeamId].name}</span><i className="fa fa-angle-down" aria-hidden="true"></i>
+            <span>{this.props.teams[this.props.match.params.team_id].name}</span><i className="fa fa-angle-down" aria-hidden="true"></i>
           </span>
           <span className='settings-menu-username'>
             <i className="fa fa-circle" aria-hidden="true"></i><span>{this.props.current_user.username}</span>
@@ -75,12 +72,11 @@ class SettingsMenu extends React.Component {
         </section>
       );
     } else {
-      return <span>Settings Menu Nada.</span>;
+      return <span>settings_menu_nada</span>
     }
   }
 
 
 }
-
 
 export default SettingsMenu;

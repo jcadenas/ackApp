@@ -12,11 +12,7 @@ const App = () => {
   return (
     <header>
       <Route exact path='/' component={Landing} />
-      <Switch>
-        <ProtectedRoute path='/messages/:team_id/:channel_id' component={BaseContainer} />
-        // <ProtectedRoute path='/messages/:team_id' component={BaseContainer} />
-        <ProtectedRoute path='/messages' component={BaseContainer} />
-      </Switch>
+      <ProtectedRoute path='/messages' component={BaseContainer} />
       <AuthRoute path='/signup' component={SessionFormContainer} />
       <AuthRoute path='/login' component={SessionFormContainer} />
     </header>

@@ -83,13 +83,9 @@ export const fetchOneTeam = (teamId) => (dispatch) => {
 export const fetchUserTeams = () => (dispatch) => {
   return APIUtil.fetchUserTeams()
     .then(
-      (resp) => {
-        dispatch(receiveAllTeams(resp));
-        if (resp[Object.keys(resp)[0]]){
-          dispatch(fetchTeamChannels(resp[Object.keys(resp)[0]].id))
-        }
-      },
-      (errors) => dispatch(receiveErrors(errors.responseJSON)));
+      (resp) => dispatch(receiveAllTeams(resp)),
+      (errors) => dispatch(receiveErrors(errors.responseJSON))
+    );
 };
 
 export const updateOneTeam = (team) => (dispatch) => {

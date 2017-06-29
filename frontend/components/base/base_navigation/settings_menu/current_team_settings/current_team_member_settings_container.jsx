@@ -2,12 +2,13 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import CurrentTeamMemberSettings from './current_team_member_settings';
 import { destroyMembership } from '../../../../../actions/membership_actions';
+import { currentTeam } from '../../../../../selectors/selectors';
 
 
 const mapStateToProps = (state, ownProps) => {
   return ({
     teams: state.teams.entities,
-    baseCurrentTeamId: ownProps.baseCurrentTeamId
+    currentTeam: currentTeam(state, ownProps)
   });
 }
 

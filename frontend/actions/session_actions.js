@@ -50,10 +50,7 @@ export const createUser = (user) => (dispatch) => {
 export const createSession = (user) => (dispatch) => {
   return (
     APIUtil.createSession(user).then(
-      (resp) => {
-        dispatch(receiveOneUser(resp));
-        dispatch(fetchUserTeams());
-      },
+      (resp) => dispatch(receiveOneUser(resp)),
       (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
   );

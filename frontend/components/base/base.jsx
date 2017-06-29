@@ -31,7 +31,7 @@ class Base extends React.Component {
   editTeamModalDisplay(){
     if (this.props.modals[EDIT_TEAM_MODAL]){
       return (
-        <Route path='/messages/:team_id/:channel_id' component={EditTeamModalContainer} />
+        <Route path='/messages/:team_id' component={EditTeamModalContainer} />
       );
     } else {
       return undefined;
@@ -41,7 +41,7 @@ class Base extends React.Component {
   createMembershipModalDisplay(){
     if (this.props.modals[CREATE_MEMBERSHIP_MODAL]){
       return (
-        <Route path='/messages/:team_id/:channel_id' component={CreateMembershipModalContainer} />
+        <Route path='/messages/:team_id' component={CreateMembershipModalContainer} />
       );
     } else {
       return undefined;
@@ -72,33 +72,34 @@ class Base extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.props.channels[Object.keys(this.props.channels)[0]] === undefined && newProps.channels[Object.keys(newProps.channels)[0]]){
-      newProps.history.push(`/messages/${newProps.teams[Object.keys(this.props.teams)[0]].id}/${newProps.channels[Object.keys(newProps.channels)[0]].id}`);
-    }
-
-    if (this.props.match.params.channel_id) {
-      
-    }
+    // if (this.props.channels[Object.keys(this.props.channels)[0]] === undefined && newProps.channels[Object.keys(newProps.channels)[0]]){
+    //   newProps.history.push(`/messages/${newProps.teams[Object.keys(this.props.teams)[0]].id}/${newProps.channels[Object.keys(newProps.channels)[0]].id}`);
+    // }
+    //
+    // if (this.props.match.params.channel_id) {
+    //
+    // }
 
   }
 
 
   render(){
-    if(this.props.baseCurrentChannelId){
-      return(
-        <div className='all-of-base'>
-          {this.createTeamModalDisplay()}
-          {this.editTeamModalDisplay()}
-          {this.createMembershipModalDisplay()}
-          {this.createChannelModalDisplay()}
-          {this.createSubscriptionModalDisplay()}
-          <BaseNavigation baseCurrentTeamId={this.props.baseCurrentTeamId} baseCurrentChannelId={this.props.baseCurrentChannelId}/>
-          <BaseChannelActivity />
-        </div>
-      );
-    } else {
-      return <span>Base Nada</span>
-    }
+    // if(this.props.baseCurrentChannelId)
+    // {
+    return(
+      <div className='all-of-base'>
+        {this.createTeamModalDisplay()}
+        {this.editTeamModalDisplay()}
+        {this.createMembershipModalDisplay()}
+        {this.createChannelModalDisplay()}
+        {this.createSubscriptionModalDisplay()}
+        <BaseNavigation />
+        <BaseChannelActivity />
+      </div>
+    );
+    // } else {
+    //   return <span>Base Nada</span>
+    // }
   }
 }
 

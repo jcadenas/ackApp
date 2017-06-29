@@ -14,10 +14,14 @@ export const nonUserTeamChannels = (state, ownProps) => {
   return userTeamChannels;
 }
 
-export const firstTeamId = (state, ownProps) => {
-
+export const firstTeam = (state) => {
+  return state.teams.entities[Object.keys(state.teams.entities)[0]];
 }
 
-export const firstChannelId = (state, ownProps) => {
-  
+export const firstChannel = (state) => {
+  return state.channels.entities[Object.keys(state.channels.entities)[0]];
+}
+
+export const currentTeam = (state, ownProps) => {
+  return state.teams.entities[ownProps.match.params.team_id]
 }
