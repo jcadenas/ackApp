@@ -16,7 +16,7 @@ class ChannelNavigationListItem extends React.Component {
   render(){
     if (this.props.channels[this.props.listChannelId]) {
       return(
-        <li key={this.props.listChannelId} className={`${this.isSelected(this.props.listChannelId)}`}>
+        <li className={`${this.isSelected(this.props.listChannelId)}`}>
           <Link to={`/messages/${this.props.teamId}/${this.props.listChannelId}`}>
             <span className='channel-nav-hash'>#</span>
             <span className='switch-to-channel'>{this.props.channels[this.props.listChannelId].name}</span>

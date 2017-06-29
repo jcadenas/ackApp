@@ -10,7 +10,7 @@ class ChannelNavigationList extends React.Component {
       const switchChannels = [];
       this.props.userTeamChannels.forEach((channelId) => {
         switchChannels.push(
-          <ChannelNavigationListItem teamId={this.props.match.params.team_id} listChannelId={channelId} baseCurrentChannelId={this.props.match.params.channel_id} />
+          <ChannelNavigationListItem key={channelId} teamId={this.props.match.params.team_id} listChannelId={channelId} baseCurrentChannelId={this.props.match.params.channel_id} />
         );
       });
       return switchChannels;

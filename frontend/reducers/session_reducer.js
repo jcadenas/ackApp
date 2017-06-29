@@ -5,6 +5,7 @@ import {
   CLEAR_ERRORS
   } from '../actions/session_actions';
 import { RECEIVE_ONE_CHANNEL } from '../actions/channel_actions';
+import { RECEIVE_ONE_TEAM } from '../actions/team_actions';
 import { CREATED_ONE_SUBSCRIPTION } from '../actions/subscription_actions';
 import { merge } from 'lodash';
 
@@ -43,8 +44,13 @@ const SessionReducer = (state = defaultState, action) => {
       newState = Object.assign({}, state, { current_user: action.user });
       return newState;
     }
-
+    // AKA created a channel
     case RECEIVE_ONE_CHANNEL: {
+      newState = Object.assign({}, state, { current_user: action.user });
+      return newState;
+    }
+
+    case RECEIVE_ONE_TEAM: {
       newState = Object.assign({}, state, { current_user: action.user });
       return newState;
     }

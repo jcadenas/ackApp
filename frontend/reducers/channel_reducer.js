@@ -5,8 +5,8 @@ import {
   DESTROYED_CHANNEL,
   CLEAR_CHANNEL_ERRORS
 } from '../actions/channel_actions';
-import { CREATED_ONE_SUBSCRIPTION } from '../actions/subscription_actions';
-import { DESTROYED_SUBSCRIPTION } from '../actions/subscription_actions';
+import { CREATED_ONE_SUBSCRIPTION, DESTROYED_SUBSCRIPTION } from '../actions/subscription_actions';
+import { RECEIVE_ONE_TEAM } from '../actions/team_actions';
 import { DESTROYED_SESSION } from '../actions/session_actions';
 import { merge } from 'lodash';
 
@@ -58,6 +58,11 @@ const ChannelReducer = (state = defaultState, action) => {
     }
 
     case CREATED_ONE_SUBSCRIPTION: {
+      newState = Object.assign({}, state, {entities: { [action.channel.id]: action.channel}});
+      return newState;
+    }
+
+    case RECEIVE_ONE_TEAM: {
       newState = Object.assign({}, state, {entities: { [action.channel.id]: action.channel}});
       return newState;
     }

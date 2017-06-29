@@ -10,8 +10,10 @@ class Api::TeamsController < ApplicationController
     @team.user_id = current_user.id
     if @team.save
       @membership = Membership.create!({user_id:current_user.id, team_id: @team.id})
+      @user = current_user
       @channel = Channel.create!({ team_id: @team.id, name: 'general', purpose: 'general chillings and millings' })
-      render :show
+      @subscription = Subscription.create!({user_id: @user.id, channel_id: @channel.id})
+      render :create
     else
       render json: @team.errors.full_messages, status: 422
     end

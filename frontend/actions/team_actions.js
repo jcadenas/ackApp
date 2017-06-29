@@ -16,10 +16,12 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 // OBJECT ACTION CREATORS -----------------------------
 
 
-export const receiveOneTeam = (team) => {
+export const receiveOneTeam = (resp) => {
   return ({
     type: RECEIVE_ONE_TEAM,
-    team
+    team: resp.team,
+    user: resp.user,
+    channel: resp.channel
   });
 };
 

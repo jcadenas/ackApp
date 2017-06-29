@@ -27,6 +27,7 @@ const TeamReducer = (state = defaultState, action) => {
       return newState;
     }
 
+    // AKA created a channel
     case RECEIVE_ONE_CHANNEL: {
       newState = merge({}, state, {entities: { [action.team.id]: action.team}});
       return newState;
