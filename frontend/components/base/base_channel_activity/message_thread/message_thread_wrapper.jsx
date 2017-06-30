@@ -19,7 +19,7 @@ class MessageThreadWrapper extends React.Component {
   render() {
     return (
       <section className='message-thread'>
-        <MessageThreadListContainer channelMessages={this.props.channelMessages} />
+        <MessageThreadListContainer currentChannelId={this.props.currentChannelId} channelMessages={this.props.channelMessages} />
       </section>
     );
   }

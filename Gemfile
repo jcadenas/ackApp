@@ -28,6 +28,8 @@ gem 'rails_12factor'
 
 gem 'font-awesome-sass'
 
+gem 'pusher'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

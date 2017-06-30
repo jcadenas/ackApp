@@ -9,6 +9,13 @@ class Api::MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.user_id = current_user.id
     if @message.save
+      Pusher.trigger("new-message", "new-message-channel-#{@message.channel_id}", {
+        id: @message.id,
+        body: @message.body,
+        channel_id: @message.channel_id,
+        author_id: @message.user_id,
+        author_username: @message.author.username
+        })
       render :create
     else
       render json: @message.errors.full_messages, status: 422

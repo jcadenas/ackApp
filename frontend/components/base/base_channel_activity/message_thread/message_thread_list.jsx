@@ -1,6 +1,32 @@
 import React from 'react';
+import * as _ from 'lodash';
+
 
 class MessageThreadList extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      channelMessages: this.props.channelMessages
+    }
+
+  }
+
+  componentDidMount() {
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('4d8588d7933b16b4135c', {
+      cluster: 'us2',
+      encrypted: true
+    });
+
+    var channel = pusher.subscribe('new-message');
+    debugger;
+    channel.bind(`new-message-channel-${this.props.currentChannelId}`, (data) => {
+      debugger;
+      this.props.createdOneMessage(data)
+    });
+  }
 
   messageThreadListItems() {
     //debugger;
@@ -29,7 +55,7 @@ class MessageThreadList extends React.Component {
       return (
         <ul className='message-thread-list'>
           {this.messageThreadListItems()}
-           <div ref={el => this.bottom = el}></div>
+          <div ref={el => this.bottom = el}></div>
         </ul>
       );
     } else {
