@@ -8,7 +8,7 @@ class BaseChannelActivity extends React.Component {
     //debugger;
     return (
       <div className='base-channel-activity'>
-        <div className='channel-detail'>Hello from Base Channel Detail!</div>
+        <div className='channel-detail'></div>
         <MessageThreadWrapperContainer currentTeamId={this.props.match.params.team_id} currentChannelId={this.props.match.params.channel_id} />
         <MessageFormContainer currentTeamId={this.props.match.params.team_id} currentChannelId={this.props.match.params.channel_id} />
       </div>
