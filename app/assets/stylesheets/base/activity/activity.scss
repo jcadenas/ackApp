@@ -1,0 +1,86 @@
+.base-channel-activity {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 220px);
+  background-color: rgb(255, 255, 255);
+}
+
+.channel-detail {
+  display: block;
+  height: 60px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+.message-thread {
+  display: block;
+  height: calc(100vh - 60px - 64px);
+  flex-grow: 1px;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+.message-form {
+  display: block;
+  height: 64px;
+  border-left: none;
+  box-sizing: border-box;
+}
+
+.create-message-input {
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid rgb(187, 189, 191);
+  border-radius: 6px;
+  color: rgb(85, 84, 89);
+  font-size: 18px;
+  letter-spacing: normal;
+  cursor: auto;
+  padding: 12px;
+  padding-left: 32px;
+  vertical-align: middle;
+  max-width: 100%;
+  margin: 0 auto;
+  width: calc(100vw - 220px - 40px);
+}
+
+.message-thread-item-username, .message-thread-item-body {
+  display: block;
+}
+
+.message-thread-item-username {
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.message-thread-item-body {
+  cursor: text;
+  font-size: 15px;
+  line-height: 22px;
+  padding-left: 1px;
+}
+
+.message-thread-list {
+
+}
+
+.message-thread-list li {
+  padding: 10px 20px;
+}
+
+.message-thread-list li:hover {
+  background-color: rgb(249, 249, 249);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Bottom of File

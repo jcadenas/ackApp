@@ -53,7 +53,7 @@ class MessageForm extends React.Component {
               id='body'
               value={this.state.body}
               onChange={this.handleChange('body')}
-              className="create-message-input form-input"
+              className="create-message-input"
               placeholder='Press Enter to Send'>
             </input>
           </div>
