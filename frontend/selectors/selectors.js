@@ -4,10 +4,28 @@ export const userTeamChannels = (state, ownProps) => {
   if(state.teams.entities[ownProps.match.params.team_id]){
     const teamChannelsById = state.teams.entities[ownProps.match.params.team_id].channels_by_id;
     const userChannels = state.session.current_user.channels_by_id;
-    const userTeamChannels = teamChannelsById.filter((x) => userChannels.includes(parseInt(x)));
-    return userTeamChannels;
+    const userTeamChannelsArr = teamChannelsById.filter((x) => userChannels.includes(parseInt(x)));
+    return userTeamChannelsArr;
   } else {
-    return ['userTeamChannels_failed']
+    return ['userTeamChannels_failed'];
+  }
+};
+
+export const channelMessages = (state, ownProps) => {
+  debugger;
+  if (Object.keys(state.messages.entities)[0]) {
+    const MessageKeys = Object.keys(state.messages.entities);
+
+    let channelMessagesArr = [];
+    for (let key in state.messages.entities){
+      if (state.messages.entities[key].channel_id === parseInt(ownProps.currentChannelId)) {
+        channelMessagesArr.push(state.messages.entities[key]);
+      }
+    }
+    debugger;
+    return channelMessagesArr
+  } else {
+    return undefined;
   }
 };
 
@@ -20,7 +38,7 @@ export const nonUserTeamChannels = (state, ownProps) => {
     const nonUserTeamChannelsArr = teamChannelsById.filter((x) => !userChannels.includes(parseInt(x)));
     return nonUserTeamChannelsArr;
 } else {
-  return ['nonUserTeamChannels_failed']
+  return ['nonUserTeamChannels_failed'];
 }
 };
 
@@ -33,5 +51,5 @@ export const firstChannel = (state) => {
 };
 
 export const currentTeam = (state, ownProps) => {
-  return state.teams.entities[ownProps.match.params.team_id]
+  return state.teams.entities[ownProps.match.params.team_id];
 };

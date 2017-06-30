@@ -9,8 +9,11 @@ Rails.application.routes.draw do
       resources :channels, only: [ :index ]
     end
     resources :memberships, only: [ :create, :destroy ]
-    resources :channels, only: [ :show, :destroy, :create, :update ]
+    resources :channels, only: [ :show, :destroy, :create, :update ] do
+      resources :messages, only: [ :index ]
+    end
     resources :subscriptions, only: [ :create, :destroy ]
+    resources :messages, only: [ :show, :create ]
   end
 
 end

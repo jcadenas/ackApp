@@ -5,7 +5,7 @@ import Root from './components/root';
 
 // TESTING
 import * as APIUtil from './util/api_util';
-import * as Actions from './actions/subscription_actions';
+import * as Actions from './actions/message_actions';
 
 
 
@@ -29,22 +29,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.store = store;
 
-  window.APICreateChannel = APIUtil.createChannel;
-  window.APIDestroyChannel = APIUtil.destroyChannel;
-  window.APIFetchOneChannel = APIUtil.fetchOneChannel;
-  window.APIFetchTeamChannels = APIUtil.fetchTeamChannels;
-  window.APIUpdateOneChannel = APIUtil.updateOneChannel;
-  window.APICreateSubscription = APIUtil.createSubscription;
-  window.APIDestroySubscription = APIUtil.destroySubscription;
+  window.APICreateMessage = APIUtil.createMessage;
+  // window.APIDestroyChannel = APIUtil.destroyChannel;
+  // window.APIFetchOneChannel = APIUtil.fetchOneChannel;
+  window.APIFetchChannelMessages = APIUtil.fetchChannelMessages;
+  // window.APIUpdateOneChannel = APIUtil.updateOneChannel;
+  // window.APICreateSubscription = APIUtil.createSubscription;
+  // window.APIDestroySubscription = APIUtil.destroySubscription;
   //
-  window.ActionCreateChannel = Actions.createChannel;
-  window.ActionDestroyChannel = Actions.destroyChannel;
-  window.ActionFetchOneChannel = Actions.fetchOneChannel;
-  window.ActionFetchTeamChannels = Actions.fetchTeamChannels;
-  window.ActionUpdateOneChannel = Actions.updateOneChannel;
+  window.ActionCreateMessage = Actions.createMessage;
+  // window.ActionDestroyChannel = Actions.destroyChannel;
+  // window.ActionFetchOneChannel = Actions.fetchOneChannel;
+  window.ActionFetchChannelMessages = Actions.fetchChannelMessages;
+  // window.ActionUpdateOneChannel = Actions.updateOneChannel;
 
-  window.ActionCreateSubscription = Actions.createSubscription;
-  window.ActionDestroySubscription = Actions.destroySubscription;
+  // window.ActionCreateSubscription = Actions.createSubscription;
+  // window.ActionDestroySubscription = Actions.destroySubscription;
 
 });
 

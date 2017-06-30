@@ -1,5 +1,4 @@
 import * as APIUtil from '../util/api_util';
-// TODO include modal handling for new channels
 import { collapseCreateChannelModal, collapseEditChannelModal } from './modal_actions';
 
 // REDUCER CONSTANTS -----------------------------

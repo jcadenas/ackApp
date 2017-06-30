@@ -138,7 +138,21 @@ export const destroySubscription = (channel_id) => {
 };
 
 
+// MESSAGES API -----------------------------
 
+export const createMessage = (message) => {
+  return $.ajax({
+    type: 'POST',
+    url: '/api/messages',
+    data: { message }
+  });
+};
+
+export const fetchChannelMessages = (channel_id) => {
+  return $.ajax({
+    url: `/api/channels/${channel_id}/messages`
+  });
+};
 
 
 

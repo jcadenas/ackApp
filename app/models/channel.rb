@@ -19,6 +19,7 @@ class Channel < ActiveRecord::Base
   belongs_to :team
 
   has_many :subscriptions, inverse_of: :channel, dependent: :destroy
+  has_many :messages, dependent: :destroy
   has_many :subscribers,
     through: :subscriptions,
     source: :subscriber

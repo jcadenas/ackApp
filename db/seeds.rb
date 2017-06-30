@@ -95,6 +95,32 @@ subscription16 = Subscription.create!({ subscriber: user2, channel: channel2 })
 subscription17 = Subscription.create!({ subscriber: user2, channel: channel3 })
 subscription18 = Subscription.create!({ subscriber: user2, channel: channel4 })
 
+Message.destroy_all
+
+message1 = Message.create!({ author: user1, channel: channel1, body: 'Ive made a huge mistake' })
+message2 = Message.create!({ author: user3, channel: channel1, body: 'She does this thing where she eats an egg' })
+message3 = Message.create!({ author: user3, channel: channel1, body: 'and squeezes mayonaise in her mouth' })
+message4 = Message.create!({ author: user3, channel: channel1, body: 'she calls it a mayonegg!' })
+message5 = Message.create!({ author: user2, channel: channel1, body: 'Her?' })
+message6 = Message.create!({ author: user2, channel: channel1, body: 'I dont feel so good' })
+
+message7 = Message.create!({ author: user6, channel: channel4, body: 'Who has it?' })
+message8 = Message.create!({ author: user2, channel: channel4, body: 'I do youre all cut off' })
+message9 = Message.create!({ author: user6, channel: channel4, body: 'Oh I gave you a fake one months ago now' })
+message10 = Message.create!({ author: user6, channel: channel4, body: '@GobBluth if youre buying another trick so help me' })
+message11 = Message.create!({ author: user1, channel: channel4, body: 'Illusions, mother. If Im buying another illusion' })
+message12 = Message.create!({ author: user1, channel: channel4, body: 'A trick is something a... nevermind' })
+
+message13 = Message.create!({ author: user1, channel: channel6, body: 'Gimme a Gob, guy!' })
+message14 = Message.create!({ author: user2, channel: channel6, body: 'Nope. Nuh-uh, pay up' })
+
+message15 = Message.create!({ author: user8, channel: channel7, body: 'Any paper towels anywhere?' })
+message16 = Message.create!({ author: user3, channel: channel7, body: 'I couldnt tell you how many health codes youre breaking right now' })
+
+message17 = Message.create!({ author: user8, channel: channel8, body: 'Toss a banana, take a buck. Banana. Buck!' })
+message18 = Message.create!({ author: user3, channel: channel8, body: 'Is that right?' })
+
+message19 = Message.create!({ author: user1, channel: channel3, body: 'Everyone dance. Now.' })
 
 
 

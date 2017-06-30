@@ -94,7 +94,7 @@ class Base extends React.Component {
         {this.createChannelModalDisplay()}
         {this.createSubscriptionModalDisplay()}
         <BaseNavigation />
-        <BaseChannelActivity />
+        <Route path='/messages/:team_id/:channel_id' component={BaseChannelActivity} />
       </div>
     );
     // } else {
