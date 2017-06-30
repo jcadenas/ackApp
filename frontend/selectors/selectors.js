@@ -12,7 +12,7 @@ export const userTeamChannels = (state, ownProps) => {
 };
 
 export const channelMessages = (state, ownProps) => {
-  debugger;
+  //debugger;
   if (Object.keys(state.messages.entities)[0]) {
     const MessageKeys = Object.keys(state.messages.entities);
 
@@ -22,7 +22,7 @@ export const channelMessages = (state, ownProps) => {
         channelMessagesArr.push(state.messages.entities[key]);
       }
     }
-    debugger;
+    //debugger;
     return channelMessagesArr
   } else {
     return undefined;

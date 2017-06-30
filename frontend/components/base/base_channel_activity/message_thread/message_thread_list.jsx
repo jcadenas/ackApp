@@ -3,21 +3,21 @@ import React from 'react';
 class MessageThreadList extends React.Component {
 
   messageThreadListItems() {
-    debugger;
+    //debugger;
     const messageThreadListItemsArray = this.props.channelMessages.map((message) => {
       return (
         <li key={message.id}>
-          <span className='message-thread-item-username'>{message.author_username}</span>
+          <span className='message-thread-item-username'>@ {message.author_username}</span>
           <span className='message-thread-item-body'>{message.body}</span>
         </li>
       );
     });
-    debugger;
+    //debugger;
     return messageThreadListItemsArray;
   }
 
   render() {
-    debugger;
+    //debugger;
     if(this.props.channelMessages !== undefined) {
       return (
         <ul className='message-thread-list'>

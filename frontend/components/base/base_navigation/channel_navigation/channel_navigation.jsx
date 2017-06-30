@@ -17,7 +17,7 @@ class ChannelNavigation extends React.Component {
 
   componentWillReceiveProps(newProps){
     // Handle initial fetch of Channels (no channels to some channels)
-    debugger;
+    //debugger;
     if (Object.keys(this.props.channels).length < 1 && Object.keys(newProps.channels).length > 0){
       newProps.history.push(`/messages/${this.props.match.params.team_id}/${newProps.teams[this.props.match.params.team_id].channels_by_id[0]}`);
     }

@@ -15,11 +15,18 @@ class MessageForm extends React.Component {
   componentDidMount() {
   }
 
+  componentWillReceiveProps (newProps) {
+    if (this.props.currentChannelId !== newProps.currentChannelId){
+      this.setState({channel_id: newProps.currentChannelId })
+    }
+  }
+
   handleSubmit(e) {
-    debugger;
+    //debugger;
     e.preventDefault();
     e.stopPropagation();
     const message = this.state;
+    debugger;
     this.props.createMessage(message);
     this.setState({body: ''})
   }
@@ -37,6 +44,7 @@ class MessageForm extends React.Component {
   }
 
   render() {
+    debugger;
     return (
       <div className="create-message-form-container">
         <form onSubmit={this.handleSubmit} className="create-message-form-box">
@@ -56,8 +64,5 @@ class MessageForm extends React.Component {
 
 
 }
-// <div className='create-team-form-buttons'>
-//   <button className='create-message-form-submit'>Send</button>
-// </div>
 
 export default MessageForm;

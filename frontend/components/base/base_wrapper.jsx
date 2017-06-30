@@ -24,7 +24,7 @@
 //     // const oldFirstTeam = oldTeams[Object.keys(oldTeams)[0]];
 //     // const newFirstTeam = newTeams[Object.keys(newTeams)[0]];
 //     // // const teamChannelsById = this.props.teams.channels_by_id;
-//     // // debugger;
+//     // // //debugger;
 //     // // const userChannels = this.props.session.current_user.channels_by_id;
 //     // // const channelsToDisplayById = teamChannelsById.filter((x) => userChannels.includes(x));
 //     // if (oldFirstTeam === undefined
