@@ -19,12 +19,17 @@ class MessageThreadList extends React.Component {
     return messageThreadListItemsArray;
   }
 
+  componentDidUpdate() {
+   this.bottom.scrollIntoView();
+   }
+
   render() {
     //debugger;
     if(this.props.channelMessages !== undefined) {
       return (
         <ul className='message-thread-list'>
           {this.messageThreadListItems()}
+           <div ref={el => this.bottom = el}></div>
         </ul>
       );
     } else {
