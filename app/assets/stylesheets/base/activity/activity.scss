@@ -14,7 +14,9 @@
   box-sizing: border-box;
 }
 .message-thread {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: calc(100vh - 60px - 64px);
   flex-grow: 1px;
   box-sizing: border-box;
@@ -62,7 +64,6 @@
 }
 
 .message-thread-list {
-
 }
 
 .message-thread-list li {
