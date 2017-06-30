@@ -7,8 +7,11 @@ class MessageThreadList extends React.Component {
     const messageThreadListItemsArray = this.props.channelMessages.map((message) => {
       return (
         <li key={message.id}>
-          <span className='message-thread-item-username'>{message.author_username}</span>
-          <span className='message-thread-item-body'>{message.body}</span>
+          <i className="fa fa-user-circle-o" aria-hidden="true"></i>
+          <div className='message-thread-list-item-text-container'>
+            <span className='message-thread-item-username'>{message.author_username}</span>
+            <span className='message-thread-item-body'>{message.body}</span>
+          </div>
         </li>
       );
     });

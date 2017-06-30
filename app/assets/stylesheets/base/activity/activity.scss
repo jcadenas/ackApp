@@ -4,6 +4,7 @@
   flex-direction: column;
   width: calc(100vw - 220px);
   background-color: rgb(255, 255, 255);
+  color: rgb(44, 45, 48);
 }
 
 .channel-detail {
@@ -29,16 +30,16 @@
 .create-message-input {
   display: block;
   box-sizing: border-box;
-  border: 1px solid rgb(187, 189, 191);
+  height: 37px;
+  border: 2px solid rgb(187, 189, 191);
   border-radius: 6px;
-  color: rgb(85, 84, 89);
-  font-size: 18px;
+  font-size: 15px;
   letter-spacing: normal;
   cursor: auto;
-  padding: 12px;
-  padding-left: 32px;
+  padding: 9px;
   vertical-align: middle;
   max-width: 100%;
+  color: rgb(61, 60, 64);
   margin: 0 auto;
   width: calc(100vw - 220px - 40px);
 }
@@ -65,11 +66,21 @@
 }
 
 .message-thread-list li {
-  padding: 10px 20px;
+  padding: 10px 25px;
+  display: flex;
 }
 
 .message-thread-list li:hover {
   background-color: rgb(249, 249, 249);
+}
+
+.message-thread-list-item-text-container {
+}
+
+.fa-user-circle-o {
+  font-size: 40px;
+  margin-right: 10px;
+  color: rgb(155, 158, 163);
 }
 
 
