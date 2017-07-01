@@ -10,12 +10,17 @@ class ChannelDetailWrapper extends React.Component {
       return(
         <section className='channel-detail'>
           <div className='channel-detail-display'>
-            <span><span>#</span>{this.props.currentChannel.name}</span>
+            <span className='channel-detail-header-name'>
+              <span className='channel-detail-header-name-hash'>#</span>
+              {this.props.currentChannel.name}
+            </span>
             <div>
-              <span className='channel-user-count'>
+              <div className='channel-user-count'>
                 <i className="fa fa-user-circle-o" aria-hidden="true"></i>
-                {this.props.currentChannel.subscribers_by_id.length}
-              </span>
+                <span>
+                  {this.props.currentChannel.subscribers_by_id.length}
+                </span>
+              </div>
               <span>
                 purpose: {this.props.currentChannel.purpose}
               </span>
