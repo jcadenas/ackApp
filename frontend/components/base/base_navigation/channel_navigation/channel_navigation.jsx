@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import ChannelNavigationHeaderContainer from './channel_navigation_header_container';
-// import ChannelNavigationListItemAbstraction from './channel_navigation_list_item_abstraction';
 import ChannelNavigationList from './channel_navigation_list';
 import * as _ from 'lodash';
 
@@ -17,7 +16,6 @@ class ChannelNavigation extends React.Component {
 
   componentWillReceiveProps(newProps){
     // Handle initial fetch of Channels (no channels to some channels)
-    //debugger;
     if (Object.keys(this.props.channels).length < 1 && Object.keys(newProps.channels).length > 0){
       newProps.history.push(`/messages/${this.props.match.params.team_id}/${newProps.teams[this.props.match.params.team_id].channels_by_id[0]}`);
     }

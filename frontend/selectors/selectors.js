@@ -11,10 +11,12 @@ export const userTeamChannels = (state, ownProps) => {
   }
 };
 
+export const currentChannel = (state, channel_id) => {
+  return state.channels.entities[channel_id]
+}
+
 export const channelMessages = (state, ownProps) => {
-  //debugger;
   if (Object.keys(state.messages.entities)[0]) {
-    const MessageKeys = Object.keys(state.messages.entities);
 
     let channelMessagesArr = [];
     for (let key in state.messages.entities){
@@ -22,7 +24,6 @@ export const channelMessages = (state, ownProps) => {
         channelMessagesArr.push(state.messages.entities[key]);
       }
     }
-    //debugger;
     return channelMessagesArr
   } else {
     return undefined;

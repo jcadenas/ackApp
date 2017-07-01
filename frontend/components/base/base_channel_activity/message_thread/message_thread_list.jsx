@@ -21,15 +21,12 @@ class MessageThreadList extends React.Component {
     });
 
     var channel = pusher.subscribe('new-message');
-    debugger;
     channel.bind(`new-message-channel-${this.props.currentChannelId}`, (data) => {
-      debugger;
       this.props.createdOneMessage(data)
     });
   }
 
   messageThreadListItems() {
-    //debugger;
     const messageThreadListItemsArray = this.props.channelMessages.map((message) => {
       return (
         <li key={message.id}>
@@ -41,7 +38,6 @@ class MessageThreadList extends React.Component {
         </li>
       );
     });
-    //debugger;
     return messageThreadListItemsArray;
   }
 
@@ -50,7 +46,6 @@ class MessageThreadList extends React.Component {
    }
 
   render() {
-    //debugger;
     if(this.props.channelMessages !== undefined) {
       return (
         <ul className='message-thread-list'>
