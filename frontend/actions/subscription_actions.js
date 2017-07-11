@@ -22,10 +22,11 @@ export const createdOneSubscription = (resp) => {
 };
 
   // Returns the channel that was left.
-export const destroyedOneSubscription = (channel) => {
+export const destroyedOneSubscription = (resp) => {
   return ({
     type: DESTROYED_SUBSCRIPTION,
-    channel
+    channel: resp.channel,
+    user: resp.user
   });
 };
 

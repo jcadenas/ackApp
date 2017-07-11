@@ -17,8 +17,9 @@ class Api::SubscriptionsController < ApplicationController
     @subscription = Subscription.find_by(user_id: current_user.id, channel_id: params[:id])
     if @subscription
       @subscription.destroy
+      @user = current_user
       @channel = Channel.find(params[:id])
-      render 'api/channels/show'
+      render :show
     else
       render json: ['Failed to find subscription'], status: 422;
     end

@@ -42,7 +42,9 @@ class MessageThreadList extends React.Component {
   }
 
   componentDidUpdate() {
-   this.bottom.scrollIntoView();
+    if(this.bottom){
+      this.bottom.scrollIntoView();
+    }
    }
 
   render() {

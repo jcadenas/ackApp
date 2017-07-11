@@ -1,9 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { currentChannel } from '../../../../selectors/selectors';
+import { destroySubscription } from '../../../../actions/subscription_actions';
 
 
 class ChannelDetailWrapper extends React.Component {
+
+  constructor (props) {
+    super(props);
+
+    this.handleLeave = this.handleLeave.bind(this);
+  }
+
+  componentWillReceiveProps(newProps){
+
+    // Handle leaving
+    if (this.props.currentChannel && !newProps.currentChannel) {
+      newProps.history.push(`/messages/${newProps.currentTeamId}/${newProps.teams[newProps.currentTeamId].channels_by_id[0]}`);
+    }
+  }
+
+  handleLeave(e) {
+    e.stopPropagation();
+    this.props.destroySubscription(this.props.currentChannel.id);
+  }
 
   render() {
     if(this.props.currentChannel) {
@@ -14,20 +35,20 @@ class ChannelDetailWrapper extends React.Component {
               <span className='channel-detail-header-name-hash'>#</span>
               {this.props.currentChannel.name}
             </span>
-            <div>
+            <div className='channel-detail-attributes'>
               <div className='channel-user-count'>
-                <i className="fa fa-user-circle-o" aria-hidden="true"></i>
+                <i className="fa fa-user-circle-o fa-user-circle-o-channel-detail" aria-hidden="true"></i>
                 <span>
                   {this.props.currentChannel.subscribers_by_id.length}
                 </span>
               </div>
-              <span>
+              <div className='channel-detail-purpose'>
                 purpose: {this.props.currentChannel.purpose}
-              </span>
+              </div>
             </div>
           </div>
-          <div>
-            <span>Leave</span>
+          <div className='channel-detail-functions'>
+            <span onClick={this.handleLeave}>Leave</span>
             <span>Edit</span>
             <span>Delete</span>
           </div>
@@ -38,19 +59,25 @@ class ChannelDetailWrapper extends React.Component {
     }
   }
 
-}
+};
 
 
 const mapStateToProps = (state, ownProps) => {
+  return ({
+    currentChannel: currentChannel(state, ownProps.currentChannelId),
+    currentTeamId: ownProps.currentTeamId
+  });
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
 
   return ({
-    currentChannel: currentChannel(state, ownProps.currentChannelId)
+    destroySubscription: (channel_id) => dispatch(destroySubscription(channel_id))
   })
+};
 
-}
 
-
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
-  null
-)(ChannelDetailWrapper)
+  mapDispatchToProps
+)(ChannelDetailWrapper));

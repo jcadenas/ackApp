@@ -3,6 +3,62 @@
   justify-content: space-between;
 }
 
+.channel-detail-display {
+  padding: 6px 16px;
+}
+
 .channel-detail-header-name {
   font-size: 24px;
+  font-weight: 900;
 }
+
+.channel-detail-attributes {
+  display: flex;
+  margin-top: 7px;
+}
+
+.fa-user-circle-o-channel-detail {
+  font-size: 15px;
+}
+
+.channel-user-count {
+  color: rgb(113, 114, 116);
+  font-size: 12.8px;
+  line-height: 16px;
+}
+
+.channel-detail-purpose {
+  font-style: italic;
+  color: rgb(113, 114, 116);
+  font-size: 12.8px;
+  line-height: 16px;
+}
+
+.channel-detail-attributes div {
+  padding-right: 10px;
+  margin-left: 10px;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.channel-detail-attributes div:last-child {
+  border-right: none;
+}
+
+.channel-detail-attributes div:first-child {
+  margin-left: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Bottom of file

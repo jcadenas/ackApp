@@ -8,7 +8,7 @@ class BaseChannelActivity extends React.Component {
   render() {
     return (
       <div className='base-channel-activity'>
-        <ChannelDetail currentChannelId={this.props.match.params.channel_id} />
+        <ChannelDetail currentTeamId={this.props.match.params.team_id} currentChannelId={this.props.match.params.channel_id} />
         <MessageThreadWrapperContainer currentTeamId={this.props.match.params.team_id} currentChannelId={this.props.match.params.channel_id} />
         <MessageFormContainer currentTeamId={this.props.match.params.team_id} currentChannelId={this.props.match.params.channel_id} />
       </div>

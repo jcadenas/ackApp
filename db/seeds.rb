@@ -50,10 +50,10 @@ membership13 = Membership.create!({ member: user9, team: team4 })
 
 Channel.destroy_all
 
-channel1 = Channel.create!({team: team1 , name: 'general'})
-channel2 = Channel.create!({team: team1 , name: 'gaming-ship'})
-channel3 = Channel.create!({team: team1 , name: 'company-xmas-party'})
-channel4 = Channel.create!({team: team1 , name: 'company-credit-card'})
+channel1 = Channel.create!({team: team1 , name: 'general', purpose: 'general chilling and milling'})
+channel2 = Channel.create!({team: team1 , name: 'gaming-ship', purpose: 'we run a pretty tight ship around here'})
+channel3 = Channel.create!({team: team1 , name: 'company-xmas-party' , purpose: 'no jokes. no body talks to Lindsay.'})
+channel4 = Channel.create!({team: team1 , name: 'company-credit-card', purpose: 'who has it?'})
 channel5 = Channel.create!({team: team1 , name: 'sheep', purpose: 'ya lost the sheep'})
 channel16 = Channel.create!({team: team1 , name: 'copy-room', purpose: 'theres too much light in here'})
 channel17 = Channel.create!({team: team1 , name: 'lost-and-found', purpose: 'ya know, finding stuff'})
