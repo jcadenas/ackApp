@@ -45,7 +45,7 @@ class MessageThreadList extends React.Component {
     if(this.bottom){
       this.bottom.scrollIntoView();
     }
-   }
+  }
 
   render() {
     if(this.props.channelMessages !== undefined) {

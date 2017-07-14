@@ -26,6 +26,7 @@ class ChannelDetailWrapper extends React.Component {
     this.props.destroySubscription(this.props.currentChannel.id);
   }
 
+
   render() {
     if(this.props.currentChannel) {
       return(
@@ -37,7 +38,7 @@ class ChannelDetailWrapper extends React.Component {
             </span>
             <div className='channel-detail-attributes'>
               <div className='channel-user-count'>
-                <i className="fa fa-user-circle-o fa-user-circle-o-channel-detail" aria-hidden="true"></i>
+                <i className="fa fa-user-o fa-user-o-channel-detail" aria-hidden="true"></i>
                 <span>
                   {this.props.currentChannel.subscribers_by_id.length}
                 </span>
