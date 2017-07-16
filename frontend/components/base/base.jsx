@@ -72,20 +72,11 @@ class Base extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    // if (this.props.channels[Object.keys(this.props.channels)[0]] === undefined && newProps.channels[Object.keys(newProps.channels)[0]]){
-    //   newProps.history.push(`/messages/${newProps.teams[Object.keys(this.props.teams)[0]].id}/${newProps.channels[Object.keys(newProps.channels)[0]].id}`);
-    // }
-    //
-    // if (this.props.match.params.channel_id) {
-    //
-    // }
 
   }
 
 
   render(){
-    // if(this.props.baseCurrentChannelId)
-    // {
     return(
       <div className='all-of-base'>
         {this.createTeamModalDisplay()}
@@ -97,9 +88,6 @@ class Base extends React.Component {
         <Route path='/messages/:team_id/:channel_id' component={BaseChannelActivity} />
       </div>
     );
-    // } else {
-    //   return <span>Base Nada</span>
-    // }
   }
 }
 

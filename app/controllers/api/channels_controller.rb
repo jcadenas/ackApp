@@ -34,7 +34,9 @@ class Api::ChannelsController < ApplicationController
   def destroy
     @channel = Channel.find(params[:id])
     @channel.destroy
-    render :show
+    @team = Team.find(@channel.team_id)
+    @user = current_user
+    render :destroy
   end
 
   private

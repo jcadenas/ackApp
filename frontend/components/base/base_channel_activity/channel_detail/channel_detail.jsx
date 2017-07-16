@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { currentChannel } from '../../../../selectors/selectors';
+import { currentChannel, userTeamChannels } from '../../../../selectors/selectors';
 import { destroySubscription } from '../../../../actions/subscription_actions';
-
+import { destroyChannel } from '../../../../actions/channel_actions';
 
 class ChannelDetailWrapper extends React.Component {
 
@@ -11,23 +11,32 @@ class ChannelDetailWrapper extends React.Component {
     super(props);
 
     this.handleLeave = this.handleLeave.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentWillReceiveProps(newProps){
-
+    debugger;
     // Handle leaving
-    if (this.props.currentChannel && !newProps.currentChannel) {
-      newProps.history.push(`/messages/${newProps.currentTeamId}/${newProps.teams[newProps.currentTeamId].channels_by_id[0]}`);
+    if (this.props.currentChannel && newProps.userTeamChannels.length > 0 && !newProps.userTeamChannels.includes(this.props.currentChannel.id)) {
+      debugger;
+      newProps.history.push(`/messages/${newProps.currentTeamId}/${newProps.userTeamChannels[0]}`);
     }
   }
 
   handleLeave(e) {
+    debugger;
     e.stopPropagation();
     this.props.destroySubscription(this.props.currentChannel.id);
   }
 
+  handleDelete(e) {
+    e.stopPropagation();
+    this.props.destroyChannel(this.props.currentChannel.id);
+  }
+
 
   render() {
+    debugger;
     if(this.props.currentChannel) {
       return(
         <section className='channel-detail'>
@@ -50,8 +59,8 @@ class ChannelDetailWrapper extends React.Component {
           </div>
           <div className='channel-detail-functions'>
             <span onClick={this.handleLeave}>Leave</span>
+            <span onClick={this.handleDelete}>Delete</span>
             <span>Edit</span>
-            <span>Delete</span>
           </div>
         </section>
       );
@@ -66,15 +75,17 @@ class ChannelDetailWrapper extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return ({
     currentChannel: currentChannel(state, ownProps.currentChannelId),
-    currentTeamId: ownProps.currentTeamId
+    currentTeamId: ownProps.currentTeamId,
+    userTeamChannels: userTeamChannels(state, ownProps)
   });
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 
   return ({
-    destroySubscription: (channel_id) => dispatch(destroySubscription(channel_id))
-  })
+    destroySubscription: (channel_id) => dispatch(destroySubscription(channel_id)),
+    destroyChannel: (channel_id) => dispatch(destroyChannel(channel_id))
+  });
 };
 
 

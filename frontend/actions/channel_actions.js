@@ -24,10 +24,12 @@ export const receiveOneChannel = (channel_user_team) => {
   });
 };
 
-export const destroyedOneChannel = (channel) => {
+export const destroyedOneChannel = (channel_user_team) => {
   return ({
     type: DESTROYED_CHANNEL,
-    channel
+    channel: channel_user_team.channel,
+    user: channel_user_team.user,
+    team: channel_user_team.team
   });
 };
 
