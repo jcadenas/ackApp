@@ -58,7 +58,79 @@
   margin-left: 0px;
 }
 
+.channel-detail-functions {
+  padding: 6px 20px;
+  padding-top: 17.5px;
+  display:flex;
+}
 
+.edit-channel-button {
+  background: rgb(251, 251, 250);
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  width: 85px;
+  height: 26px;
+  color: rgb(85, 84, 89);
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 16px;
+  margin-right: 8px;
+  padding: 4px 18px 4px 18px;
+  text-align: center;
+}
+
+.edit-channel-button:hover {
+  color: rgb(0, 122, 184);
+}
+
+.leave-channel-button {
+  background: rgb(251, 251, 250);
+  width: 85px;
+  height: 26px;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  color: rgb(85, 84, 89);
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 16px;
+  margin-right: 8px;
+  padding: 4px 18px 4px 18px;
+  text-align: center;
+}
+
+.leave-channel-button:hover {
+  color: rgb(0, 122, 184);
+}
+
+.delete-channel-button {
+  background: rgb(251, 251, 250);
+  width: 85px;
+  height: 26px;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  color: rgb(85, 84, 89);
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 16px;
+  margin-right: 8px;
+  padding: 4px 18px 4px 18px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.delete-channel-button:hover {
+  color: rgb(235, 34, 71);
+}
+
+.channel-detail-functions span:last-child {
+  margin-right: 0;
+}
 
 
 

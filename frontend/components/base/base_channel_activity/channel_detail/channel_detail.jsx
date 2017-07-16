@@ -65,9 +65,9 @@ class ChannelDetailWrapper extends React.Component {
             </div>
           </div>
           <div className='channel-detail-functions'>
-            <span onClick={this.handleLeave}>Leave</span>
-            <span onClick={this.handleDelete}>Delete</span>
-            <span onClick={this.handleEdit}>Edit</span>
+            <span className='edit-channel-button' onClick={this.handleEdit}>Edit</span>
+            <span className='leave-channel-button' onClick={this.handleLeave}>Leave</span>
+            <span className='delete-channel-button' onClick={this.handleDelete}>Delete</span>
           </div>
         </section>
       );
