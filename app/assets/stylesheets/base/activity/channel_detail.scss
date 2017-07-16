@@ -4,7 +4,8 @@
 }
 
 .channel-detail-display {
-  padding: 6px 16px;
+  padding: 6px 20.8px;
+  padding-top: 11.2px;
 }
 
 .channel-detail-header-name {
@@ -15,6 +16,7 @@
 .channel-detail-attributes {
   display: flex;
   margin-top: 7px;
+  line-height: 15.8px;
 }
 
 .fa-users-channel-detail {
@@ -28,19 +30,17 @@
   padding-right: 8px;
   padding-left: 2px;
   vertical-align: top;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .channel-user-count {
   color: rgb(113, 114, 116);
   font-size: 13px;
-  line-height: 16px;
 }
 
 .channel-detail-purpose {
   color: rgb(113, 114, 116);
   font-size: 13px;
-  line-height: 16px;
   vertical-align: middle;
 }
 
