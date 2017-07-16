@@ -8,6 +8,7 @@ export const RECEIVE_ALL_CHANNELS = 'RECEIVE_ALL_CHANNELS';
 export const RECEIVE_CHANNEL_ERRORS = 'RECEIVE_CHANNEL_ERRORS';
 export const DESTROYED_CHANNEL = 'DESTROYED_CHANNEL';
 export const CLEAR_CHANNEL_ERRORS = 'CLEAR_CHANNEL_ERRORS';
+export const UPDATED_ONE_CHANNEL = 'UPDATED_ONE_CHANNEL';
 
 
 
@@ -30,6 +31,13 @@ export const destroyedOneChannel = (channel_user_team) => {
     channel: channel_user_team.channel,
     user: channel_user_team.user,
     team: channel_user_team.team
+  });
+};
+
+export const updatedOneChannel = (channel) => {
+  return ({
+    type: UPDATED_ONE_CHANNEL,
+    channel
   });
 };
 
@@ -93,11 +101,11 @@ export const fetchTeamChannels = (teamId) => (dispatch) => {
 export const updateOneChannel = (channel) => (dispatch) => {
   return APIUtil.updateOneChannel(channel)
     .then(
-      (resp) => dispatch(receiveOneChannel(resp)),
+      (resp) => dispatch(updatedOneChannel(resp)),
       (errors) => dispatch(receiveChannelErrors(errors.responseJSON)));
-    // .then(
-    //   () => dispatch(collapseEditChannelModal())
-    // );
+    .then(
+      () => dispatch(collapseEditChannelModal())
+    );
 };
 
 

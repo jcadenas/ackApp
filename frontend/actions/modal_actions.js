@@ -9,6 +9,8 @@ export const EXPAND_CREATE_MEMBERSHIP_MODAL = 'EXPAND_CREATE_MEMBERSHIP_MODAL';
 export const COLLAPSE_CREATE_MEMBERSHIP_MODAL = 'COLLAPSE_CREATE_MEMBERSHIP_MODAL';
 export const EXPAND_CREATE_CHANNEL_MODAL = 'EXPAND_CREATE_CHANNEL_MODAL';
 export const COLLAPSE_CREATE_CHANNEL_MODAL = 'COLLAPSE_CREATE_CHANNEL_MODAL';
+export const EXPAND_EDIT_CHANNEL_MODAL = 'EXPAND_EDIT_CHANNEL_MODAL';
+export const COLLAPSE_EDIT_CHANNEL_MODAL = 'COLLAPSE_EDIT_CHANNEL_MODAL';
 export const EXPAND_CREATE_SUBSCRIPTION_MODAL = 'EXPAND_CREATE_SUBSCRIPTION_MODAL';
 export const COLLAPSE_CREATE_SUBSCRIPTION_MODAL = 'COLLAPSE_CREATE_SUBSCRIPTION_MODAL';
 
@@ -61,6 +63,18 @@ export const expandCreateChannelModal = () => {
 export const collapseCreateChannelModal = () => {
   return ({
     type: COLLAPSE_CREATE_CHANNEL_MODAL
+  });
+};
+
+export const expandEditChannelModal = () => {
+  return ({
+    type: EXPAND_EDIT_CHANNEL_MODAL
+  });
+};
+
+export const collapseEditChannelModal = () => {
+  return ({
+    type: COLLAPSE_EDIT_CHANNEL_MODAL
   });
 };
 

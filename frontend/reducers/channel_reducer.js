@@ -2,6 +2,7 @@ import {
   RECEIVE_ONE_CHANNEL,
   RECEIVE_ALL_CHANNELS,
   RECEIVE_CHANNEL_ERRORS,
+  UPDATED_ONE_CHANNEL,
   DESTROYED_CHANNEL,
   CLEAR_CHANNEL_ERRORS
 } from '../actions/channel_actions';
@@ -22,6 +23,11 @@ const ChannelReducer = (state = defaultState, action) => {
 
     case RECEIVE_ONE_CHANNEL: {
       newState = merge({}, state, {entities: { [action.channel.id]: action.channel}});
+      return newState;
+    }
+
+    case UPDATED_ONE_CHANNEL: {
+      newState = Object.assign({}, state, {entities: { [action.channel.id]: action.channel}});
       return newState;
     }
 
