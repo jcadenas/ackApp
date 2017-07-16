@@ -12,6 +12,7 @@ export const userTeamChannels = (state, ownProps) => {
 };
 
 export const currentChannel = (state, channel_id) => {
+  debugger;
   return state.channels.entities[channel_id]
 }
 

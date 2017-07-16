@@ -102,7 +102,7 @@ export const updateOneChannel = (channel) => (dispatch) => {
   return APIUtil.updateOneChannel(channel)
     .then(
       (resp) => dispatch(updatedOneChannel(resp)),
-      (errors) => dispatch(receiveChannelErrors(errors.responseJSON)));
+      (errors) => dispatch(receiveChannelErrors(errors.responseJSON)))
     .then(
       () => dispatch(collapseEditChannelModal())
     );

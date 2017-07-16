@@ -6,6 +6,7 @@ import CreateTeamModalContainer from './modals/teams/create_team_modal_container
 import EditTeamModalContainer from './modals/teams/edit_team_modal_container';
 import CreateMembershipModalContainer from './modals/memberships/create_membership_modal_container';
 import CreateChannelModalContainer from './modals/channels/create_channel_modal_container';
+import EditChannelModal from './modals/channels/edit_channel_modal';
 import CreateSubscriptionModalContainer from './modals/subscriptions/create_subscription_modal_container';
 
 import {
@@ -13,6 +14,7 @@ import {
   CREATE_TEAM_MODAL,
   CREATE_MEMBERSHIP_MODAL,
   CREATE_CHANNEL_MODAL,
+  EDIT_CHANNEL_MODAL,
   CREATE_SUBSCRIPTION_MODAL
 } from '../../reducers/modal_reducer';
 
@@ -58,6 +60,16 @@ class Base extends React.Component {
     }
   }
 
+  editChannelModalDisplay(){
+    if (this.props.modals[EDIT_CHANNEL_MODAL]){
+      return (
+        <Route path='/messages/:team_id/:channel_id' component={EditChannelModal} />
+      );
+    } else {
+      return undefined;
+    }
+  }
+
   createSubscriptionModalDisplay(){
     if (this.props.modals[CREATE_SUBSCRIPTION_MODAL]){
       return (
@@ -83,6 +95,7 @@ class Base extends React.Component {
         {this.editTeamModalDisplay()}
         {this.createMembershipModalDisplay()}
         {this.createChannelModalDisplay()}
+        {this.editChannelModalDisplay()}
         {this.createSubscriptionModalDisplay()}
         <BaseNavigation />
         <Route path='/messages/:team_id/:channel_id' component={BaseChannelActivity} />

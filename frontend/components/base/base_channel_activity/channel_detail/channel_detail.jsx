@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { currentChannel, userTeamChannels } from '../../../../selectors/selectors';
 import { destroySubscription } from '../../../../actions/subscription_actions';
 import { destroyChannel } from '../../../../actions/channel_actions';
+import { expandEditChannelModal } from '../../../../actions/modal_actions';
 
 class ChannelDetailWrapper extends React.Component {
 
@@ -12,19 +13,20 @@ class ChannelDetailWrapper extends React.Component {
 
     this.handleLeave = this.handleLeave.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   componentWillReceiveProps(newProps){
-    debugger;
+
     // Handle leaving
     if (this.props.currentChannel && newProps.userTeamChannels.length > 0 && !newProps.userTeamChannels.includes(this.props.currentChannel.id)) {
-      debugger;
+
       newProps.history.push(`/messages/${newProps.currentTeamId}/${newProps.userTeamChannels[0]}`);
     }
   }
 
   handleLeave(e) {
-    debugger;
+
     e.stopPropagation();
     this.props.destroySubscription(this.props.currentChannel.id);
   }
@@ -34,9 +36,14 @@ class ChannelDetailWrapper extends React.Component {
     this.props.destroyChannel(this.props.currentChannel.id);
   }
 
+  handleEdit(e) {
+    e.stopPropagation();
+    this.props.expandEditChannelModal();
+  }
+
 
   render() {
-    debugger;
+
     if(this.props.currentChannel) {
       return(
         <section className='channel-detail'>
@@ -60,7 +67,7 @@ class ChannelDetailWrapper extends React.Component {
           <div className='channel-detail-functions'>
             <span onClick={this.handleLeave}>Leave</span>
             <span onClick={this.handleDelete}>Delete</span>
-            <span>Edit</span>
+            <span onClick={this.handleEdit}>Edit</span>
           </div>
         </section>
       );
@@ -84,7 +91,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return ({
     destroySubscription: (channel_id) => dispatch(destroySubscription(channel_id)),
-    destroyChannel: (channel_id) => dispatch(destroyChannel(channel_id))
+    destroyChannel: (channel_id) => dispatch(destroyChannel(channel_id)),
+    expandEditChannelModal: () => dispatch(expandEditChannelModal())
   });
 };
 

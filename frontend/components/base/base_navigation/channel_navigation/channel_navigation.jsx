@@ -7,7 +7,7 @@ import * as _ from 'lodash';
 class ChannelNavigation extends React.Component {
 
   componentDidMount() {
-    // debugger;
+    
     if (Object.keys(this.props.channels).length < 1) {
       this.props.fetchTeamChannels(this.props.match.params.team_id);
     } else {
@@ -16,13 +16,13 @@ class ChannelNavigation extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    // debugger;
+    
 
     // Handle initial fetch of Channels (no channels to some channels)
     if (Object.keys(this.props.channels).length < 1 && Object.keys(newProps.channels).length > 0){
       newProps.history.push(`/messages/${this.props.match.params.team_id}/${newProps.teams[this.props.match.params.team_id].channels_by_id[0]}`);
     }
-    debugger;
+    
     // Handle leaving a channel
     // Goal: Update URL with an appropriate new channel id.
     // cannot rely on channel missing from channels as it should stay. What it should do, is check the user's channels_by_id to see if
@@ -30,7 +30,7 @@ class ChannelNavigation extends React.Component {
     // JK NOPE. It has to go to the teams because channels is all teams channels...if moving between teams
 
     // if (!newProps.userTeamChannels.includes(newProps.match.params.channel_id) && newProps.userTeamChannels.length > 0 && newProps.match.params.channel_id) {
-    //   debugger;
+    
     //   newProps.history.push(`/messages/${newProps.match.params.team_id}/${newProps.userTeamChannels[0]}`);
     // }
 
@@ -52,7 +52,7 @@ class ChannelNavigation extends React.Component {
   }
 
   render() {
-    debugger;
+    
     return (
       <section className='channel-navigation'>
         <ChannelNavigationHeaderContainer />
