@@ -68,7 +68,7 @@ class EditChannelModal extends React.Component {
           <form onSubmit={this.handleSubmit} className="update-channel-form-box">
             <br/>
             <h3 className='update-channel-form-header form-header'>Update #{this.props.currentChannel.name}</h3>
-            <p className='update-channel-form-blerb form-blerb'>Create a new channel and justify your random choices of conversation topic</p>
+            <p className='update-channel-form-blerb form-blerb'>Up the channel and justify your random choices of conversation topic</p>
             {this.renderErrors()}
             <div className="update-channel-form form">
               <br/>
