@@ -12,8 +12,10 @@
 
 class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
-  validates :password, length: {minimum: 6, allow_nil: true}
-  validates :username, format: { without: /\s/ }
+  validates :password, length: {minimum: 6, maximum: 22, allow_nil: true}
+  validates :password, format: { with: /\A[a-zA-Z0-9]+\Z/ }
+  validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }
+
 
   has_many :memberships, dependent: :destroy
   has_many :subscriptions, dependent: :destroy

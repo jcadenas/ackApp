@@ -61,7 +61,7 @@ class CreateChannelModal extends React.Component {
           <form onSubmit={this.handleSubmit} className="create-channel-form-box">
             <br/>
             <h3 className='create-channel-form-header form-header'>Create New Channel</h3>
-            <p className='create-channel-form-blerb form-blerb'>Create a new channel and justify your random choices of conversation topic</p>
+            <p className='create-channel-form-blerb form-blerb'>Channels are where your team communicates  -  They are best organized around a topic.</p>
             {this.renderErrors()}
             <div className="create-channel-form form">
               <br/>

@@ -60,7 +60,7 @@ class CreateTeamModal extends React.Component {
           <form onSubmit={this.handleSubmit} className="create-team-form-box">
             <br/>
             <h3 className='create-team-form-header form-header'>Create New Team</h3>
-            <p className='create-team-form-blerb form-blerb'>Create a new team and begin chatting with your coworkers faster</p>
+            <p className='create-team-form-blerb form-blerb'>Create a new team and begin chatting with your coworkers faster.</p>
             {this.renderErrors()}
             <div className="create-team-form form">
               <br/>
