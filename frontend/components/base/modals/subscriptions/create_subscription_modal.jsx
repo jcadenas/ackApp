@@ -48,8 +48,8 @@ class CreateSubscriptionModal extends React.Component {
         <div className="create-subscription-form-container form-container">
           <form onSubmit={this.handleDone} className="create-subscription-form-box form-box">
             <br/>
-            <h3 className='create-subscription-form-header form-header'>Join Channels</h3>
-            <p className='create-subscription-form-blerb form-blerb'>Find and Join the Channels that you would like...to...join...? And start chattin!</p>
+            <h3 className='create-subscription-form-header form-header'>Browse Channels</h3>
+            <p className='create-subscription-form-blerb form-blerb'>Join interesting channels and be a part of the conversation!</p>
             <div className="create-subscription-form form">
               <br/>
               <ul className='create-subscription-list'>

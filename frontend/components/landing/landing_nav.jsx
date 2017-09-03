@@ -9,6 +9,7 @@ class LandingNav extends React.Component {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
     this.handleLoginDemoUser = this.handleLoginDemoUser.bind(this);
+    this.handleUrlUpdate = this.handleUrlUpdate.bind(this);
   }
 
   handleLogout(e) {
@@ -24,7 +25,11 @@ class LandingNav extends React.Component {
   }
 
   handleLoginDemoUser(e){
-    this.props.logInDemoUser({ username:'GobBluth', password:'GobBluth' });
+    this.props.logInDemoUser({ username:'GobBluth', password:'GobBluth' })
+      .then(() => this.handleUrlUpdate());
+  }
+
+  handleUrlUpdate() {
     this.props.history.push('/messages');
   }
 
