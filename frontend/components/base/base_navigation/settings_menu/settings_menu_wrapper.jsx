@@ -8,12 +8,10 @@ import SettingsMenuContainer from './settings_menu_container';
 class SettingsMenuWrapper extends React.Component {
 
   componentDidMount() {
-    debugger
     this.props.fetchUserTeams();
   }
 
   componentWillReceiveProps(newProps) {
-    debugger
     if (!this.props.firstTeam && newProps.firstTeam){
       newProps.history.push(`/messages/${newProps.firstTeam.id}`);
     }

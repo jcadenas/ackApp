@@ -8,9 +8,7 @@ class ChannelNavigationList extends React.Component {
   listItems () {
     if (this.props.userTeamChannels[Object.keys(this.props.userTeamChannels)[0]]){
       const switchChannels = [];
-      debugger;
       let sortedUserTeamChannels = this.props.userTeamChannels.sort(this.compare);
-      debugger;
       sortedUserTeamChannels.forEach((channelId) => {
         switchChannels.push(
           <ChannelNavigationListItem key={channelId} teamId={this.props.match.params.team_id} listChannelId={channelId} baseCurrentChannelId={this.props.match.params.channel_id} />

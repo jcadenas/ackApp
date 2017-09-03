@@ -9,7 +9,6 @@ import React from 'react';
 class EditChannelModal extends React.Component {
   constructor(props) {
     super(props);
-    debugger;
     this.state = {
       name: this.props.currentChannel.name,
       purpose: this.props.currentChannel.purpose,

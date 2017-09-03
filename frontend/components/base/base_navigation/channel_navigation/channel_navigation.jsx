@@ -7,7 +7,6 @@ import * as _ from 'lodash';
 class ChannelNavigation extends React.Component {
 
   componentDidMount() {
-    debugger;
 
     if (Object.keys(this.props.channels).length < 1) {
       this.props.fetchTeamChannels(this.props.match.params.team_id);
@@ -17,7 +16,6 @@ class ChannelNavigation extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    debugger;
 
     // Handle initial fetch of Channels (no channels to some channels)
     if (Object.keys(this.props.channels).length < 1 && Object.keys(newProps.channels).length > 0){
