@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
   username_requirements() {
     if (this.props.formType === 'signup'){
       return (
-        <p className='session-input-reqs'>Usernames must be lowercase, shorter than 22 characters, and without special characters, periods or spaces.</p>
+        <p className='session-input-reqs'>Usernames must be shorter than 22 characters, and without special characters, periods or spaces.</p>
       );
     } else {
       return (
