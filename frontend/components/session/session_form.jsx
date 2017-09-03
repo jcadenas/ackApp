@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
   username_requirements() {
     if (this.props.formType === 'signup'){
       return (
-        <p className='session-input-reqs'>Usernames must be shorter than 22 characters, and without special characters, periods or spaces.</p>
+        <p className='session-input-reqs'>Usernames must be shorter than 22 characters and without special characters, periods or spaces.</p>
       );
     } else {
       return (
@@ -69,7 +69,7 @@ class SessionForm extends React.Component {
   password_requirements() {
     if (this.props.formType === 'signup'){
       return (
-        <p className='session-input-reqs'>Passwords must be a minimum of six characters, and without special characters and spaces.</p>
+        <p className='session-input-reqs'>Passwords must be a minimum of six characters and without special characters and spaces.</p>
       );
     } else {
       return (
