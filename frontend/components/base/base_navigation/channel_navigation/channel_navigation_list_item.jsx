@@ -16,15 +16,19 @@ class ChannelNavigationListItem extends React.Component {
   render(){
     if (this.props.channels[this.props.listChannelId]) {
       return(
-        <li className={`${this.isSelected(this.props.listChannelId)}`}>
-          <Link to={`/messages/${this.props.teamId}/${this.props.listChannelId}`}>
-            <span className='channel-nav-hash'>#</span>
-            <span className='switch-to-channel'>{this.props.channels[this.props.listChannelId].name}</span>
-          </Link>
-        </li>
+        <Link to={`/messages/${this.props.teamId}/${this.props.listChannelId}`}>
+          <li className={`${this.isSelected(this.props.listChannelId)}`}>
+              <span className='channel-nav-hash'>#</span>
+              <span className='switch-to-channel'>{this.props.channels[this.props.listChannelId].name}</span>
+          </li>
+        </Link>
       );
     } else {
-      return <span>Nada from channel nav list item</span>
+      return(
+        <li className='channel-nav-list-item-loader'>
+        </li>
+      );
+
     }
   }
 

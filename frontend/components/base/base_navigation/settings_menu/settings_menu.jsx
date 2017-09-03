@@ -72,7 +72,16 @@ class SettingsMenu extends React.Component {
         </section>
       );
     } else {
-      return <span>settings_menu_nada</span>
+      return(
+        <section className='settings-menu'>
+          <span className='settings-menu-header'>
+            <span>Loading...</span><i className="fa fa-angle-down" aria-hidden="true"></i>
+          </span>
+          <span className='settings-menu-username'>
+            <i className="fa fa-circle" aria-hidden="true"></i><span>...</span>
+          </span>
+        </section>
+      );
     }
   }
 

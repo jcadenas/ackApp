@@ -62,6 +62,24 @@
   color: rgb(255, 255, 255);
 }
 
+.channel-nav-list-item-loader {
+  display:block;
+  background-color: rgba(171, 155, 169, 0.3);
+  margin-left: 16px;
+  margin-right: 34px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  width: 180px !important;
+  height: 14px;
+  // font-size: 16px;
+  // font-weight: 100;
+  box-sizing: border-box;
+  text-align: middle;
+  cursor:pointer;
+
+}
+
 .channel-nav-list-item-selected:hover {
   background-color: rgb(56, 151, 141);
   color: rgb(255, 255, 255);

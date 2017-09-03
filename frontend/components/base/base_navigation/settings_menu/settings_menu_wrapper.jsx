@@ -8,10 +8,12 @@ import SettingsMenuContainer from './settings_menu_container';
 class SettingsMenuWrapper extends React.Component {
 
   componentDidMount() {
+    debugger
     this.props.fetchUserTeams();
   }
 
   componentWillReceiveProps(newProps) {
+    debugger
     if (!this.props.firstTeam && newProps.firstTeam){
       newProps.history.push(`/messages/${newProps.firstTeam.id}`);
     }
@@ -26,7 +28,14 @@ class SettingsMenuWrapper extends React.Component {
       );
     } else {
       return (
-        <span>SettingsMenuWrapper Nada.</span>
+        <section className='settings-menu' >
+          <span className='settings-menu-header'>
+            <span>Loading...</span><i className="fa fa-angle-down" aria-hidden="true"></i>
+          </span>
+          <span className='settings-menu-username'>
+            <i className="fa fa-circle" aria-hidden="true"></i><span>...</span>
+          </span>
+        </section>
       );
     }
   }

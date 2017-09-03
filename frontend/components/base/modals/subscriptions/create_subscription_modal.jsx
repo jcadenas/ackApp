@@ -30,8 +30,15 @@ class CreateSubscriptionModal extends React.Component {
     let listItemsToDisplay = this.props.nonUserTeamChannelsArr.map((channelId) => (
       <CreateSubscriptionListItemContainer key={channelId} channelId={channelId} />
     ));
-
-    return listItemsToDisplay;
+    if (listItemsToDisplay.length > 0) {
+      return listItemsToDisplay;
+    } else {
+      return (
+        <li className="form-blerb">
+          There are no channels to join at this time  -  Create a new Channel today!
+        </li>
+      )
+    }
 
   }
 

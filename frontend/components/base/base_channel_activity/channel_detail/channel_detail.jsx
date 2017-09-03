@@ -14,6 +14,7 @@ class ChannelDetailWrapper extends React.Component {
     this.handleLeave = this.handleLeave.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.displayCrudButtons = this.displayCrudButtons.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -41,6 +42,22 @@ class ChannelDetailWrapper extends React.Component {
     this.props.expandEditChannelModal();
   }
 
+  displayCrudButtons() {
+    if (this.props.currentChannel.name === "general"){
+      return (
+        <span></span>
+      )
+    } else {
+      return (
+        <div className='channel-detail-functions'>
+          <span className='edit-channel-button' onClick={this.handleEdit}>Edit</span>
+          <span className='leave-channel-button' onClick={this.handleLeave}>Leave</span>
+          <span className='delete-channel-button' onClick={this.handleDelete}>Delete</span>
+        </div>
+      )
+    }
+  }
+
 
   render() {
 
@@ -64,15 +81,29 @@ class ChannelDetailWrapper extends React.Component {
               </div>
             </div>
           </div>
-          <div className='channel-detail-functions'>
-            <span className='edit-channel-button' onClick={this.handleEdit}>Edit</span>
-            <span className='leave-channel-button' onClick={this.handleLeave}>Leave</span>
-            <span className='delete-channel-button' onClick={this.handleDelete}>Delete</span>
-          </div>
+          {this.displayCrudButtons()}
         </section>
       );
     } else {
-      return <span>Channel Detail Nada</span>
+      return <section className='channel-detail'>
+        <div className='channel-detail-display'>
+          <span className='channel-detail-header-name'>
+            <span className='channel-detail-header-name-hash'>#</span>
+            Loading...
+          </span>
+          <div className='channel-detail-attributes'>
+            <div className='channel-user-count'>
+              <i className="fa fa-user-o fa-user-o-channel-detail" aria-hidden="true"></i>
+              <span>
+
+              </span>
+            </div>
+            <div className='channel-detail-purpose'>
+              purpose:
+            </div>
+          </div>
+        </div>
+      </section>
     }
   }
 

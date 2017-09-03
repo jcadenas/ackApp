@@ -56,7 +56,11 @@ class MessageThreadList extends React.Component {
         </ul>
       );
     } else {
-      return <span>Uh</span>;
+      return (
+        <ul className='message-thread-list'>
+          {null}
+        </ul>
+      );
     }
 
   }
