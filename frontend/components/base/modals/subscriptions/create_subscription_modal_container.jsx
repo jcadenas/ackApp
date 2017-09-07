@@ -16,7 +16,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  // TODO Move createSubscription to the li container for each button
   return ({
     createSubscription: (subscription) => dispatch(createSubscription(subscription)),
     collapseCreateSubscriptionModal: () => dispatch(collapseCreateSubscriptionModal())

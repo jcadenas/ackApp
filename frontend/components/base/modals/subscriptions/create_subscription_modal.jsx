@@ -17,14 +17,6 @@ class CreateSubscriptionModal extends React.Component {
     this.props.collapseCreateSubscriptionModal();
   }
 
-  handleChange(field) {
-  }
-
-  handleCancel(e) {
-  }
-
-  renderErrors() {
-  }
 
   listItemsDisplay() {
     let listItemsToDisplay = this.props.nonUserTeamChannelsArr.map((channelId) => (

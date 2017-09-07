@@ -11,18 +11,6 @@ export const userTeamChannels = (state, ownProps) => {
   }
 };
 
-// None of this works at the moment
-// This was for how to handle sorting channels in the channel navigation list
-// export const userTeamChannelsByChannelObject = (state, ownProps) => {
-//   if(state.teams.entities[ownProps.match.params.team_id]){
-//     const teamChannelsById = state.teams.entities[ownProps.match.params.team_id].channels_by_id;
-//     const userChannels = state.session.current_user.channels_by_id;
-//     const userTeamChannelsArr = teamChannelsById.filter((x) => userChannels.includes(parseInt(x)));
-//     return userTeamChannelsArr;
-//   } else {
-//     return ['userTeamChannels_failed'];
-//   }
-// };
 
 export const currentChannel = (state, channel_id) => {
   return state.channels.entities[channel_id]
@@ -44,7 +32,6 @@ export const channelMessages = (state, ownProps) => {
 };
 
 export const nonUserTeamChannels = (state, ownProps) => {
-  // THIS IS INCORRECT
 
   if(state.teams.entities[ownProps.match.params.team_id]){
     const teamChannelsById = state.teams.entities[ownProps.match.params.team_id].channels_by_id;

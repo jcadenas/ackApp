@@ -17,14 +17,6 @@ class CreateSubscriptionListItem extends React.Component {
     this.props.createSubscription(subscription);
   }
 
-  handleChange(field) {
-  }
-
-  handleCancel(e) {
-  }
-
-  renderErrors() {
-  }
 
   currentChannel() {
     return this.props.channels[this.props.currentChannelId];

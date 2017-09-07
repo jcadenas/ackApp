@@ -6,7 +6,6 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const DESTROYED_SESSION = 'DESTROY_ONE_SESSION';
 
-// TODO: Likely need to change how I'm passing user
 export const receiveOneUser = (user) => {
   return ({
     type: RECEIVE_ONE_USER,
@@ -14,7 +13,6 @@ export const receiveOneUser = (user) => {
   });
 };
 
-// TODO: Likely need to change how I'm passing errors with key (errors.responseJSON)
 export const receiveErrors = (errors) => {
   return ({
     type: RECEIVE_ERRORS,

@@ -1,6 +1,5 @@
 // USER API -----------------------------
 
-// TODO: Likely need to change how I'm passing user
 export const createUser = (user) => {
   return $.ajax({
     type: 'POST',
@@ -9,7 +8,6 @@ export const createUser = (user) => {
   });
 };
 
-// TODO: Likely need to change how I'm passing user
 export const createSession = (user) => {
   return $.ajax({
     type: 'POST',

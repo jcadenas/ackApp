@@ -112,14 +112,6 @@ class SessionForm extends React.Component {
     }
   }
 
-  // Currently not used
-  esc_button() {
-    return (
-      <div className='form_escape_button'>
-        <i className="fa fa-times-circle-o" aria-hidden="true"></i>
-      </div>
-    )
-  }
 
   render() {
     return (

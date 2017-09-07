@@ -30,12 +30,7 @@ const MessageReducer = (state = defaultState, action) => {
       newState = merge({}, state, { errors });
       return newState;
     }
-
-    // case CLEAR_ERRORS: {
-    //   newState = Object.assign({}, state, { errors: action.errors });
-    //   return newState;
-    // }
-
+    
     default:
       return state;
   }

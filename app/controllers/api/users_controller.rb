@@ -1,5 +1,4 @@
 class Api::UsersController < ApplicationController
-  # Notes: Not currently making an UPDATE action
 
   def create
     @user = User.new(user_params)

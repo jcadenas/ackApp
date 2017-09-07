@@ -57,15 +57,6 @@ const ChannelReducer = (state = defaultState, action) => {
       return defaultState;
     }
 
-    // NOTE: Thought is, leaving a channel shouldnt remove it from the
-    // channel slice of state. Only from the user's channel ids
-    // case DESTROYED_SUBSCRIPTION: {
-
-    //   newState = merge({}, state);
-    //   delete newState.entities[action.channel.id];
-    //   return newState;
-    // }
-
     case CREATED_ONE_SUBSCRIPTION: {
       newState = Object.assign({}, state, {entities: { [action.channel.id]: action.channel}});
       return newState;

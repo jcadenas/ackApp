@@ -18,8 +18,6 @@ const mapDispatchToProps = (dispatch) => {
   });
 }
 
-
-// TODO update connect with dispatch for memberships
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps

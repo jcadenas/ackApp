@@ -13,10 +13,6 @@ class CreateMembershipModal extends React.Component {
     this.handleCancel = this.handleCancel.bind(this);
   }
 
-  componentDidMount() {
-    // TODO handle errors
-    // this.props.clearErrors([]);
-  }
 
   handleSubmit(e) {
     e.preventDefault();
