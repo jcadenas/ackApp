@@ -21,13 +21,12 @@ Ack! is a full-stack single page web app inspired by [Slack][slack] complete wit
 
 ### User Authentication
 
-![Alt Text](https://media.giphy.com/media/3ohhwF1Cpr3zyIibYs/giphy.gif)
-
 On entering the site, you will land on the landing page.  Here, you can learn a little about Ack! and create a new account, login to a prexisting account, or enter the Demo Account (a magician named, G.O.B.)
 
 #### Account Creation
 
 ![Alt Text](https://media.giphy.com/media/3o7aD60sCx93TkzO6Y/giphy.gif)
+
 When opting to create a new account, the user will be directed to a protected signup route.
 
 Here a user can select a user name and password. On submission, validations are run on the backend and error messages will be displayed to direct the user to an appropriate username & password.
@@ -43,6 +42,7 @@ On creation of a new Team, a `general` channel will be automatically created and
 #### Login
 
 ![Alt Text](https://media.giphy.com/media/26n7aCsZ2aH6JzZhS/giphy.gif)
+
 When logging in, a user will enter their credentials and the backend will confirm their credentials. BCrypt is used to validate the user's password-digest.
 
 If valid credentials are supplied, a session is started by storing a session token on the front end and on the user's account.
@@ -54,17 +54,24 @@ When logging out, the user's session token is reset and the session token on the
 ### Teams & Channels
 
 ![Alt Text](https://media.giphy.com/media/l378eMan4xnFFjsqI/giphy.gif)
+
 A Team is a collection of Channels.  Each Team will have one owner who is the creator of that team.  The owner has additional privileges such as editing the team information and adding users to the team.
 
 A user can be a part of many teams.
 
+Any user can create a Channel.  A Channel is a method of organizing the conversation within your team. Any user can join any Channel by selecting `CHANNELS` on the left navigation.
 
+### Live Messaging
+
+![Alt Text](https://media.giphy.com/media/3ohhwF1Cpr3zyIibYs/giphy.gif)
+
+Within each channel, a user can send a message.  Messaging makes use of web sockets via Pusher so that the messages component displays all relevant messages as they occur.
 
 ## How to run
 
 ### Steps to Setup
 
-This is a Ruby on Rails app with React / Redux, using D3 for the DOM manipulation for the visualizations
+This is a Ruby on Rails app with React / Redux.
 
 1. Install Dependencies
     1. Install gem dependencies by running `bundle install`
@@ -72,7 +79,7 @@ This is a Ruby on Rails app with React / Redux, using D3 for the DOM manipulatio
 2. Setup database
     1.  Uses a postgres database
     2.  Setup the database by running `bundle exec rake db:setup`
-        The seed data is available in csv files. Seeding the database can take upwards of 35 minutes due to the large script lines csv (turns out, a lot has been said over 26 seasons and 6,722 characters)
+        The seed data is bits and pieces of the transcript of Episdoe 1 Season 1 of Arrested Development.
 3. Start server
     1. Start server by running `bundle exec rails server`
 
@@ -85,44 +92,9 @@ This is a Ruby on Rails app with React / Redux, using D3 for the DOM manipulatio
 * Redux
 * HTML / CSS
 
-
-### Schema & Database Seeding
-
-
-There are 4 tables
-- characters
-- locations
-- episodes
-- script lines
-
-A good amount of cleaning is required to ingest these into active record. I did a few runs to remove unnecessary commas and quotations, as well as remove excess columns.
-
-It's a postgres database - Once the seed data is good to go seeding in total can take around 35 minutes.  The script lines table is a doozy (and very awesome)
-
-### Data Visualization Components
-
-Currently, each type of chart is it's own React component.  The charts are broken out by Overview charts & Character charts.
-
-The character charts adhere to D3's enter, update, exit cycle when navigating between characters in order to have DRY reusable components.
-
-### Routes
-
-Currently, each chart has a custom route where SQL is executed on the backend.  In the future, I would like to make more generic routes and potentially handle the building of the charts within each component. We shall see...
-
 ## Coming Soon
 
 * Additional interesting views are in the works focusing around character correlations with IMDB rating
 
-## Shout Outs
-
-The project found inspiration from a post by Todd W. Schneider ([Simpsons by the data][todd]) - Awesome stuff and it's been fun to expand upon the idea!
-
-Additionally, thanks to thomasdafoestudio.blogspot.com ([blog][dafoe]) for the assets.
-
-## Disclaimer
-
-I don't know how to write disclaimers, but here it goes.  Just a heads up, I do not own The Simpsons or these assets nor am I affiliated with 20th Century Fox in any capacity.  This is just for fun :)  The ideas and stuff are my own.
-
-Did I disclaim? I hope that disclaimed.
 
 Enjoy!
