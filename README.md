@@ -18,7 +18,6 @@ Ack! is a full-stack single page web app inspired by [Slack][slack] complete wit
 Ack! is a full-stack single page web app inspired by [Slack][slack] complete with user authentication, teams, channels and live messaging.  Create a team for you and your coworkers, create channels to organize your discussion, send live messages get your work done.
 
 
----
 ### User Authentication
 
 On entering the site, you will land on the landing page.  Here, you can learn a little about Ack! and create a new account, login to a prexisting account, or enter the Demo Account (a magician named, G.O.B.)
