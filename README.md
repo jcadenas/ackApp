@@ -66,18 +66,22 @@ When logging out, the user's session token is reset and the session token on the
 
 ![Alt Text](https://media.giphy.com/media/l378eMan4xnFFjsqI/giphy.gif)
 
-A Team is a collection of Channels.  Each Team will have one owner who is the creator of that team.  The owner has additional privileges such as editing the team information and adding users to the team.
+* A Team is a collection of Channels.  
 
-A user can be a part of many teams.
+* A user can be a part of many teams.
 
-Any user can create a Channel.  A Channel is a method of organizing the conversation within your team. Any user can join any Channel by selecting `CHANNELS` on the left navigation.
+* Any user can create a Channel within a Team.  A Channel is a method of organizing the conversation within your team. Any user can join any Channel by selecting `CHANNELS` on the left navigation.
+
+#### Owner Access
+* Each Team will have one owner who is the creator of that team.  The owner has additional privileges such as editing the team information and adding users to the team.
 
 ---
 ### Live Messaging
 
 ![Alt Text](https://media.giphy.com/media/3ohhwF1Cpr3zyIibYs/giphy.gif)
 
-Within each channel, a user can send a message.  Messaging makes use of web sockets via Pusher so that the messages component displays all relevant messages as they occur.
+* Within each channel, a user can send a message.
+* Messaging makes use of web sockets via Pusher so that the messages component displays all relevant messages as they occur.
 
 ## How to run
 
