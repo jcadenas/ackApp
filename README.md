@@ -13,12 +13,12 @@ Ack! is a full-stack single page web app inspired by [Slack][slack] complete wit
 [slack]: https://www.slack.com
 
 
-## Instructions
+## Features
 
 Ack! is a full-stack single page web app inspired by [Slack][slack] complete with user authentication, teams, channels and live messaging.  Create a team for you and your coworkers, create channels to organize your discussion, send live messages get your work done.
 
 
-
+---
 ### User Authentication
 
 On entering the site, you will land on the landing page.  Here, you can learn a little about Ack! and create a new account, login to a prexisting account, or enter the Demo Account (a magician named, G.O.B.)
@@ -39,6 +39,7 @@ On creation of a new account, the user will be directed to the on boarding exper
 
 On creation of a new Team, a `general` channel will be automatically created and added to the team and the User's Channels.
 
+
 #### Login
 
 ![Alt Text](https://media.giphy.com/media/26n7aCsZ2aH6JzZhS/giphy.gif)
@@ -50,7 +51,7 @@ If valid credentials are supplied, a session is started by storing a session tok
 #### Logout
 
 When logging out, the user's session token is reset and the session token on the browser is cleaned by being set to null.
-
+---
 ### Teams & Channels
 
 ![Alt Text](https://media.giphy.com/media/l378eMan4xnFFjsqI/giphy.gif)
@@ -61,6 +62,7 @@ A user can be a part of many teams.
 
 Any user can create a Channel.  A Channel is a method of organizing the conversation within your team. Any user can join any Channel by selecting `CHANNELS` on the left navigation.
 
+---
 ### Live Messaging
 
 ![Alt Text](https://media.giphy.com/media/3ohhwF1Cpr3zyIibYs/giphy.gif)
