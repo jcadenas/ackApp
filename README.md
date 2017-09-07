@@ -51,6 +51,7 @@ If valid credentials are supplied, a session is started by storing a session tok
 #### Logout
 
 When logging out, the user's session token is reset and the session token on the browser is cleaned by being set to null.
+
 ---
 ### Teams & Channels
 
