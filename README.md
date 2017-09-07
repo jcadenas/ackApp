@@ -94,7 +94,8 @@ This is a Ruby on Rails app with React / Redux.
 
 ## Coming Soon
 
-* Additional interesting views are in the works focusing around character correlations with IMDB rating
+* Direct Messaging
+* @ Mentions
 
 
 Enjoy!
