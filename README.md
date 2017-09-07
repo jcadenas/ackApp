@@ -28,12 +28,16 @@ On entering the site, you will land on the landing page.  Here, you can learn a 
 
 When opting to create a new account, the user will be directed to a protected signup route.
 
+##### Validations
 Here a user can select a user name and password. On submission, validations are run on the backend and error messages will be displayed to direct the user to an appropriate username & password.
 
+##### Password Hashing
 BCrypt is used for password hashing in order to store a password-digest allowing secure user authentication.
 
+##### Session Creation
 Once the account is created, a session is started by storing a session token on the front end and on the user's account.
 
+##### On-boarding
 On creation of a new account, the user will be directed to the on boarding experience which directs the user to create a Team.
 
 On creation of a new Team, a `general` channel will be automatically created and added to the team and the User's Channels.
