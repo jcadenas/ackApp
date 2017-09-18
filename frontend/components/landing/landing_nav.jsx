@@ -53,12 +53,10 @@ class LandingNav extends React.Component {
 
   render () {
     return(
-      <div className='landing-wrapper'>
         <nav className='landing-nav'>
           <span className='landing-nav-logo'>Ack!</span>
           {this.determine_nav()}
         </nav>
-      </div>
     );
   }
 
