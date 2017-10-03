@@ -257,7 +257,7 @@ message35 = Message.create!({ author: user5, channel: channel1, body: 'I got som
 message36 = Message.create!({ author: user2, channel: channel1, body: 'Please.' })
 message37 = Message.create!({ author: user5, channel: channel1, body: 'Open up.' })
 message38 = Message.create!({ author: user2, channel: channel1, body: 'What do you mean about...?' })
-message39 = Message.create!({ author: user5, channel: channel1, body: '🍦🍔' })
+message39 = Message.create!({ author: user5, channel: channel1, body: '🍦🍔💨' })
 
 message40 = Message.create!({ author: user3, channel: channel6, body: 'Dad, I want to work more hours at the banana stand.' })
 message41 = Message.create!({ author: user2, channel: channel6, body: 'Wow. Well, thats great.' })
